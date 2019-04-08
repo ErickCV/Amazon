@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXButton?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml">
+    <GridPane alignment="CENTER">
+        <Label text="ID Promocion" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <JFXTextField fx:id="txtPromo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre Promo" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <JFXTextField fx:id="txtName" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha Promo" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <JFXDatePicker fx:id="dpPromo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <JFXButton text="Agregar" fx:id="btnAdd" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <JFXButton fx:id="btnCancel"  text="Cancelar" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <JFXButton fx:id="btnUpdate"  text="Actualizar" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+</VBox>

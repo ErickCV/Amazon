@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" alignment="CENTER" >
+    <GridPane alignment="CENTER">
+        <Label text="Venta No" fx:id="lblSale" GridPane.rowIndex="0" />
+        <Label text="Cliente" fx:id="lblCustomer" GridPane.rowIndex="1" />
+        <Label text="ID Carrito" fx:id="lblIdCart" GridPane.rowIndex="2" />
+        <Label text="Usuario" fx:id="lblUser" GridPane.rowIndex="3" />
+        <Label text="Total" fx:id="lblTotal" GridPane.rowIndex="4" />
+        <JFXTextField fx:id="txtTotal" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        <Label text="Tipo de Pago" fx:id="lblPayment" GridPane.rowIndex="5" />
+        <Label text="Tipo de venta" fx:id="lblTypeSale" GridPane.rowIndex="6" />
+        <Label text="Tienda" fx:id="lblStore" GridPane.rowIndex="7" />
+        <Label text="Promocion" fx:id="lblPromo" GridPane.rowIndex="8" />
+        <Label text="Fecha" fx:id="lblDAte" GridPane.rowIndex="9" />
+        <JFXDatePicker fx:id="dpDate" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+        <JFXButton text="Agregar" fx:id="btnAdd" GridPane.rowIndex="10" />
+        <JFXButton text="Cancelar" fx:id="btnCancel" GridPane.rowIndex="10"  GridPane.columnIndex="1"/>
+        <JFXButton text="Actualizar" fx:id="btnUpdate" GridPane.rowIndex="10"  GridPane.columnIndex="2"/>
+    </GridPane>
+
+</VBox>

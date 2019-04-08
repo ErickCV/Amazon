@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox  alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" spacing="30">
+    <padding>
+        <Insets left="15" right="15"/>
+    </padding>
+
+    <StackPane >
+        <HBox alignment="TOP_CENTER">
+            <Label text="Agregar Usuario" styleClass="title"/>
+        </HBox>
+    </StackPane>
+
+    <GridPane  alignment="CENTER" hgap="20" styleClass="GridPanel" prefWidth="600" vgap="20">
+        <Label text="Nombre de usuario" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <font>
+                <Font size="30"/>
+            </font>
+        </Label>
+        <JFXTextField fx:id="txfuserName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Contrasena" GridPane.rowIndex="1" GridPane.columnIndex="0">
+            <font>
+                <Font size="30"/>
+            </font>
+        </Label>
+        <JFXPasswordField fx:id="psfPassword" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Confirmar contrasena" GridPane.rowIndex="2" GridPane.columnIndex="0">
+            <font>
+                <Font size="30"/>
+            </font>
+        </Label>
+        <JFXPasswordField fx:id="psfConfirmPassword" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Rol" GridPane.rowIndex="3" GridPane.columnIndex="0">
+            <font>
+                <Font size="30"/>
+            </font>
+        </Label>
+        <JFXComboBox fx:id="cmbRole" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <JFXButton fx:id="btnAdd" text="Agregar" GridPane.rowIndex="4" GridPane.columnIndex="0">
+
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" text="Cancelar" GridPane.rowIndex="4" GridPane.columnIndex="1">
+
+        </JFXButton>
+        <JFXButton fx:id="btnExit" text="Salir" GridPane.rowIndex="4" GridPane.columnIndex="2">
+
+        </JFXButton>
+    </GridPane>
+</VBox>

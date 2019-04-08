@@ -1,0 +1,40 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.VBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+    <GridPane alignment="CENTER">
+        <Label text="Id del Paquete" GridPane.rowIndex="0" GridPane.columnIndex="0"  textFill="white"/>
+
+        <JFXTextField fx:id="txtIdPackage" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label textFill="white" text="Nombre del paquete" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <JFXTextField fx:id="txtNamePackage" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label textFill="white" text="Descripcion" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <JFXTextField  fx:id="txtDescription" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label textFill="white" text="Precio" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <JFXTextField  fx:id="txtPice" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label textFill="white" text="Cantidad en almacen" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <JFXTextField  fx:id="txtstock" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label textFill="white" text="imagen" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <JFXButton  fx:id="btnImge" GridPane.rowIndex="5" GridPane.columnIndex="1">
+
+        </JFXButton>
+        <JFXButton fx:id="btnAdd"  text="Agregar" GridPane.rowIndex="6" GridPane.columnIndex="0"></JFXButton>
+        <JFXButton fx:id="btnCancel"  text="Cancelar" GridPane.rowIndex="6" GridPane.columnIndex="2"></JFXButton>
+        <JFXButton fx:id="btnUpdate"  text="Actualizar" GridPane.rowIndex="6" GridPane.columnIndex="1"></JFXButton>
+    </GridPane>
+</VBox>

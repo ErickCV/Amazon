@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="TOP_CENTER" >
+    <GridPane alignment="TOP_CENTER">
+        <Label text="Producto " fx:id="lbl" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <JFXComboBox fx:id="cmbProduct" promptText="Producto" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Tienda" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <JFXComboBox fx:id="cmbStore" promptText="Tienda" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Cantidad" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <JFXTextField fx:id="txtQuantity" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <JFXButton fx:id="btnAdd" text="Agregar" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <JFXButton fx:id="btnCancel" text="Cancelar" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <JFXButton fx:id="btnUpdate" text="Actualizar" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+</VBox>

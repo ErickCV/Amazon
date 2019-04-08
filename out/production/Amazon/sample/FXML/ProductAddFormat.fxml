@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      >
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <Label text="Agregar un producto" styleClass="title"/>
+    <HBox alignment="CENTER_RIGHT">
+        <JFXButton fx:id="btnExit" text="Salir"  buttonType="RAISED"/>
+    </HBox>
+    <HBox alignment="CENTER">
+    <GridPane alignment="CENTER" hgap="20" styleClass="GridPanel" prefWidth="600" vgap="20">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30" />
+        </padding>
+        <Label styleClass="texto" text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <JFXTextField fx:id="tfId" promptText="ID" styleClass="texto" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label styleClass="texto" text="Nombre: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="tfName" promptText="Nombre del producto" styleClass="texto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label styleClass="texto" text="Categoria : " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cbCategory" styleClass="texto" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label styleClass="texto" text="Descripción: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <JFXTextField fx:id="tfDescription" styleClass="texto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label styleClass="texto" text="Precio: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <JFXTextField fx:id="tfPrice" promptText="Precio" styleClass="texto" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label styleClass="texto" text="Imagen: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <JFXButton  fx:id="btnImge" GridPane.columnIndex="1" GridPane.rowIndex="5">
+
+        </JFXButton>
+        <JFXButton fx:id="btnCancel" text="Cancelar" GridPane.halignment="CENTER" buttonType="RAISED" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <JFXButton fx:id="btnAdd" text="Agregar" GridPane.halignment="CENTER" buttonType="RAISED" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    </GridPane>
+    </HBox>
+</VBox>
