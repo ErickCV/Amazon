@@ -6,7 +6,7 @@
     -fx-red: #FF0000;
     -fx-color-1:#1976D2;
 }
-
+/*hola*/
 #button_actualizar{
      -fx-background-image: url("/sample/imagenes/update.png");
      -fx-image-alignment: right;
