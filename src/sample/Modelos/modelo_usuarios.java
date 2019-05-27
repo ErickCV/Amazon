@@ -169,6 +169,33 @@ public class modelo_usuarios {
         return valor;
     }
 
+    public int consultas3()
+    {
+        try {
+            objC = new ConexionBD();
+            con = objC.getConectar();
+            System.out.println("nombre "+nombre);
+            System.out.println("clave "+clave);
+
+            String query2 = "INSERT INTO Customers (name,lastName,gender,clave) " +
+                    "VALUES('"+nombre+"','"+""+"','"+"F"+"','"+clave+"')";
+
+            objSt2 = con.createStatement();
+            ResultSet rs2 = objSt2.executeQuery(query2);
+            while(rs2.next()) {
+                if (rs2.wasNull())
+                    valor = 0;
+                else
+                    valor = 2;
+            }
+            con.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return valor;
+    }
 
     public ObservableList<modelo_usuarios> Listar()//de modelos
     {
