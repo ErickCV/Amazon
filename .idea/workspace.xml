@@ -2,146 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/BD/AmazonV3.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Amazon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Amazon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/CSS/estilo.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Amazon/sample/CSS/estilo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Componentes/GestorTeclado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/AdreessDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/CategoryDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/MySQL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/PackageDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/ProductDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/PromoDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/RoleDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/SaleDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/StockDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/StoreDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/TypeSaleDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPackageController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPackageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPromotionFormatController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPromotionFormatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddRoleFormat$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddRoleFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddSaleFormatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddStoreFormatController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddStoreFormatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddToStockFormatController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddToStockFormatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddTypeSaleFormatController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddTypeSaleFormatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/ConexionBD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/consultas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_carritocompras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_categoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_ciudad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_contenidopaquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_direccion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_direccioncliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_estado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_factura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_listacarritocompras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_metodopago.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_pais.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_paquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_productos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_productosMAU.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_promocion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_rol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_tienda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_tipoventa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_usuarios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_venta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Address.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/AddressCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/City.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Country.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Customers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/ListShoppingCart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/PackageContent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Packages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/PaymentMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Promotion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Sale.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/ShoppingCart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Store.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/TypeDecoration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/TypeSale.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/invoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_CarritoCompras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Categoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Ciudad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_ContenidoPaquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Direccion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_DireccionCliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Estado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Factura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_ListaCarrito.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_MetodoPago.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Pais.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Paquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Productos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Promocion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Rol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Tienda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_TipoVenta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Usuarios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Venta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsCustomer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Signup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_carritocompras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_categoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_ciudad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_contenidopaquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_direccion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_direccioncliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_estado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_factura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_listacarritocompras.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_metodopago.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_pais.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_paquete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_productos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_promocion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_rol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_stock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_tienda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_tipoventa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_usuarios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_venta.class" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -198,6 +62,10 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
@@ -206,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="153">
               <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -238,9 +106,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10370">
+            <state relative-caret-position="4607">
               <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
               <folding>
+                <element signature="method#handle#0;class#6176:24853" />
                 <element signature="e#30944#35865#0" />
                 <element signature="e#35871#36094#0" />
                 <element signature="e#36100#36319#0" />
@@ -265,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="91" column="65" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -274,7 +143,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3944">
+            <state relative-caret-position="363">
               <caret line="598" column="43" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -302,15 +171,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productosMAU.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -320,28 +180,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_ListaCarrito.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_usuarios.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+            <state relative-caret-position="176">
+              <caret line="127" column="92" lean-forward="true" selection-start-line="127" selection-start-column="92" selection-end-line="127" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -451,32 +293,27 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Amazon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Amazon" type="462c0819:PsiDirectoryNode" />
+              <item name="ProyectoTBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoTBD" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Amazon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Amazon" type="462c0819:PsiDirectoryNode" />
+              <item name="ProyectoTBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoTBD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Amazon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Amazon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="librerias" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -484,11 +321,12 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558918554565" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/JavaFX/Java3D/jfoenix-9.0.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/BD" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -611,11 +449,12 @@
       <workItem from="1558613966198" duration="156000" />
       <workItem from="1558917718689" duration="53000" />
       <workItem from="1558918156137" duration="312000" />
+      <workItem from="1558920213717" duration="592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1823000" />
+    <option name="totallyTimeSpent" value="2415000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,7 +468,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18456884" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18759455" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -639,7 +478,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24342105" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24319728" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -651,7 +490,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Problems" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32733223" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3265306" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="16" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329429" />
@@ -970,9 +809,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_ListaCarrito.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productosMAU.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="598" column="43" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2537#3568#0" />
+            <element signature="e#3573#5556#0" />
+            <element signature="e#5561#6995#0" />
+            <element signature="e#7000#8434#0" />
+            <element signature="e#8439#9873#0" />
+            <element signature="e#9879#11277#0" />
+            <element signature="e#11282#12696#0" />
+            <element signature="e#12702#14113#0" />
+            <element signature="e#14119#15537#0" />
+            <element signature="e#15543#15721#0" />
+            <element signature="e#19006#19145#0" />
+            <element signature="e#19151#19698#0" />
+            <element signature="e#19804#19888#0" />
+            <element signature="e#19991#20179#0" />
+            <element signature="e#20184#20959#0" />
+            <element signature="e#23104#23361#0" />
+            <element signature="e#23367#24377#0" />
+            <element signature="e#24382#26367#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4607">
+          <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
+          <folding>
+            <element signature="method#handle#0;class#6176:24853" />
+            <element signature="e#30944#35865#0" />
+            <element signature="e#35871#36094#0" />
+            <element signature="e#36100#36319#0" />
+            <element signature="e#36325#36540#0" />
+            <element signature="e#39552#45259#0" />
+            <element signature="e#45265#45803#0" />
+            <element signature="e#45809#56865#0" />
+            <element signature="e#65093#69243#0" />
+            <element signature="e#69249#69983#0" />
+            <element signature="e#69989#70726#0" />
+            <element signature="e#70732#71491#0" />
+            <element signature="e#71497#72209#0" />
+            <element signature="e#72215#72949#0" />
+            <element signature="e#72955#73694#0" />
+            <element signature="e#73700#74445#0" />
+            <element signature="e#74451#75205#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="153">
           <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1000,98 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10370">
-          <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
-          <folding>
-            <element signature="e#30944#35865#0" />
-            <element signature="e#35871#36094#0" />
-            <element signature="e#36100#36319#0" />
-            <element signature="e#36325#36540#0" />
-            <element signature="e#39552#45259#0" />
-            <element signature="e#45265#45803#0" />
-            <element signature="e#45809#56865#0" />
-            <element signature="e#65093#69243#0" />
-            <element signature="e#69249#69983#0" />
-            <element signature="e#69989#70726#0" />
-            <element signature="e#70732#71491#0" />
-            <element signature="e#71497#72209#0" />
-            <element signature="e#72215#72949#0" />
-            <element signature="e#72955#73694#0" />
-            <element signature="e#73700#74445#0" />
-            <element signature="e#74451#75205#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="91" column="65" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="598" column="43" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2537#3568#0" />
-            <element signature="e#3573#5556#0" />
-            <element signature="e#5561#6995#0" />
-            <element signature="e#7000#8434#0" />
-            <element signature="e#8439#9873#0" />
-            <element signature="e#9879#11277#0" />
-            <element signature="e#11282#12696#0" />
-            <element signature="e#12702#14113#0" />
-            <element signature="e#14119#15537#0" />
-            <element signature="e#15543#15721#0" />
-            <element signature="e#19006#19145#0" />
-            <element signature="e#19151#19698#0" />
-            <element signature="e#19804#19888#0" />
-            <element signature="e#19991#20179#0" />
-            <element signature="e#20184#20959#0" />
-            <element signature="e#23104#23361#0" />
-            <element signature="e#23367#24377#0" />
-            <element signature="e#24382#26367#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productosMAU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_usuarios.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_ListaCarrito.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="176">
+          <caret line="127" column="92" lean-forward="true" selection-start-line="127" selection-start-column="92" selection-end-line="127" selection-end-column="92" />
         </state>
       </provider>
     </entry>

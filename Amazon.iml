@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/JavaFX/Java3D/jfoenix-9.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../librerias/jfoenix-9.0.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
