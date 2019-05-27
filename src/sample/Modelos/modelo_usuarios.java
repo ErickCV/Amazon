@@ -150,9 +150,7 @@ public class modelo_usuarios {
             System.out.println("nombre "+nombre);
             System.out.println("clave "+clave);
 
-            String query2 = "select *" +
-                    "       from Customers" +
-                    "       where clave = '" + clave + "' and name = '" + nombre+"'";
+            String query2 = "exec verificaCustomer '"+nombre+"','"+clave+"','"+valor+"'";
 
             objSt2 = con.createStatement();
             ResultSet rs2 = objSt2.executeQuery(query2);
