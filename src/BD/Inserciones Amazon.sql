@@ -1,142 +1,141 @@
 use amazonV3
 
-insert into role values
-	(1,'Administrador','encargado'),
-    (2,'Usuario','comprador')
+insert into Role values
+	('Administrador','encargado'),
+    ('Usuario','comprador')
     
 insert into PaymentMethod values
-	(4,'TarjetaR','transaccion-digital'),
-    (5,'Trueque','dinero-fisico'),
-	(1,'efectivo','dinero-fisico'),
-    (2,'TarjetasCR','transaccion-digital'),
-    (3,'Cupones','transaccion-digital')
+	('TarjetaR','transaccion-digital'),
+    ('Trueque','dinero-fisico'),
+	('efectivo','dinero-fisico'),
+    ('TarjetasCR','transaccion-digital'),
+    ('Cupones','transaccion-digital')
     
 insert into Promotion values
-	(4,'2x1','2018-12-25'),
-    (5,'3x2','2018-12-28'),
-	(1,'5descuento','2018-12-15'),
-    (2,'10descuento','2018-12-20'),
-    (3,'20descuento','2018-12-25')
+	('2x1','2018-12-25'),
+    ('3x2','2018-12-28'),
+	('5descuento','2018-12-15'),
+    ('10descuento','2018-12-20'),
+    ('20descuento','2018-12-25')
     
 insert into Customers values
-	(4,'Paulina','Cupa','F'),
-    (5,'Juan luis','Montero','M'),
-	(1,'Erick','Camacho','M'),
-    (2,'Sarai','Jimenes','F'),
-    (3,'Francisco','Tierrablnca','M')
+	('Paulina','Cupa','F','Cupa'),
+    ('Juan luis','Montero','M','Montero'),
+	('Erick','Camacho','M','Montero'),
+    ('Sarai','Jimenes','F','Jimenes'),
+    ('Francisco','Tierrablnca','M','Tierrablanca')
     
 insert into Category values
-	(4,'Mascotas','Accesorios',null),
-    (5,'Libros','Libros',null),
-	(1,'Electronicos','Celulares,Computadoras',null),
-    (2,'Linea Blanca','Refrigeradores,Lavadoras',null),
-    (3,'Deportes','Tenis,Sudaderas',null)
+	('Mascotas','Accesorios',null),
+    ('Libros','Libros',null),
+	('Electronicos','Celulares,Computadoras',null),
+    ('Linea Blanca','Refrigeradores,Lavadoras',null),
+    ('Deportes','Tenis,Sudaderas',null)
     
 insert into Package values
-	(4,'Libros','Habitos de millonarios',250.00,10,null),
-    (5,'Accesorios','Sueter para perro',199.99,10,null),
-	(1,'Celulares','Note 9',24999.99,10,null),
-    (2,'Lavadora','lG',12599.99,20,null),
-    (3,'Tenis','nike',1599.99,30,null)
+	('Libros','Habitos de millonarios',250.00,10,null),
+    ('Accesorios','Sueter para perro',199.99,10,null),
+	('Celulares','Note 9',24999.99,10,null),
+    ('Lavadora','lG',12599.99,20,null),
+    ('Tenis','nike',1599.99,30,null)
     
 insert into Country values
-	(4,'España'),
-    (5,'Inglaterra'),
-	(1,'Japon'),
-    (2,'Mexico'),
-    (3,'EUA')
+	('España'),
+    ('Inglaterra'),
+	('Japon'),
+    ('Mexico'),
+    ('EUA')
     
 insert into Users values
-	(4,'JM','12345',2),
-    (5,'PC','12345',1),
-	(1,'EC','12345',2),
-    (2,'SJ','12345',1),
-    (3,'FT','12345',2)
+	('JM','12345',2),
+    ('PC','12345',1),
+	('EC','12345',2),
+    ('SJ','12345',1),
+    ('FT','12345',2)
     
 insert into TypeSale values
-	(1,'Normal','Caja'),
-    (2,'Regalo','envoltura')
+	('Normal','Caja'),
+    ('Regalo','envoltura')
     
 insert into Product values
-	(9,'Xbox one',1,'Xbox de 1T',7500.00,'/sample/imagenes/xbox.jpg'),
-	(6,'Lavadora Smart',2,'Lavadora Samsung',16500.00,'/sample/imagenes/lavadora2.jpg'),
-    (7,'Tenis modernos',3,'Tenis Nike',2100.00,'/sample/imagenes/tenis2.jpg'),
-    (8,'iPhone x',1,'Celular Apple',20999.99,'/sample/imagenes/iphonex.png'),
-	(1,'note 9',1,'Celular Samsung',24999.99,'/sample/imagenes/note9.jpg'),
-    (2,'Lavadora',2,'Lavador LG',12599.99,'/sample/imagenes/lavadora.jpg'),
-    (3,'Tenis',3,'Tenis nike',1599.99,'/sample/imagenes/tenis.jpg'),
-    (4,'Refrigerador',2,'Refrigerador 16 pies',21000.00,'/sample/imagenes/refri.jpg'),
-	(5,'Google pixel',1,'Celular google',18999.99,'/sample/imagenes/pixel.jpg')
+	('Xbox one',1,'Xbox de 1T',7500.00,'/sample/imagenes/xbox.jpg'),
+	('Lavadora Smart',2,'Lavadora Samsung',16500.00,'/sample/imagenes/lavadora2.jpg'),
+    ('Tenis modernos',3,'Tenis Nike',2100.00,'/sample/imagenes/tenis2.jpg'),
+    ('iPhone x',1,'Celular Apple',20999.99,'/sample/imagenes/iphonex.png'),
+	('note 9',1,'Celular Samsung',24999.99,'/sample/imagenes/note9.jpg'),
+    ('Lavadora',2,'Lavador LG',12599.99,'/sample/imagenes/lavadora.jpg'),
+    ('Tenis',3,'Tenis nike',1599.99,'/sample/imagenes/tenis.jpg'),
+    ('Refrigerador',2,'Refrigerador 16 pies',21000.00,'/sample/imagenes/refri.jpg'),
+	('Google pixel',1,'Celular google',18999.99,'/sample/imagenes/pixel.jpg')
 
 insert into State values
-	(6,'Merseyside',5),
-	(4,'Cataluña',4),
-    (5,'Greater London',5),
-	(1,'Guanajuato',2),
-    (2,'California',3),
-    (3,'Tokyo',1)
-    
+	('Cataluña',1),
+    ('Greater London',2),
+	('Guanajuato',4),
+    ('California',5),
+    ('Tokyo',3)
+
 insert into City values
-	(1,'Londres',5,5),
-    (2,'Barcelona',4,4),
-	(3,'Celaya',2,1),
-    (4,'L.A',3,2),
-    (5,'kioto',1,3)
+	('Londres',2,13),
+    ('Barcelona',1,12),
+	('Celaya',4,14),
+    ('L.A',5,15),
+    ('kioto',3,16)
     
 insert into Address values
-    (3,'insurgenes','erick@gmail.com','4612565465','pokemon',3,1,2,38050),
-	(4,'seiso foruya','cupa@gmail.com','4613215487','chinos',1,5,5,38030),
-	(5,'valle del pirul','Juan@gmail.com','4616543252','ArtiDep',4,2,3,38010),
-	(1,'agua marina','fran@gmail.com','4611789567','Forex',1,5,5,38020),
-	(2,'piracanto','Sarai@gmail.com','4611685599','Celutec',2,4,4,38040),
+    ('insurgenes','erick@gmail.com','4612565465','pokemon',10,13,2,38050),
+	('seiso foruya','cupa@gmail.com','4613215487','chinos',12,14,4,38030),
+	('valle del pirul','Juan@gmail.com','4616543252','ArtiDep',14,16,3,38010),
+	('agua marina','fran@gmail.com','4611789567','Forex',11,12,1,38020),
+	('piracanto','Sarai@gmail.com','4611685599','Celutec',13,15,5,38040)
 
 insert into Store values
-	(4,5),
-    (5,4),
-	(1,3),
-    (2,1),
-    (3,2)
-    
+	(5,'Machitos'),
+    (4,'Leon'),
+	(3,'Tigres'),
+    (6,'Stadium'),
+    (7,'miniso')
+
 insert into ShoppingCart values
-	(4,2,2100.00),
-    (5,3,16500.00),
-	(2,5,12999.99),
-    (1,4,24999.99),
-    (3,1,1599.99)
+	(4,1,2100.00),
+    (5,2,16500.00),
+	(2,3,12999.99),
+    (6,4,24999.99),
+    (3,5,1599.99)
     
 insert into AddressCustomer values
 	(5,5),
     (4,4),
 	(2,3),
-    (1,2),
-    (3,1)
-    
+    (6,6),
+    (3,7)
+
 insert into Sale values
-	(4,2,1,1,12599.99,2,1,1,2,'2018-12-25'),
-    (5,5,4,1,16500.00,1,2,1,2,'2018-12-26'),
-    (2,2,1,1,12599.99,2,2,2,1,'2018-12-11'),
-    (3,3,2,1,12599.99,2,2,2,1,'2018-12-11'),
-    (1,1,3,1,24999.99,1,1,1,1,'2018-12-10')
-    
+	(2,3,1,12599.99,2,1,8,2,'2018-12-25'),
+    (5,2,2,16500.00,1,2,9,2,'2018-12-26'),
+    (4,1,3,12599.99,3,2,10,1,'2018-12-11'),
+    (3,5,4,12599.99,4,2,9,1,'2018-12-11'),
+    (6,4,5,24999.99,1,1,11,1,'2018-12-10')
+
 insert into invoice values
-	(1,1,'2018-12-05',1),
-    (2,3,'2018-12-01',2),
-    (3,2,'2018-12-03',3),
-    (1,3,'2018-12-05',1)
-    
+	(11,'2018-12-05',1),
+    (13,'2018-12-01',2),
+    (12,'2018-12-03',3),
+    (14,'2018-12-05',1)
+
 insert into ListShoppingCart values
-	(4,1,'Celular',1,2,2,2),
-    (1,2,'Tenis',1,2,2,2),
-	(3,1,'Celular',1,1,1,1),
-    (5,2,'Lavadora',2,1,2,1),
-    (2,3,'Tenis',3,1,3,1)
-    
+	(4,6,'Celular',1,2,2,2),
+    (3,2,'Tenis',1,2,2,2),
+	(3,2,'Celular',1,1,1,1),
+    (5,3,'Lavadora',2,1,2,1),
+    (2,5,'Tenis',3,1,3,1)
+
 insert into Stock values
-	(4,2,15),
-    (5,1,10),
-	(1,2,10),
-    (2,1,5),
-    (3,3,50)
+	(4,8,15),
+    (5,9,10),
+	(1,11,10),
+    (2,10,5),
+    (3,12,50)
     
 insert into PackageContent values
 	(4,'Celular',8,1),
