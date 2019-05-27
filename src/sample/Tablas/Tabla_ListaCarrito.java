@@ -5,7 +5,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import oracle.jrockit.jfr.ProducerDescriptor;
 import sample.Modelos.modelo_listacarritocompras;
 
 public class Tabla_ListaCarrito extends Stage{

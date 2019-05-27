@@ -7,15 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="jfoenix-8.0.5" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/sqljdbc4.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/JavaFX/Java3D/jfoenix-9.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="sqljdbc4" level="project" />
   </component>
 </module>

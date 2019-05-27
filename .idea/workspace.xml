@@ -2,16 +2,151 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/librerias/jfoenix-8.0.5.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/librerias/sqljdbc4.jar" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Amazon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Amazon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/CSS/estilo.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Amazon/sample/CSS/estilo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Componentes/GestorTeclado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/AdreessDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/CategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/MySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/PackageDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/ProductDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/PromoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/RoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/SaleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/StockDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/StoreDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/TypeSaleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/DAOs/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPackageController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPackageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPromotionFormatController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddPromotionFormatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddRoleFormat$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddRoleFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddSaleFormatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddStoreFormatController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddStoreFormatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddToStockFormatController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddToStockFormatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddTypeSaleFormatController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddTypeSaleFormatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/AddUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/FormatToController/ProductAddController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/ConexionBD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/consultas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_carritocompras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_ciudad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_consulta4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_contenidopaquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_direccion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_direccioncliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_factura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_listacarritocompras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_metodopago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_pais.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_paquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_productos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_productosMAU.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_promocion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_rol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_tienda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_tipoventa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Modelos/modelo_venta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/AddressCustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Customers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/ListShoppingCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/PackageContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Packages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/PaymentMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Promotion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Sale.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/ShoppingCart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/TypeDecoration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/TypeSale.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/TDAs/invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_CarritoCompras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Ciudad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_ContenidoPaquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Direccion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_DireccionCliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Factura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_ListaCarrito.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_MetodoPago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Pais.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Paquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Productos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Promocion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Rol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Tienda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_TipoVenta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_Venta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Tablas/Tabla_consulta4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsCustomer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsCustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/MenuAsUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Signup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_carritocompras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_ciudad.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_contenidopaquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_direccion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_direccioncliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_factura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_listacarritocompras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_metodopago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_pais.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_paquete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_productos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_promocion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_rol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_tienda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_tipoventa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Amazon/sample/Vistas/Vista_venta.class" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,11 +203,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modelo_consulta4.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta4.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
-              <caret line="66" column="49" lean-forward="false" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+              <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#451#452#0" expanded="true" />
@@ -100,109 +235,113 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuAsCustomer.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="10370">
-              <caret line="645" column="51" lean-forward="false" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
+              <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
               <folding>
-                <element signature="method#Editar#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#NoVenta#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Resumen#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Usuarios#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Actualizar#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Salir#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Borrar#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#Seleccion#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showPackage#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showProduct#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showPromotion#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showRol#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showSale#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showStore#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showStock#0;class#MenuAsCustomer#0" expanded="false" />
-                <element signature="method#showTypeSale#0;class#MenuAsCustomer#0" expanded="false" />
+                <element signature="e#30944#35865#0" />
+                <element signature="e#35871#36094#0" />
+                <element signature="e#36100#36319#0" />
+                <element signature="e#36325#36540#0" />
+                <element signature="e#39552#45259#0" />
+                <element signature="e#45265#45803#0" />
+                <element signature="e#45809#56865#0" />
+                <element signature="e#65093#69243#0" />
+                <element signature="e#69249#69983#0" />
+                <element signature="e#69989#70726#0" />
+                <element signature="e#70732#71491#0" />
+                <element signature="e#71497#72209#0" />
+                <element signature="e#72215#72949#0" />
+                <element signature="e#72955#73694#0" />
+                <element signature="e#73700#74445#0" />
+                <element signature="e#74451#75205#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1292">
-              <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
-              <folding />
+              <caret line="91" column="65" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuAsUser.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3944">
-              <caret line="598" column="43" lean-forward="false" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
+              <caret line="598" column="43" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#lista#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtro#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtro1y2#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtro1y3#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtro2y3#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#PorPrecio#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtraDeportes#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtraLinea#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#filtraElectronicos#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#crearEscena#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#toString#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#Consulta#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#Salir#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#TextField#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#checks#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#Inicio#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#label#0;class#MenuAsUser#0" expanded="false" />
-                <element signature="method#imagenes#0;class#MenuAsUser#0" expanded="false" />
+                <element signature="e#2537#3568#0" />
+                <element signature="e#3573#5556#0" />
+                <element signature="e#5561#6995#0" />
+                <element signature="e#7000#8434#0" />
+                <element signature="e#8439#9873#0" />
+                <element signature="e#9879#11277#0" />
+                <element signature="e#11282#12696#0" />
+                <element signature="e#12702#14113#0" />
+                <element signature="e#14119#15537#0" />
+                <element signature="e#15543#15721#0" />
+                <element signature="e#19006#19145#0" />
+                <element signature="e#19151#19698#0" />
+                <element signature="e#19804#19888#0" />
+                <element signature="e#19991#20179#0" />
+                <element signature="e#20184#20959#0" />
+                <element signature="e#23104#23361#0" />
+                <element signature="e#23367#24377#0" />
+                <element signature="e#24382#26367#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelo_productosMAU.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productosMAU.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1462">
-              <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-              <folding />
+              <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelo_consulta2.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="102">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estilo.css" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_ListaCarrito.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1292">
-              <caret line="76" column="17" lean-forward="false" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-              <folding />
+              <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelo_usuarios.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_usuarios.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1751">
-              <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
-              <folding />
+              <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -223,11 +362,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -297,17 +431,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -343,36 +467,32 @@
               <item name="Amazon" type="b2602c69:ProjectViewProjectNode" />
               <item name="Amazon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Amazon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="librerias" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ASimpleSoftwareEngineeringApp-master" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558918554565" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/JavaFX/Java3D/jfoenix-9.0.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -405,109 +525,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sample.Modelos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Vistas.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Amazon" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -520,9 +537,65 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Vistas.Main" />
+      <module name="Amazon" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.Modelos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -535,11 +608,14 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1558613966198" duration="156000" />
+      <workItem from="1558917718689" duration="53000" />
+      <workItem from="1558918156137" duration="312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
+    <option name="totallyTimeSpent" value="1823000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -553,70 +629,60 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20245399" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15953948" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24342105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18228404" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18456884" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info id="Favorites" order="6" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24342105" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.20130932" />
+      <window_info anchor="bottom" id="Event Log" order="7" weight="0.15953948" />
+      <window_info anchor="bottom" id="Application Servers" order="8" />
+      <window_info anchor="bottom" id="Profiler" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Problems" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32733223" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329429" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="JetGradle" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Maven" order="11" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="8" />
-    </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Vista_categoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Vista_cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1223">
@@ -627,7 +693,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Vista_contenidopaquete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2006">
-          <caret line="125" column="49" lean-forward="false" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+          <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -641,21 +707,21 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_paquete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_pais.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1258">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Vista_promocion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -669,7 +735,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_DireccionCliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -683,7 +749,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Vista_pais.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
-          <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -711,43 +777,42 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1642">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_consulta3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
-          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_consulta2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/ConexionBD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/DAOs/PackageDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -759,93 +824,59 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddPromotionFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+        <state relative-caret-position="-102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddPackageFormat.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/addSaleFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+        <state relative-caret-position="-153" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddRoleFormat.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddStoreFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddToStockFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/AddTypeSaleFormat.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/addUserFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FXML/ProductAddFormat.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/DAOs/MySQL.java">
@@ -858,56 +889,56 @@
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddStoreFormatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddTypeSaleFormatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-528">
-          <caret line="78" column="62" lean-forward="false" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
+          <caret line="78" column="62" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1106">
-          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/ProductAddController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="34" column="61" lean-forward="false" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+          <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/DAOs/CategoryDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddToStockFormatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddPackageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1310">
-          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddPromotionFormatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -921,29 +952,28 @@
     <entry file="file://$PROJECT_DIR$/src/sample/FormatToController/AddSaleFormatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_consulta4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="36" column="71" lean-forward="false" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
+          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
+    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/consultas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="17" lean-forward="false" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
-          <caret line="66" column="49" lean-forward="false" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#451#452#0" expanded="true" />
@@ -973,75 +1003,59 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10370">
-          <caret line="645" column="51" lean-forward="false" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
+          <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
           <folding>
-            <element signature="method#Editar#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#NoVenta#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Resumen#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Usuarios#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Actualizar#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Salir#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Borrar#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#Seleccion#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showPackage#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showProduct#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showPromotion#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showRol#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showSale#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showStore#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showStock#0;class#MenuAsCustomer#0" expanded="false" />
-            <element signature="method#showTypeSale#0;class#MenuAsCustomer#0" expanded="false" />
+            <element signature="e#30944#35865#0" />
+            <element signature="e#35871#36094#0" />
+            <element signature="e#36100#36319#0" />
+            <element signature="e#36325#36540#0" />
+            <element signature="e#39552#45259#0" />
+            <element signature="e#45265#45803#0" />
+            <element signature="e#45809#56865#0" />
+            <element signature="e#65093#69243#0" />
+            <element signature="e#69249#69983#0" />
+            <element signature="e#69989#70726#0" />
+            <element signature="e#70732#71491#0" />
+            <element signature="e#71497#72209#0" />
+            <element signature="e#72215#72949#0" />
+            <element signature="e#72955#73694#0" />
+            <element signature="e#73700#74445#0" />
+            <element signature="e#74451#75205#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_usuarios.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
-          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/consultas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="91" column="65" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Vistas/MenuAsUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3944">
-          <caret line="598" column="43" lean-forward="false" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
+          <caret line="598" column="43" selection-start-line="598" selection-start-column="43" selection-end-line="598" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#lista#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtro#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtro1y2#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtro1y3#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtro2y3#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#PorPrecio#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtraDeportes#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtraLinea#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#filtraElectronicos#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#crearEscena#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#toString#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#Consulta#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#Salir#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#TextField#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#checks#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#Inicio#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#label#0;class#MenuAsUser#0" expanded="false" />
-            <element signature="method#imagenes#0;class#MenuAsUser#0" expanded="false" />
+            <element signature="e#2537#3568#0" />
+            <element signature="e#3573#5556#0" />
+            <element signature="e#5561#6995#0" />
+            <element signature="e#7000#8434#0" />
+            <element signature="e#8439#9873#0" />
+            <element signature="e#9879#11277#0" />
+            <element signature="e#11282#12696#0" />
+            <element signature="e#12702#14113#0" />
+            <element signature="e#14119#15537#0" />
+            <element signature="e#15543#15721#0" />
+            <element signature="e#19006#19145#0" />
+            <element signature="e#19151#19698#0" />
+            <element signature="e#19804#19888#0" />
+            <element signature="e#19991#20179#0" />
+            <element signature="e#20184#20959#0" />
+            <element signature="e#23104#23361#0" />
+            <element signature="e#23367#24377#0" />
+            <element signature="e#24382#26367#0" />
           </folding>
         </state>
       </provider>
@@ -1049,16 +1063,35 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_productosMAU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1462">
-          <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-          <folding />
+          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/CSS/estilo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_usuarios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Modelos/modelo_consulta2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Tablas/Tabla_ListaCarrito.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1103,7 +1136,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
