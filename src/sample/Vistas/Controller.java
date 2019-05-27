@@ -1,4 +1,4 @@
-package sample;
+package sample.Vistas;
 
 
 import com.jfoenix.controls.JFXButton;
