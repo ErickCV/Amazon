@@ -1,4 +1,4 @@
-use amazon
+use amazonV3
 
 insert into role values
 	(1,'Administrador','encargado'),

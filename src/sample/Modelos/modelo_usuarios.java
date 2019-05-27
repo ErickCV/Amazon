@@ -123,9 +123,7 @@ public class modelo_usuarios {
             con = objC.getConectar();
             System.out.println("nombre "+nombre);
             System.out.println("clave "+clave);
-            String query = "select *" +
-                    "       from Users" +
-                    "       where password = '" + clave + "' and userName = '" + nombre+"'";
+            String query = "exec verificaUsuario '"+nombre+"','"+clave+"','"+valor+"'";
 
             objSt = con.createStatement();
             ResultSet rs = objSt.executeQuery(query);
