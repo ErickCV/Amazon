@@ -51,7 +51,8 @@ public class MenuAsUser extends Stage
     private Scene scene;
     private MenuAsCustomer objMAC;
 
-    public MenuAsUser(String name,String clave){
+    public MenuAsUser(String name,String clave)
+    {
         this.name = name;
         this.clave = clave;
         crearEscena();
@@ -129,7 +130,7 @@ public class MenuAsUser extends Stage
                                 lblNombreCel = new Label("Note 9");
                                 lblPrecioCel = new Label("24,999");
                                 lblDescCel = new Label("Celular Samsung");
-                                ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+                                ancInicio.getChildren().addAll(vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
                             }
                         }
                     }
@@ -157,10 +158,7 @@ public class MenuAsUser extends Stage
             AnchorPane.setTopAnchor(imvCel[con], top);
             AnchorPane.setLeftAnchor(imvCel[con], valor);
             vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
+            vbxLabels.getChildren().addAll(lblNombreCel,lblPrecioCel,lblDescCel);
             AnchorPane.setLeftAnchor(vbxLabels,valor);
             AnchorPane.setTopAnchor(vbxLabels,top2);
             ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
@@ -253,37 +251,47 @@ public class MenuAsUser extends Stage
 
     private void PorPrecio()
     {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
-        modelo_productosMAU obj = new modelo_productosMAU();
-        obj.ListaPrecios(Integer.parseInt(txtP1.getText()),Integer.parseInt(txtP2.getText()));
-        while (con < obj.i)
+        try
         {
-            lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
-            lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
-            lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
-            vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(lblNombreCel,lblPrecioCel,lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
-            con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
+            ancInicio.getChildren().clear();
+            top = 20;
+            top2 = 195;
+            modelo_productosMAU obj = new modelo_productosMAU();
+            obj.ListaPrecios(Integer.parseInt(txtP1.getText()), Integer.parseInt(txtP2.getText()));
+            while (con < obj.i) {
+                lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
+                lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
+                lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
+                imvCel[con] = new ImageView(obj.imgArray[con]);
+                imvCel[con].setFitWidth(250.0);
+                imvCel[con].setFitHeight(170.0);
+                AnchorPane.setTopAnchor(imvCel[con], top);
+                AnchorPane.setLeftAnchor(imvCel[con], valor);
+                vbxLabels = new VBox();
+                vbxLabels.getChildren().addAll(lblNombreCel, lblPrecioCel, lblDescCel);
+                AnchorPane.setLeftAnchor(vbxLabels, valor);
+                AnchorPane.setTopAnchor(vbxLabels, top2);
+                ancInicio.getChildren().addAll(imvCel[con], vbxLabels);
+                valor = valor + 270.0;
+                con = con + 1;
+                if (con == 3) {
+                    valor = 250.0;
+                    top = 275.0;
+                    top2 = 450;
+                }
             }
+            con = 0;
+            valor = 250;
         }
-        con=0;
-        valor=250;
+        catch(Exception e)
+        {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("ALERTA");
+            a.setHeaderText("ERROR AL INGRESAR DATOS");
+            a.setContentText("Debe de ingresar DOS CANTIDADES diferentes en los espacios correspondientes");
+            a.show();
+            Inicio();
+        }
 
     }
     private void filtraDeportes()
@@ -411,7 +419,7 @@ public class MenuAsUser extends Stage
     {
         TextField();
         checks();
-        imagenes();
+        //imagenes();
         label();
         Vbox();
         //ESPACIO DE BUSQUEDA
@@ -427,7 +435,7 @@ public class MenuAsUser extends Stage
         AnchorPane.setTopAnchor(btnBscar,15.0);
         //btnBscar.setOnAction(event -> accion());
 //--------------------------------------------------------------------------------------------------------------------------------
-        chbCategorias = new JFXComboBox<>(FXCollections.observableArrayList("Electronicos","Linea blanca","Deportes"));
+        chbCategorias = new JFXComboBox<>(FXCollections.observableArrayList("Electronicos","papeleria","componentes pc"));
         chbCategorias.setPromptText("Categorias");
         AnchorPane.setLeftAnchor(chbCategorias,180.0);
         AnchorPane.setTopAnchor(chbCategorias,92.0);
@@ -445,14 +453,15 @@ public class MenuAsUser extends Stage
 //---------------------------------------------------------------------------------------------
         //ESCENAS DE LOS TABS
         ancInicio = new AnchorPane();
-        ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        //ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        ancInicio.getChildren().addAll(vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
 //------------------------------------------------------------------------------------------------
         //INSERTANDO LAS ESCENAS A LOS TABS
         tapInicio.setContent(ancInicio);
         tbpInterfaz.getTabs().addAll(tapInicio,tapCompras);
 //------------------------------------------------------------------------------------------------
 
-        imvUser = new ImageView("/sample/Imagenes/usuario.png");
+        imvUser = new ImageView("/sample/imagenes/usuario.png");
         imvUser.setFitHeight(35);
         imvUser.setFitWidth(35);
         AnchorPane.setTopAnchor(imvUser,15.0);
@@ -469,9 +478,14 @@ public class MenuAsUser extends Stage
         AnchorPane.setTopAnchor(lbname,15.0);
         AnchorPane.setLeftAnchor(lbname,1225.0);
 
+        imvLogo = new ImageView("/sample/imagenes/logo.png");
+        imvLogo.setFitHeight(80.0);
+        imvLogo.setFitWidth(250.0);
+
 //------------------------------------------------------------------------------------------------
         //ESCENA PRINCIPAL
-        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvPubli,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,vbxCheck,vbxPrecio);
+        //ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvPubli,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,vbxCheck,vbxPrecio);
+        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,txtBusqueda,lbname,imvLogo,imvUser,btnLogout,vbxCheck,vbxPrecio);
 //------------------------------------------------------------------------------------------------
 
 
@@ -525,7 +539,7 @@ public class MenuAsUser extends Stage
             }
         });
 
-        ckbCategoria2 = new JFXCheckBox("Linea blanca");
+        ckbCategoria2 = new JFXCheckBox("Papeleria");
         ckbCategoria2.setOnAction(event -> {
             try {
                 filtro();
@@ -534,7 +548,7 @@ public class MenuAsUser extends Stage
             }
         });
 
-        ckbCategoria3 = new JFXCheckBox("Deportes");
+        ckbCategoria3 = new JFXCheckBox("Componentes PC");
         ckbCategoria3.setOnAction(event -> {
             try {
                 filtro();
@@ -600,12 +614,13 @@ public class MenuAsUser extends Stage
 
     }
 
-    private void Inicio()
+    public void Inicio()
     {
         txtP1.clear();
         txtP2.clear();
         ancInicio.getChildren().clear();
-        ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        //ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        ancInicio.getChildren().addAll(vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
     }
 
     private void label()
@@ -638,7 +653,7 @@ public class MenuAsUser extends Stage
         lblPrecCel2 = new Label("20,999");
         lblDescCel2 = new Label("Celular marca Apple");
     }
-    private void imagenes()
+    /*private void imagenes()
     {
         //CONSTRUCCION DE IMAGENES
         imvpixel = new ImageView("/sample/imagenes/pixel.jpg");
@@ -690,5 +705,5 @@ public class MenuAsUser extends Stage
         imv3.setFitHeight(170.0);
         AnchorPane.setTopAnchor(imv3,275.0);
         AnchorPane.setLeftAnchor(imv3,790.0);
-    }
+    }*/
 }

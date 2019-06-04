@@ -15,7 +15,7 @@ public class modelo_productosMAU
     public int idProduct,idCategory;
     public String nameProduct,description,image,texto;
     public ResultSet res;
-     public int i;
+    public int i;
     public float price;
     public Image [] imgArray = new Image[10];
     public String[] ArrayName = new String[10];
@@ -107,8 +107,7 @@ public class modelo_productosMAU
             modelo_productos objMp;
             listProd = FXCollections.observableArrayList();
 
-            String query = "select nameProduct,price,description,image from product " +
-                    "where idCategory in (select idCategory from category where name = '" + cate + "')";
+            String query = "exec filtro'" + cate + "'";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
             res = objSt.executeQuery(query);
             while (res.next())
@@ -144,10 +143,9 @@ public class modelo_productosMAU
             modelo_productos objMp;
             listProd = FXCollections.observableArrayList();
 
-            String query = "select nameProduct,price,description,image from product where idCategory in (select idCategory from category where name = '" + cate + "')" +
-                    "union select nameProduct,price,description,image from product where idCategory in (select idCategory from category where name = '" + cate2 +"')";
+            String query = "exec filtro2'" + cate + "','" + cate2 +"'";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
-            ResultSet res = objSt.executeQuery(query);
+            res = objSt.executeQuery(query);
             while (res.next())
             {
                 objMp = new modelo_productos();
@@ -181,7 +179,7 @@ public class modelo_productosMAU
             modelo_productos objMp;
             listProd = FXCollections.observableArrayList();
 
-            String query = "select nameproduct,price,description,image from product where price >= '" + p1 + "' and price <='"+ p2 +"'";
+            String query = "exec filtroPre'" + p1+"','"+ p2 +"'";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
             res = objSt.executeQuery(query);
             while (res.next())
