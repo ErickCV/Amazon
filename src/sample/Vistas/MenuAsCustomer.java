@@ -1456,12 +1456,6 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("dateInvoice");
                 tabla=9;
                 break;
-            case "Lista Carrito":
-                string ="ListShoppingCart";
-                string2 = "detail";
-                txtBuscar.setPromptText("detail");
-                tabla=10;
-                break;
             case "Metodo de pago":
                 string ="PaymentMethod";
                 string2 = "decription";

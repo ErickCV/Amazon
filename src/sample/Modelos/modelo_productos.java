@@ -2,6 +2,7 @@ package sample.Modelos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.TDAs.Product;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -146,6 +147,22 @@ Connection con;
             e.printStackTrace();
         }
         return listProductos;
+    }
+
+    public Product BuscarProducto(int idproduct) throws SQLException {
+        String consulta="";
+        Product product=null;
+        Statement statement=con.createStatement();
+        ResultSet resultSet=statement.executeQuery(consulta);
+        while (resultSet.next()){
+            product=new Product();
+            product.setIdProduct(resultSet.getInt("idProduct"));
+            product.setNameProduct(resultSet.getString("nameProduct"));
+            product.setDescription(resultSet.getString("description"));
+            product.setIdCategory(resultSet.getInt("idCategory"));
+            product.setPrice(resultSet.getDouble("price"));
+        }
+        return  product;
     }
 }
 
