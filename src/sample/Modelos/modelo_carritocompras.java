@@ -2,6 +2,8 @@ package sample.Modelos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.TDAs.Customers;
+import sample.TDAs.Product;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,18 +12,36 @@ import java.sql.Statement;
 
 public class modelo_carritocompras
 {
-    public int idCustomer,idCart;
+
+    public int idCart,cantidad;
+    public Product idProduct;
+    public Customers idCustomer;
     public float subTotal;
-    public String texto;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Product getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(Product idProduct) {
+        this.idProduct = idProduct;
+    }
+
     ConexionBD objC;
     Connection con;
 
-
-    public int getIdCustomer() {
+    public Customers getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(Customers idCustomer) {
         this.idCustomer = idCustomer;
     }
 
@@ -52,7 +72,7 @@ public class modelo_carritocompras
                     "VALUES('"+idCustomer+"','"+subTotal+"')";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
             objSt.executeUpdate(query);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
-            this.Listar();
+            //this.Listar();
             con.close();
         }
         catch (Exception e)
@@ -71,7 +91,7 @@ public class modelo_carritocompras
             String query = "UPDATE ShoppingCart SET idCustomer ='"+idCustomer+"',subTotal='"+subTotal+"' where idCart="+idCart ;
             Statement objSt = con.createStatement();
             objSt.executeUpdate(query);
-            this.Listar();
+            //this.Listar();
             con.close();
         }
         catch (Exception e)
@@ -89,7 +109,7 @@ public class modelo_carritocompras
             String query = "DELETE FROM ShoppingCart WHERE idCart = "+idCart;
             Statement objSt = con.createStatement();
             objSt.executeUpdate(query);
-            this.Listar();
+            //this.Listar();
             con.close();
         }
         catch (SQLException e)
@@ -99,30 +119,29 @@ public class modelo_carritocompras
     }
 
 
-    public ObservableList<modelo_carritocompras> Listar()
+    public ObservableList<modelo_carritocompras> Listar(modelo_carritocompras modeloCarritocompras)
     {
         ObservableList<modelo_carritocompras> listCarritoCompras = null;
         try {
             objC = new ConexionBD();
             con = objC.getConectar();
-
+            modelo_productos producto=null;
             modelo_carritocompras objMCarrito;
             listCarritoCompras = FXCollections.observableArrayList();
-            String query= "SELECT * FROM ShoppingCart";
+            String query= "SELECT * FROM ShoppingCart where idCuetomer="+modeloCarritocompras.getIdCart()+" and idCustomer="+modeloCarritocompras.getIdCustomer().getIdCustomer();
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
 
             while (res.next())
             {
                 objMCarrito = new modelo_carritocompras();
-                objMCarrito.setIdCustomer(res.getInt("idCustomer"));
+                producto=new modelo_productos();
+                objMCarrito.setIdCustomer(new modelo_cliente().BuscarCustomer(res.getInt("idCustomer")));
                 objMCarrito.setIdCart(res.getInt("idCart"));
                 objMCarrito.setSubTotal(res.getFloat("subTotal"));
+                objMCarrito.setIdProduct(producto.BuscarProducto(res.getInt("idProduct")));
+                objMCarrito.setCantidad(res.getInt("cantidad"));
                 listCarritoCompras.add(objMCarrito);
-
-                texto = String.valueOf(res.getInt("idCustomer"))+" "+String.valueOf(res.getInt("idCart"))+" "
-                        +String.valueOf(res.getFloat("subTotal"));
-
             }
             con.close();
         }

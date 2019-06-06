@@ -2,6 +2,7 @@ package sample.Modelos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.TDAs.Customers;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -150,5 +151,18 @@ public class modelo_cliente
             e.printStackTrace();
         }
         return listCliente;
+    }
+    public Customers BuscarCustomer(int idCustomer) throws SQLException {
+        String consulta="";
+        Customers customers=null;
+        Statement statement =con.createStatement();
+        ResultSet resultSet=statement.executeQuery(consulta);
+        while (resultSet.next()){
+            customers=new Customers();
+            customers.setIdCustomer(resultSet.getString("idCustomer"));
+            customers.setName(resultSet.getString("name"));
+            customers.setLastName(resultSet.getString("lastName"));
+        }
+        return  customers;
     }
 }

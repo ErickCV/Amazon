@@ -1,118 +1,63 @@
 package sample.Vistas;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Modelos.modelo_carritocompras;
-import sample.Tablas.Tabla_CarritoCompras;
+import sample.Modelos.modelo_cliente;
+import sample.Modelos.modelo_productos;
 
 
 public class Vista_carritocompras extends Stage
 {
-    public Label lblIdCustumer,lblIdCart,lblSubTotal;
-    public JFXTextField txtIdCustumer,txtIdCart,txtSubTotal;
-    public HBox hbxCustumer,hbxIdCart,hbxSubTotal;
-    public JFXButton btnAceptar,btnCancelar;
-    public modelo_carritocompras objMC;
-    public Tabla_CarritoCompras objT;
-    public AnchorPane ancPanel;
-    public Scene escena;
-    public int opci = 0;
-
-
-    public Vista_carritocompras(int opci, modelo_carritocompras modelo)
-    {
-        this.objMC = modelo;
-        this.opci = opci;
-        CrearEscena();
-        escena = new Scene(ancPanel,400,400);
-        escena.getStylesheets().add(getClass().getResource("/sample/css/estilo.css").toExternalForm());
-        this.setScene(escena);
-        this.setTitle("Carrito de compras");
-        this.show();
+    private Label lblCustomer,lblProduct,lblPrecio,lblDescripcion;
+    private JFXButton btnEliminar;
+    private ImageView imagen;
+    private ObservableList<modelo_carritocompras> listacarrito;
+    private ScrollPane principal;
+    private VBox vbProduct,vboxPrincipal;
+    private modelo_cliente user;
+    private VBox[][] arrvbox;
+    private Scene escena;
+    private  int c=0,f=0;
+    public void CrearGUI(){
+        arrvbox=new VBox[listacarrito.size()-1][3];
+        principal=new ScrollPane();
+        vboxPrincipal=new VBox();
+        lblCustomer=new Label(user.getName()+" "+user.getLastName());
+        for (modelo_carritocompras carrito:listacarrito) {
+            lblProduct=new Label(carrito.getIdProduct().getNameProduct());
+            lblDescripcion=new Label(carrito.getIdProduct().getDescription());
+            lblPrecio=new Label(carrito.getIdProduct().getPrice()+"");
+            imagen=new ImageView(carrito.getIdProduct().getImage());
+            btnEliminar=new JFXButton("Eliminar");
+            btnEliminar.setOnAction(Event->EventoEliminar(carrito));
+            vbProduct=new VBox();
+            vbProduct.getChildren().addAll(imagen,lblProduct,lblDescripcion,lblPrecio,btnEliminar);
+            if (c>=3)
+                c=0;
+            arrvbox[f][c].getChildren().add(vbProduct);
+            principal.setContent(arrvbox[f][c]);
+            f++;
+            c++;
+        }
+        vboxPrincipal.getChildren().addAll(lblCustomer,principal);
+        escena=new Scene(vboxPrincipal);
+        setScene(escena);
+        show();
     }
 
-    public void CrearEscena()
-    {
-        ancPanel = new AnchorPane();
-        hbxCustumer = new HBox();
-        hbxIdCart = new HBox();
-        hbxSubTotal = new HBox();
-
-        lblIdCustumer = new Label("ID Custumer :");
-        lblIdCart = new Label("ID Cart :");
-        lblSubTotal = new Label("SubTotal :");
-
-        txtIdCustumer = new JFXTextField();
-        txtIdCustumer.setEditable(false);
-        txtIdCustumer.setPromptText("no puede quedar vacio");
-
-        txtIdCart = new JFXTextField();
-        txtIdCart.setEditable(false);
-        txtIdCart.setPromptText("no puede quedar vacio");
-
-        txtSubTotal = new JFXTextField();
-
-        btnAceptar = new JFXButton("Guardar");
-        AnchorPane.setTopAnchor(btnAceptar,130.0);
-
-        btnCancelar = new JFXButton("Cancelar");
-        AnchorPane.setTopAnchor(btnCancelar,130.0);
-        AnchorPane.setLeftAnchor(btnCancelar,100.0);
-
-        btnAceptar.setId("button_options");
-        btnCancelar.setId("button_options");
-        btnAceptar.setOnAction(event -> Acciones(1));
-        btnCancelar.setOnAction(event -> Acciones(2));
-
-        hbxCustumer.getChildren().addAll(lblIdCustumer,txtIdCustumer);
-        AnchorPane.setTopAnchor(hbxCustumer,15.0);
-        AnchorPane.setLeftAnchor(hbxCustumer,15.0);
-
-        hbxIdCart.getChildren().addAll(lblIdCart,txtIdCart);
-        AnchorPane.setTopAnchor(hbxIdCart,50.0);
-        AnchorPane.setLeftAnchor(hbxIdCart,50.0);
-
-        hbxSubTotal.getChildren().addAll(lblSubTotal,txtSubTotal);
-        AnchorPane.setTopAnchor(hbxSubTotal,95.0);
-        AnchorPane.setLeftAnchor(hbxSubTotal,39.0);
-
-        if(opci == 2)
-        {
-            txtIdCart.setText(String.valueOf(objMC.getIdCart()));
-            txtIdCustumer.setText(String.valueOf(objMC.getIdCustomer()));
-            txtSubTotal.setText(String.valueOf(objMC.getSubTotal()));
-
-        }
-
-        ancPanel.getChildren().addAll(hbxCustumer,hbxIdCart,hbxSubTotal,btnAceptar,btnCancelar);
+    public Vista_carritocompras(modelo_carritocompras carritocompras) {
+        listacarrito=new modelo_carritocompras().Listar(carritocompras);
+        CrearGUI();
     }
 
-    private void Acciones(int opc)
-    {
-        if(opci == 1)
-            switch (opc)
-            {
-                case 1:
-                    objMC = new modelo_carritocompras();
-                    objMC.setIdCustomer(Integer.parseInt(txtIdCustumer.getText()));
-                    objMC.setIdCart(Integer.parseInt(txtIdCart.getText()));
-                    objMC.setSubTotal(Float.valueOf(txtSubTotal.getText()));
-                    objMC.insertar();
-                case 2:
-                    this.close();
-            }
-        else
-        {
-            objMC.setIdCustomer(Integer.parseInt(txtIdCustumer.getText()));
-            objMC.setIdCart(Integer.parseInt(txtIdCart.getText()));
-            objMC.setSubTotal(Float.valueOf(txtSubTotal.getText()));
-            objMC.Actualizar();
-            this.close();
-        }
+    private void EventoEliminar(modelo_carritocompras carrito) {
     }
 }
