@@ -3,6 +3,7 @@ package sample.Vistas;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import sample.Modelos.ConexionBD;
+import sample.Modelos.modelo_carritocompras;
 
 public class Main extends Application {
 
