@@ -1,34 +1,18 @@
 package sample.Tablas;
 
-import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import sample.Modelos.modelo_carritocompras;
+
 
 public class Tabla_CarritoCompras extends Stage{
-    public TableView <modelo_carritocompras>tableViewCarrito;
-    private Scene scene;
-    public Tabla_CarritoCompras(){
-        crearGUI();
-        scene = new Scene(tableViewCarrito,500,300);
-        this.setScene(scene);
-        this.show();
-    }
-    public void crearGUI(){
-        tableViewCarrito = new TableView<>();
-        TableColumn<modelo_carritocompras,Integer> tbcIdCustomer = new TableColumn<>("idCustomer");
-        tbcIdCustomer.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
+    private Label lblName,lblPrice,lblDescription,lblUser;
+    private ImageView imvImagen;
+    private JFXButton btnDelete,btnConfirmar;
 
-        TableColumn<modelo_carritocompras,Integer> tbcIdCart = new TableColumn<>("idCart");
-        tbcIdCart.setCellValueFactory(new PropertyValueFactory<>("idCart"));
+    private  void CrearGUI(){
 
-        TableColumn<modelo_carritocompras,Integer> tbcsubTotal = new TableColumn<>("subTotal");
-        tbcsubTotal.setCellValueFactory(new PropertyValueFactory<>("subTotal"));
 
-        tableViewCarrito.setItems(new modelo_carritocompras().Listar());
-
-        tableViewCarrito.getColumns().addAll(tbcIdCustomer,tbcIdCart,tbcsubTotal);
     }
 }

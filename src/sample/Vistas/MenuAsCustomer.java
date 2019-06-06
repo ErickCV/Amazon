@@ -48,7 +48,6 @@ public class MenuAsCustomer extends Stage {
     private Label lbuser;
     private AnchorPane anchorPane1;
     private Scene scene;
-    private Tabla_CarritoCompras objCC;
     private int tabla = 0,rol = 0;
     private String user,contra;
     public  String opc = "";
@@ -61,7 +60,6 @@ public class MenuAsCustomer extends Stage {
     public  Tabla_DireccionCliente objDC;
     public  Tabla_Estado objE;
     public Tabla_Factura objF;
-    public Tabla_ListaCarrito objLC;
     public Tabla_MetodoPago objMP;
     public  Tabla_Pais objP;
     public  Tabla_Paquete objPa;
@@ -92,7 +90,6 @@ public class MenuAsCustomer extends Stage {
     private ObservableList<modelo_direccioncliente> listDireccionCliente = null;
     private ObservableList<modelo_estado> listEstado = null;
     private ObservableList<modelo_factura> listFactura = null;
-    private ObservableList<modelo_listacarritocompras> listLista = null;
     private ObservableList<modelo_pais> listPais= null;
     private ObservableList<modelo_paquete> listPaquete = null;
     private ObservableList<modelo_productos> listProductos = null;
@@ -115,7 +112,6 @@ public class MenuAsCustomer extends Stage {
     private modelo_direccioncliente objdc;
     private modelo_estado obje;
     private modelo_factura objf;
-    private modelo_listacarritocompras objlcc;
     private modelo_pais objp;
     private modelo_paquete objpaq;
     private modelo_productos objpro;
@@ -138,7 +134,6 @@ public class MenuAsCustomer extends Stage {
     private Vista_direccioncliente objvDC = null;
     private Vista_estado objvE = null;
     private Vista_factura objvF = null;
-    private Vista_listacarritocompras objvLCC = null;
     private Vista_metodopago objvMP = null;
     private Vista_pais objvP = null;
     private Vista_paquete objvPa = null;
@@ -183,7 +178,6 @@ public class MenuAsCustomer extends Stage {
                                     listCarritoCompras.add(objcc);
                                 }
                                 con.close();
-                                objCC.tableViewCarrito.setItems(listCarritoCompras);
                                 break;
 
                             case 2:
@@ -311,22 +305,6 @@ public class MenuAsCustomer extends Stage {
                                 objF.tableViewFactura.setItems(listFactura);
                                 break;
                             case 10:
-                                listLista = FXCollections.observableArrayList();
-                                while (rs.next())
-                                {
-                                    objlcc = new modelo_listacarritocompras();
-                                    objlcc.setIdCart(rs.getInt("idCart"));
-                                    objlcc.setIdCustomer(rs.getInt("idCustomer"));
-                                    objlcc.setDetail(rs.getString("detail"));
-                                    objlcc.setIdProduct(rs.getInt("idProduct"));
-                                    objlcc.setQuantityProduct(rs.getInt("quantityProduct"));
-                                    objlcc.setIdPackage(rs.getInt("idPackage"));
-                                    objlcc.setQuantityPackage(rs.getInt("quantityPackage"));
-                                    listCarritoCompras.add(objcc);
-                                }
-                                con.close();
-
-                                objLC.tableViewListaCarrito.setItems(listLista);
                                 break;
                             case 11:
                                 try
@@ -678,8 +656,6 @@ public class MenuAsCustomer extends Stage {
             switch (tabla)
             {
                 case 1:
-                    modelo_carritocompras objetoCC = objCC.tableViewCarrito.getSelectionModel().getSelectedItem();
-                    objvCC = new Vista_carritocompras(2,objetoCC);
                     break;
                 case 2:
                     modelo_categoria objetoCA = objC.tableViewCategoria.getSelectionModel().getSelectedItem();
@@ -715,8 +691,6 @@ public class MenuAsCustomer extends Stage {
                     objvF = new Vista_factura(2,objetoF);
                     break;
                 case 10:
-                    modelo_listacarritocompras objetoLC = objLC.tableViewListaCarrito.getSelectionModel().getSelectedItem();
-                    objvLCC = new Vista_listacarritocompras(2,objetoLC);
                     break;
                 case 11:
                     modelo_metodopago objetoMP = objMP.tableViewMetodoPago.getSelectionModel().getSelectedItem();
@@ -828,7 +802,6 @@ public class MenuAsCustomer extends Stage {
                     Vista_factura objF = new Vista_factura(1,objf);
                     break;
                 case 10:
-                    Vista_listacarritocompras objLC = new Vista_listacarritocompras(1,objlcc);
                     break;
                 case 11:
                     Vista_metodopago objMPa = new Vista_metodopago(1,objmp);
@@ -885,9 +858,6 @@ public class MenuAsCustomer extends Stage {
             switch (tabla){
                 case 1:
                     vBoxTabla.getChildren().clear();
-                    objCC = new Tabla_CarritoCompras();
-                    vBoxTabla.getChildren().addAll(objCC.tableViewCarrito);
-                    objCC.close();
                     break;
                 case 2:
                     vBoxTabla.getChildren().clear();
@@ -944,10 +914,6 @@ public class MenuAsCustomer extends Stage {
                     break;
                 case 10:
                     vBoxTabla.getChildren().clear();
-                    objLC = new Tabla_ListaCarrito();
-                    vBoxTabla.getChildren().addAll(objLC.tableViewListaCarrito);
-                    objLC.close();
-
                     break;
                 case 11:
                     vBoxTabla.getChildren().clear();
@@ -1060,12 +1026,7 @@ public class MenuAsCustomer extends Stage {
             switch (tabla)
             {
                 case 1:
-                    modelo_carritocompras objetoCC = objCC.tableViewCarrito.getSelectionModel().getSelectedItem();
-                    objetoCC.setIdCart(objetoCC.getIdCart());
-                    objetoCC.setIdCustomer(objetoCC.getIdCustomer());
-                    objetoCC.setSubTotal(objetoCC.getSubTotal());
-                    objetoCC.borrar();
-                    objCC.tableViewCarrito.refresh();//listo
+
                     break;
                 case 2:
                     modelo_categoria objetoC = objC.tableViewCategoria.getSelectionModel().getSelectedItem();
@@ -1142,15 +1103,6 @@ public class MenuAsCustomer extends Stage {
                     objR.tableViewRol.refresh();
                     break;
                 case 10:
-                    modelo_listacarritocompras objetoLC = objLC.tableViewListaCarrito.getSelectionModel().getSelectedItem();
-                    objetoLC.setIdCart(objetoLC.getIdCart());
-                    objetoLC.setIdCustomer(objetoLC.getIdCustomer());
-                    objetoLC.setIdPackage(objetoLC.getIdPackage());
-                    objetoLC.setIdProduct(objetoLC.getIdProduct());
-                    objetoLC.setQuantityPackage(objetoLC.getQuantityPackage());
-                    objetoLC.setQuantityProduct(objetoLC.getQuantityProduct());
-                    objetoLC.setDetail(objetoLC.getDetail());
-                    objetoLC.Borrar();
                     objR.tableViewRol.refresh();
                     break;
                 case 11:
@@ -1257,9 +1209,6 @@ public class MenuAsCustomer extends Stage {
         {
             case "Carrito de Compras":
                 vBoxTabla.getChildren().clear();
-                objCC = new Tabla_CarritoCompras();
-                objCC.close();
-                vBoxTabla.getChildren().addAll(objCC.tableViewCarrito);
                 tabla = 1;
                 string ="ShoppingCart";
                 string2="idCart";
@@ -1344,16 +1293,6 @@ public class MenuAsCustomer extends Stage {
                 string2 = "dateInvoice";
                 txtBuscar.setPromptText("dateInvoice");
                 tabla = 9;
-                break;
-            case "Lista Carrito":
-                vBoxTabla.getChildren().clear();
-                objLC = new Tabla_ListaCarrito();
-                objLC.close();
-                vBoxTabla.getChildren().addAll(objLC.tableViewListaCarrito);
-                string ="ListShoppingCart";
-                string2 = "detail";
-                txtBuscar.setPromptText("detail");
-                tabla = 10;
                 break;
             case "Metodo de pago":
                 vBoxTabla.getChildren().clear();
