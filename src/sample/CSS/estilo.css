@@ -8,7 +8,7 @@
 }
 /*hola*/
 #button_actualizar{
-     -fx-background-image: url("/sample/imagenes/update.png");
+     /*-fx-background-image: url("/sample/imagenes/update.png");*/
      -fx-image-alignment: right;
      -fx-text-fill: -fx-primarytext;
      -fx-text-alignment: left;
@@ -30,10 +30,10 @@
 }
 
 #button_logout{
-    -fx-background-image: url("/sample/imagenes/login.png");
+   /* -fx-background-image: url("/sample/imagenes/login.png");*/
         -fx-background-color: -fx-primary;
         -fx-border-color: -fx-secondary;
-        -fx-background-image-center: url("/sample/imagenes/login.png");
+        /*-fx-background-image-center: url("/sample/imagenes/login.png");*/
         -fx-border-radius: 5px;
         -fx-background-radius: 50px;
         -fx-font-size: 11.5pt;
@@ -132,7 +132,7 @@
     -fx-text-fill: derive(-fx-secondary, 20%);
 }
 
-/Login Screen Specific/
+/*Login Screen Specific*/
 
 
 .wrong-credentials
@@ -141,9 +141,9 @@
     -jfx-focus-color: -fx-red;
 }
 
-/Main Screen CSS Styling starts here/
+/*Main Screen CSS Styling starts here*/
 
-/TablPane styling/
+/*TablPane styling*/
 .tab{
     -fx-background-color: -fx-primary;
 }
@@ -179,7 +179,7 @@
 .settings-tab .tab-header-background{
     -fx-background-color: derive(-fx-primary, -50%);
 }
-/Menu bar Styling/
+/*Menu bar Styling*/
 .menu-bar{
     -fx-base : -fx-primary;
     -fx-background-color: -fx-primary;
@@ -190,18 +190,18 @@
     -fx-background-color:  derive(-fx-primary, 20%);
 }
 
-/Hamburger Styling/
+/*Hamburger Styling*/
 .jfx-hamburger-icon{
     -fx-spacing: 7;
 }
 
-.jfx-hamburger-icon StackPane
+.jfx-hamburger-icon /*StackPane*/
 {
     -fx-background-color: -fx-secondary;
     -fx-background-radius: 5px;
 }
 
-/Toolbar buttons/
+/*Toolbar buttons*/
 .toolbar-button
 {
     -fx-border-color: transparent;
@@ -220,7 +220,7 @@
     -fx-fill: -fx-primary;
 }
 
-/Text styling/
+/*Text styling*/
 .main-text
 {
     -fx-fill: -fx-secondary;
@@ -232,7 +232,7 @@
     -fx-background-color: derive(-fx-primary, 10%);
 }
 
-/Dialog styling/
+/*Dialog styling*/
 .dialog-button{
     -fx-border-color: -fx-color-1;
     -fx-text-fill: white;
@@ -251,7 +251,7 @@
     -fx-hgap:8;
 }
 
-/Chart Styling/
+/*Chart Styling*/
 .data0.chart-pie{
     -fx-pie-color: -fx-secondary;
     -fx-border-color: derive(-fx-secondary, -30%);
@@ -265,7 +265,7 @@
     -fx-fill : derive(-fx-secondary, -5%);
 }
 
-/About window/
+/*About window*/
 .about-text{
     -fx-fill: -fx-secondary;
 }
@@ -274,12 +274,12 @@
     -fx-border-color: transparent;
 }
 
-/Custom window background/
+/*Custom window background*/
 .custom-pane{
     -fx-background-color: derive(-fx-primary, 5%);
 }
 
-/TableView Default/
+/*TableView Default*/
 .table-view{
     -fx-background-color: derive(-fx-primary, 10%);
     -fx-font-size: 16px;
@@ -357,7 +357,7 @@
 }
 
 
-/JFXDialog styling/
+/*JFXDialog styling*/
 .jfx-layout-heading
 {
     -fx-background-color: -fx-color-1;
@@ -377,7 +377,7 @@
 }
 
 
-/Dashboard label/
+/*Dashboard label*/
 .not-available
 {
     -fx-background-radius: 5px;
@@ -393,7 +393,7 @@
     -fx-font-size: 10pt;
 }
 
-/Progress bar/
+/*Progress bar*/
 
 .progress-bar-main .track{
     -fx-background-color: -fx-primary;
