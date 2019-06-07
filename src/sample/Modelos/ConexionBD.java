@@ -9,19 +9,18 @@ public class ConexionBD
     public Connection cn = null;
     public Connection getConectar()
     {
-
         return cn;
     }
     public ConexionBD()
     {
         try
         {
-            String connectionUrl = "jdbc:sqlserver://;database=AmazonV3;integratedSecurity=true;";
+            String connectionUrl = "jdbc:sqlserver://;database=AmazonV3; user=Erick; password=itgd; integratedSecurity=true;";
             cn = DriverManager.getConnection(connectionUrl);
             System.out.println("Conectado.");
         } catch (SQLException ex)
         {
-            System.out.println("Error.");
+            System.out.println("Error: "+ex);
         }
     }
 }

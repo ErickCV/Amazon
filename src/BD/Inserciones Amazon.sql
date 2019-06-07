@@ -26,8 +26,6 @@ insert into Customers values
     ('Francisco','Tierrablnca','M','Tierrablanca')
     
 insert into Category values
-	('Mascotas','Accesorios',null),
-    ('Libros','Libros',null),
 	('Electronicos','Celulares,Computadoras',null),
     ('Linea Blanca','Refrigeradores,Lavadoras',null),
     ('Deportes','Tenis,Sudaderas',null)

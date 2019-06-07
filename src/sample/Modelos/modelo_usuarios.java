@@ -124,7 +124,7 @@ public class modelo_usuarios {
             System.out.println("nombre "+nombre);
             System.out.println("clave "+clave);
             String query = "exec verificaUsuario '"+nombre+"','"+clave+"','"+valor+"'";
-
+            System.out.println(query);
             objSt = con.createStatement();
             ResultSet rs = objSt.executeQuery(query);
             while(rs.next()) {

@@ -70,8 +70,7 @@ public class modelo_consulta4 {
                     "                          from Users u inner join Sale s on u.idUser = s.idUser" +
                     "                                        inner join ShoppingCart sc on s.idCustomer = sc.idCustomer and s.idCart = sc.idCart" +
                     "                                        inner join Customers c on c.idCustomer = sc.idCustomer" +
-                    "                                        inner join ListShoppingCart lsc on sc.idCustomer = lsc.idCustomer and sc.idCart = lsc.idCart" +
-                    "                                        inner join Product p on p.idProduct = lsc.idProduct"+
+                    "                                        inner join Product p on p.idProduct = sc.idProduct"+
                     "                          where c.name = '"+name+"'";
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);

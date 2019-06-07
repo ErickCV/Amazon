@@ -1,13 +1,9 @@
+use master
+drop database AmazonV3
 create database AmazonV3; 
 use AmazonV3;
 
 
-create table Role(
-					idRole int not null identity(1,1),
-                    name varchar(15) not null,
-                    description varchar(30),
-                    constraint PKRole primary key(idRole)
-);
 create table PaymentMethod(
 							idPayment int not null identity(1,1),
                             typePayment varchar (10) not null,
@@ -36,30 +32,13 @@ create table Category(
                         image varchar (50),
                         constraint PKCategory primary key (idCategory)
 );
-create table Package(
-						idPackage int not null identity(1,1), 
-                        namePackage varchar(15) not null,
-                        description varchar(30),
-                        price float not null,
-                        stock int not null,
-                        image varchar(50),
-                        constraint PKPackage primary key (idPackage),
-                        constraint CTPackagePrice check (price >=0),
-                        constraint CTPackageStock check (stock>=0)
-);
+
 create table Country(
 						idCountry smallint not null identity(1,1),
                         name varchar (15) not null,
                         constraint PKCountry primary key (idCountry)
 );
-create table Users(
-						idUser int not null identity(1,1),
-                        userName varchar(15) not null,
-                        password varchar(15) not null,
-                        idRole int,
-                        constraint PKUsers primary key (idUser),
-                        constraint FK1User foreign key (idRole) references Role(idRole)
-);
+
 create table TypeSale(
 						idTypeSale int not null identity(1,1),
                         name varchar(15) not null,
@@ -114,9 +93,12 @@ create table Store(
 create table ShoppingCart(
 						idCustomer int not null,
                         idCart int not null,
+						idProduct int not null,
                         subTotal float not null,
-                        constraint PKShopping primary key (idCustomer,idCart),
+						cantidad int,
+                        constraint PKShopping primary key (idCustomer,idCart,idProduct),
                         constraint FKShopping foreign key (idCustomer)references Customers(idCustomer),
+						constraint FK2Shopping foreign key (idProduct)references Product(idProduct),
                         constraint CTShoppingSubTotal check (subTotal >=0));
 
 create table AddressCustomer(
@@ -130,16 +112,16 @@ create table Sale(
 						idSale int not null identity(1,1),
                         idCustomer int not null,
                         idCart int,
-                        idUser int not null,
                         total float not null,
                         idPayment int not null,
                         idTypeSale int not null,
                         idStore int not null,
                         idPromo int,
+						nUser int not null,
+						idProduct int not null,
                         date date not null,
                         constraint PKSale primary key (idSale),
-                        constraint FK1Sale foreign key (idCustomer,idCart)references ShoppingCart (idCustomer,idCart),
-                        constraint FK2Sale foreign key (idUser)references Users (idUser),
+                        constraint FK1Sale foreign key (idCustomer,idCart,idProduct) references ShoppingCart (idCustomer,idCart,idProduct),
                         constraint FK3Sale foreign key (idPayment)references PaymentMethod (idPayment),
                         constraint FK4Sale foreign key (idTypeSale)references TypeSale (idTypeSale),
                         constraint FK5Sale foreign key (idStore)references Store (idStore),
@@ -150,24 +132,11 @@ create table invoice(
 						idInvoice int not null identity(1,1),
                         idSale int not null,
                         dateInvoice date not null,
-                        idUser int,
+                        nUser int,
                         constraint PKInvoice primary key (idInvoice,idSale),
-                        constraint FK1Invoice foreign key (idSale) references Sale(idSale),
-                        constraint FK2Invoice foreign key (idUser) references Users(idUser));
+                        constraint FK1Invoice foreign key (idSale) references Sale(idSale));
 
-create table ListShoppingCart(
-						idCart int not null,
-                        idCustomer int not null,
-                        detail varchar(30) not null,
-                        idProduct int ,
-                        quantityProduct int,
-                        idPackage int ,
-                        quantityPackage int,
-                        constraint PKListSC primary key (detail,idCart,idCustomer),
-                        constraint FK1ListSC foreign key (idCustomer,idCart) references ShoppingCart(idCustomer,idCart),
-                        constraint FK2ListSC foreign key(idPackage)references Package(idPackage),
-                        constraint FK3ListSC foreign key(idProduct)references Product(idProduct)
-);
+
 create table Stock(
 						idProduct int not null,
                         idStore int not null,
@@ -177,12 +146,3 @@ create table Stock(
                         constraint FK2Stock foreign key(idStore)references Store(idStore),
                         constraint CTStock check (quantity>=0)
 );
-create table PackageContent(
-						idPackage int not null,
-                        detail varchar(30) not null,
-                        idProduct int not null,
-                        quantity int not null,
-                        constraint PKPackageCont primary key(idPackage,detail),
-                        constraint FK1PackageCont foreign key(idPackage) references Package(idPackage),
-                        constraint FK2PackageCont foreign key(idProduct)references Product(idProduct),
-                        constraint CTPackageCont check (quantity>=0));
