@@ -29,6 +29,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import sample.FormatToController.*;
 import sample.Modelos.*;
+import sample.TDAs.Customers;
 import sample.Tablas.*;
 
 import java.io.IOException;
@@ -168,7 +169,20 @@ public class MenuAsCustomer extends Stage {
 
                         switch (tabla){
                             case 1:
-
+                                listCarritoCompras = FXCollections.observableArrayList();
+                                Customers customers;
+                                while (rs.next())
+                                {
+                                    objcc = new modelo_carritocompras();
+                                    customers=new Customers();
+                                    customers.setIdCustomer(rs.getString("idCustomer"));
+                                    objcc.setIdCustomer(customers);//acabo de modificar esta linea
+                                    objcc.setIdCart(rs.getInt("idCart"));
+                                    objcc.setSubTotal(rs.getFloat("subTotal"));
+                                    listCarritoCompras.add(objcc);
+                                }
+                                con.close();
+                                break;
 
                             case 2:
                                 listCategoria = FXCollections.observableArrayList();
@@ -765,7 +779,8 @@ public class MenuAsCustomer extends Stage {
         if(tabla!=0)
             switch (tabla){
                 case 1:
-
+                    //Vista_carritocompras objCC = new Vista_carritocompras(1,objcc);
+                    break;
                 case 2:
                     Vista_categoria objCa = new Vista_categoria(1,objca);
                     break;
@@ -1559,8 +1574,7 @@ public class MenuAsCustomer extends Stage {
             Stage.setScene(scene);
             Stage.setMaximized(true);
             Stage.show();
-        }catch (IOException e )
-        {
+        }catch (IOException e ){
             e.printStackTrace();
         }
     }

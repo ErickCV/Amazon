@@ -153,7 +153,9 @@ public class modelo_cliente
         return listCliente;
     }
     public Customers BuscarCustomer(int idCustomer) throws SQLException {
-        String consulta="";
+        String consulta="Select * from Customers where idCustomer="+idCustomer;
+        objC=new ConexionBD();
+        con=objC.getConectar();
         Customers customers=null;
         Statement statement =con.createStatement();
         ResultSet resultSet=statement.executeQuery(consulta);

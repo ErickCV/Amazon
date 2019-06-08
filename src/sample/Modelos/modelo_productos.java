@@ -150,8 +150,10 @@ Connection con;
     }
 
     public Product BuscarProducto(int idproduct) throws SQLException {
-        String consulta="";
+        String consulta="Select * from Product where idProduct="+idproduct;
         Product product=null;
+        objC=new ConexionBD();
+        con=objC.getConectar();
         Statement statement=con.createStatement();
         ResultSet resultSet=statement.executeQuery(consulta);
         while (resultSet.next()){
