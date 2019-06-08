@@ -36,8 +36,8 @@ public class MenuAsUser extends Stage
     Label lblNombreCel,lblPrecioCel, lblDescCel,lblNombreLav,lblPrecioLav,lblDescLav,lblNombreTenis,lblPrecioTenis,lblDescTenis,lblCategoria;
     Label lblPrecios,lblNomLava2,lblPrecLava2,lblDescLava2,lblNomTenis2,lblPreTenis2,lblDescTenis2,lblNomCel2,lblPrecCel2,lblDescCel2,lbname;
     VBox vbxCel,vbxLav,vbxTenis,vbxCheck,vbxCel2,vbxLav2,vbxTenis2;
-    VBox  vbxLabels,vbxPrecio;
-    HBox hbxFiltro;
+    VBox  vbx,vbxLabels,vbxPrecio,vbxHbx;
+    HBox hbxFiltro,hbxProduct;
     ImageView[] imvCel = new ImageView[10];
     public String[] ArrayNameM = new String[10];
     public String[] ArrayDescripM = new String[10];
@@ -54,6 +54,8 @@ public class MenuAsUser extends Stage
     //public JFXComboBox<String> chbCategorias;
     public TableView<modelo_productosMAU> tbvProductos;
     public String name, clave;
+
+    ScrollPane spInicio;
 
     public MenuAsUser(String name,String clave)
     {
@@ -97,45 +99,29 @@ public class MenuAsUser extends Stage
     private void filtro() throws SQLException
     {
         if(ckbCategoria1.isSelected() && !ckbCategoria2.isSelected() && !ckbCategoria3.isSelected())
-            filtraElectronicos();
+            filtraElectronicos(ckbCategoria1.getText());
         else
         {
             if(ckbCategoria2.isSelected() && !ckbCategoria1.isSelected() && !ckbCategoria3.isSelected())
-            {
-                filtraLinea();
-            }
+                filtraElectronicos(ckbCategoria2.getText());
             else
             {
                 if (ckbCategoria3.isSelected() && !ckbCategoria1.isSelected() && !ckbCategoria2.isSelected())
-                {
-                    filtraDeportes();
-                }
+                    filtraElectronicos(ckbCategoria3.getText());
                 else
                 {
                     if (ckbCategoria1.isSelected() && ckbCategoria2.isSelected() && !ckbCategoria3.isSelected())
-                    {
-                        filtro1y2();
-                    }
+                        filtro2Cate(ckbCategoria1.getText(),ckbCategoria2.getText());
                     else
                     {
                         if (ckbCategoria1.isSelected() && !ckbCategoria2.isSelected() && ckbCategoria3.isSelected())
-                        {
-                            filtro1y3();
-                        }
+                            filtro2Cate(ckbCategoria1.getText(),ckbCategoria3.getText());
                         else
                         {
                             if (!ckbCategoria1.isSelected() && ckbCategoria2.isSelected() && ckbCategoria3.isSelected())
-                            {
-                                filtro2y3();
-                            }
+                                filtro2Cate(ckbCategoria2.getText(),ckbCategoria3.getText());
                             else
-                            {
-                                ancInicio.getChildren().clear();
-                                lblNombreCel = new Label("Note 9");
-                                lblPrecioCel = new Label("24,999");
-                                lblDescCel = new Label("Celular Samsung");
-                                ancInicio.getChildren().addAll(vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
-                            }
+                                spInicio.setContent(vbx);
                         }
                     }
                 }
@@ -144,13 +130,14 @@ public class MenuAsUser extends Stage
 
 
     }
-    private void filtro1y2()
+    private void filtro2Cate(String cate1, String cate2)
     {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
+        hbxProduct = new HBox();
+        hbxProduct.setSpacing(10.0);
+        vbxHbx = new VBox();
+        spInicio.setContent(null);
         modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista2(ckbCategoria1.getText(),ckbCategoria2.getText());
+        obj.Lista2(cate1,cate2);
         while (con < obj.i)
         {
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
@@ -159,107 +146,23 @@ public class MenuAsUser extends Stage
             imvCel[con] = new ImageView(obj.imgArray[con]);
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
             vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(lblNombreCel,lblPrecioCel,lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
+            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
+            hbxProduct.getChildren().addAll(vbxLabels);
             con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
         }
+        vbxHbx.getChildren().addAll(hbxProduct);
+        spInicio.setContent(vbxHbx);
         con=0;
-        valor=250;
     }
-    private void filtro1y3()
-    {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
-        modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista2(ckbCategoria1.getText(),ckbCategoria3.getText());
-        while (con < obj.i)
-        {
-            lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
-            lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
-            lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
-            vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
-            con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
-        }
-        con=0;
-        valor=250;
-    }
-    private void filtro2y3()
-    {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
-        modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista2(ckbCategoria2.getText(),ckbCategoria3.getText());
-        while (con < obj.i)
-        {
-            lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
-            lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
-            lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
-            vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
-            con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
-        }
-        con=0;
-        valor=250;
-    }
-
     private void PorPrecio()
     {
         try
         {
-            ancInicio.getChildren().clear();
-            top = 20;
-            top2 = 195;
+            hbxProduct = new HBox();
+            hbxProduct.setSpacing(10.0);
+            vbxHbx = new VBox();
+            spInicio.setContent(null);
             modelo_productosMAU obj = new modelo_productosMAU();
             obj.ListaPrecios(Integer.parseInt(txtP1.getText()), Integer.parseInt(txtP2.getText()));
             while (con < obj.i) {
@@ -269,23 +172,14 @@ public class MenuAsUser extends Stage
                 imvCel[con] = new ImageView(obj.imgArray[con]);
                 imvCel[con].setFitWidth(250.0);
                 imvCel[con].setFitHeight(170.0);
-                AnchorPane.setTopAnchor(imvCel[con], top);
-                AnchorPane.setLeftAnchor(imvCel[con], valor);
                 vbxLabels = new VBox();
-                vbxLabels.getChildren().addAll(lblNombreCel, lblPrecioCel, lblDescCel);
-                AnchorPane.setLeftAnchor(vbxLabels, valor);
-                AnchorPane.setTopAnchor(vbxLabels, top2);
-                ancInicio.getChildren().addAll(imvCel[con], vbxLabels);
-                valor = valor + 270.0;
+                vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel, lblPrecioCel, lblDescCel);
+                hbxProduct.getChildren().addAll(vbxLabels);
                 con = con + 1;
-                if (con == 3) {
-                    valor = 250.0;
-                    top = 275.0;
-                    top2 = 450;
-                }
             }
+            vbxHbx.getChildren().addAll(hbxProduct);
+            spInicio.setContent(vbxHbx);
             con = 0;
-            valor = 250;
         }
         catch(Exception e)
         {
@@ -298,51 +192,15 @@ public class MenuAsUser extends Stage
         }
 
     }
-    private void filtraDeportes()
-    {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
-        modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista(ckbCategoria3.getText());
-        while (con < obj.i)
-        {
-            lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
-            lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
-            lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
-            vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
-            con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
-        }
-        con=0;
-        valor=250;
-    }
 
-    private void filtraLinea()
+    private void filtraElectronicos(String Cate)
     {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
+        hbxProduct = new HBox();
+        hbxProduct.setSpacing(10.0);
+        vbxHbx = new VBox();
+        spInicio.setContent(null);
         modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista(ckbCategoria2.getText());
+        obj.Lista(Cate);
         while (con < obj.i)
         {
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
@@ -351,65 +209,15 @@ public class MenuAsUser extends Stage
             imvCel[con] = new ImageView(obj.imgArray[con]);
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
             vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
+            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
+            hbxProduct.getChildren().add(vbxLabels);
+            //valor = valor + 270.0;
             con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
         }
+        vbxHbx.getChildren().addAll(hbxProduct);
+        spInicio.setContent(vbxHbx);
         con=0;
-        valor=250;
-    }
-
-    private void filtraElectronicos()
-    {
-        ancInicio.getChildren().clear();
-        top = 20;
-        top2 = 195;
-        modelo_productosMAU obj = new modelo_productosMAU();
-        obj.Lista(ckbCategoria1.getText());
-        while (con < obj.i)
-        {
-            lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
-            lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
-            lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
-            AnchorPane.setTopAnchor(imvCel[con], top);
-            AnchorPane.setLeftAnchor(imvCel[con], valor);
-            vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(
-                    lblNombreCel,
-                    lblPrecioCel,
-                    lblDescCel);
-            AnchorPane.setLeftAnchor(vbxLabels,valor);
-            AnchorPane.setTopAnchor(vbxLabels,top2);
-            ancInicio.getChildren().addAll(imvCel[con],vbxLabels);
-            valor = valor + 270.0;
-            con = con +1;
-            if(con == 3)
-            {
-                valor = 250.0;
-                top = 275.0;
-                top2 = 450;
-            }
-        }
-        con=0;
-        valor=250;
     }
 
     private void crearEscena()
@@ -439,12 +247,6 @@ public class MenuAsUser extends Stage
         AnchorPane.setLeftAnchor(btnBscar,820.0);
         AnchorPane.setTopAnchor(btnBscar,15.0);
         //btnBscar.setOnAction(event -> accion());
-//--------------------------------------------------------------------------------------------------------------------------------
-        /*chbCategorias = new JFXComboBox<>(FXCollections.observableArrayList("Electronicos","papeleria","componentes pc"));
-        chbCategorias.setPromptText("Categorias");
-        AnchorPane.setLeftAnchor(chbCategorias,180.0);
-        AnchorPane.setTopAnchor(chbCategorias,92.0);
-        //chbCategorias.setOnAction(event -> categorias());*/
 //-----------------------------------------------------------------------------------------------
         //INSTANCIANDO TABPANE
         tbpInterfaz = new JFXTabPane();
@@ -457,17 +259,38 @@ public class MenuAsUser extends Stage
         //tapCompras.setOnSelectionChanged(event -> Consulta());
 //---------------------------------------------------------------------------------------------
         //ESCENAS DE LOS TABS
-        ancInicio = new AnchorPane();
-        //ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
-        ancInicio.getChildren().addAll(imvCooler,imvBrother,imvLap,imvTMadre,imvLapiz,imvfolder,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        vbx = new VBox();
+        HBox hbx = new HBox();
+        HBox hbx1 = new HBox();
+        HBox hbx2 = new HBox();
+        HBox hbx3 = new HBox();
+        HBox hbxNode = new HBox();
+
+        hbx.getChildren().addAll(vbxCel,vbxLav,vbxTenis);
+        hbx1.getChildren().addAll(vbxLav2);
+        hbx2.getChildren().addAll(vbxCel2);
+        hbx3.getChildren().addAll(vbxTenis2);
+
+        hbx.setSpacing(10.0);
+        hbx1.setSpacing(10.0);
+        hbx2.setSpacing(10.0);
+        hbx3.setSpacing(10.0);
+        vbx.setSpacing(10.0);
+
+        vbx.getChildren().addAll(hbx,hbx1,hbx2,hbx3);
+        spInicio = new ScrollPane();
+        spInicio.setPrefSize(800,500);
+        spInicio.setContent(vbx);
+        hbx.setSpacing(10.0);
+        hbxNode.getChildren().addAll(vbxCheck,spInicio);
 //------------------------------------------------------------------------------------------------
         //INSERTANDO LAS ESCENAS A LOS TABS
-        tapInicio.setContent(ancInicio);
+        tapInicio.setContent(hbxNode);
         tbpInterfaz.getTabs().addAll(tapInicio,tapCompras);
 //------------------------------------------------------------------------------------------------
         //ESCENA PRINCIPAL
         //ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvPubli,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,vbxCheck,vbxPrecio);
-        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,vbxCheck,vbxPrecio);
+        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvLogo,txtBusqueda,lbname,imvUser,btnLogout);
 //------------------------------------------------------------------------------------------------
 
 
@@ -555,32 +378,32 @@ public class MenuAsUser extends Stage
     {
         //VBOX
         vbxCel = new VBox();
-        vbxCel.getChildren().addAll(lblNombreCel,lblPrecioCel,lblDescCel,new Button("Agregar al carrito",image));
+        vbxCel.getChildren().addAll(imvCooler,lblNombreCel,lblPrecioCel,lblDescCel,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxCel,250.0);
         AnchorPane.setTopAnchor(vbxCel,200.0);
 
         vbxLav = new VBox();
-        vbxLav.getChildren().addAll(lblNombreLav,lblPrecioLav,lblDescLav,new Button("Agregar al carrito",image));
+        vbxLav.getChildren().addAll(imvBrother,lblNombreLav,lblPrecioLav,lblDescLav,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxLav,522.0);
         AnchorPane.setTopAnchor(vbxLav,200.0);
 
         vbxTenis = new VBox();
-        vbxTenis.getChildren().addAll(lblNombreTenis,lblPrecioTenis,lblDescTenis,new Button("Agregar al carrito",image));
+        vbxTenis.getChildren().addAll(imvLap,lblNombreTenis,lblPrecioTenis,lblDescTenis,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxTenis,793.0);
         AnchorPane.setTopAnchor(vbxTenis,200.0);
 
         vbxLav2 = new VBox();
-        vbxLav2.getChildren().addAll(lblNomLava2,lblPrecLava2,lblDescLava2,new Button("Agregar al carrito",image));
+        vbxLav2.getChildren().addAll(imvTMadre,lblNomLava2,lblPrecLava2,lblDescLava2,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxLav2,250.0);
         AnchorPane.setTopAnchor(vbxLav2,490.0);
 
         vbxTenis2 = new VBox();
-        vbxTenis2.getChildren().addAll(lblNomTenis2,lblPreTenis2,lblDescTenis2,new Button("Agregar al carrito",image));
+        vbxTenis2.getChildren().addAll(imvLapiz,lblNomTenis2,lblPreTenis2,lblDescTenis2,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxTenis2,522.0);
         AnchorPane.setTopAnchor(vbxTenis2,490.0);
 
         vbxCel2 = new VBox();
-        vbxCel2.getChildren().addAll(lblNomCel2,lblPrecCel2,lblDescCel2,new Button("Agregar al carrito",image));
+        vbxCel2.getChildren().addAll(imvfolder,lblNomCel2,lblPrecCel2,lblDescCel2,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxCel2,793.0);
         AnchorPane.setTopAnchor(vbxCel2,490.0);
 
@@ -615,9 +438,10 @@ public class MenuAsUser extends Stage
     {
         txtP1.clear();
         txtP2.clear();
-        ancInicio.getChildren().clear();
-        //ancInicio.getChildren().addAll(imvCelular,imvLibros,imvRelojes,imv1,imv2,imv3,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
-        ancInicio.getChildren().addAll(imvCooler,imvBrother,imvLap,imvTMadre,imvLapiz,imvfolder,vbxCel,vbxLav,vbxTenis,vbxLav2,vbxTenis2,vbxCel2);
+        ckbCategoria1.setSelected(false);
+        ckbCategoria2.setSelected(false);
+        ckbCategoria3.setSelected(false);
+       spInicio.setContent(vbx);
     }
 
     private void label()
@@ -713,11 +537,14 @@ public class MenuAsUser extends Stage
 
     private void interfaz2()
     {
+        HBox hbx = new HBox();
+        hbx.getChildren().addAll(vbxCel,vbxLav,vbxTenis);
         Label lblname,lblPrice,lbldesc;
         ImageView imvImage;
-        ScrollPane spInterfaz = new ScrollPane();
-        spInterfaz.getContent();
-        tapInicio.setContent(spInterfaz);
+        spInicio = new ScrollPane();
+        spInicio.setVmax(440);
+        spInicio.setPrefSize(115,150);
+        spInicio.setContent(hbx);
         ObservableList<modelo_productos> Lista = new modelo_productos().Listar();
         for (modelo_productos MP: Lista)
         {
