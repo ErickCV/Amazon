@@ -698,7 +698,7 @@ public class MenuAsCustomer extends Stage {
                     break;
                 case 11:
                     modelo_metodopago objetoMP = objMP.tableViewMetodoPago.getSelectionModel().getSelectedItem();
-                    objvMP = new Vista_metodopago(2,objetoMP);
+                    //objvMP = new Vista_metodopago(2,objetoMP);
                     break;
                 case 12:
                     modelo_pais objetoP = objP.tableViewPais.getSelectionModel().getSelectedItem();
@@ -808,7 +808,7 @@ public class MenuAsCustomer extends Stage {
                 case 10:
                     break;
                 case 11:
-                    Vista_metodopago objMPa = new Vista_metodopago(1,objmp);
+                    //Vista_metodopago objMPa = new Vista_metodopago(1,objmp);
                     break;
                 case 12:
                     Vista_pais objP = new Vista_pais(1,objp);

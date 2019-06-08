@@ -1,18 +1,20 @@
 package sample.Vistas;
 
 import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Modelos.modelo_carritocompras;
 import sample.TDAs.Customers;
+
 
 public class Vista_carritocompras extends Stage
 {
@@ -22,18 +24,25 @@ public class Vista_carritocompras extends Stage
     private ObservableList<modelo_carritocompras> listacarrito;
     private ScrollPane principal;
     private VBox vbProduct,vboxPrincipal;
-    private AnchorPane apPrincipal;
+    private JFXButton btnPayment;
     private Customers user;
     private GridPane gpProduct;
     private Scene escena;
+    private FontAwesomeIconView icono;
     private  int c=0,f=0;
     public void CrearGUI(){
-        apPrincipal=new AnchorPane();
+        icono=new FontAwesomeIconView(FontAwesomeIcon.MONEY);
+        icono.setSize("50");
+        btnPayment=new JFXButton();
+        btnPayment.setGraphic(icono);
+        btnPayment.setOnAction(Event->EventoPagar());
         gpProduct=new GridPane();
         principal=new ScrollPane();
         vboxPrincipal=new VBox();
-        user=listacarrito.get(0).getIdCustomer();
-        lblCustomer=new Label("Cliente: "+user.getName()+" "+user.getLastName());//
+        lblCustomer=new Label("Cliente: "+user.getName()+" "+user.getLastName());
+        icono=new FontAwesomeIconView(FontAwesomeIcon.USER_CIRCLE_ALT);
+        icono.setSize("50");
+        lblCustomer.setGraphic(icono);
         for (modelo_carritocompras carrito:listacarrito) {
             lblProduct=new Label("Nombre: "+carrito.getIdProduct().getNameProduct());
             lblDescripcion=new Label("Descripcion: "+carrito.getIdProduct().getDescription());
@@ -61,7 +70,11 @@ public class Vista_carritocompras extends Stage
             principal.setContent(gpProduct);
             c++;
         }
-        vboxPrincipal.getChildren().addAll(lblCustomer,principal);
+        if (listacarrito.isEmpty()){
+            btnPayment.setDisable(true);
+        }
+        vboxPrincipal.setAlignment(Pos.TOP_CENTER);
+        vboxPrincipal.getChildren().addAll(lblCustomer,principal,btnPayment);
         escena=new Scene(vboxPrincipal);
         escena.getStylesheets().add("/sample/CSS/estilo.css");
         setScene(escena);
@@ -70,7 +83,14 @@ public class Vista_carritocompras extends Stage
         show();
     }
 
+    private void EventoPagar() {
+        this.close();
+        Vista_metodopago pago = new Vista_metodopago(listacarrito.get(0).idCart,Integer.parseInt(listacarrito.get(0).idCustomer.getIdCustomer()));
+
+    }
+
     public Vista_carritocompras(modelo_carritocompras carritocompras) {
+        user=carritocompras.getIdCustomer();
         listacarrito=new modelo_carritocompras().Listar(carritocompras);
         CrearGUI();
     }

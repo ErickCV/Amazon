@@ -414,3 +414,7 @@
 .scroll-pane{
     -fx-background-color:  transparent;
 }
+.radio-button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size: 11.5pt;
+}

@@ -128,8 +128,8 @@ public class modelo_carritocompras
             modelo_productos producto=null;
             modelo_carritocompras objMCarrito;
             listCarritoCompras = FXCollections.observableArrayList();
-            String query= "select * from shoppingcart where idCart="+modeloCarritocompras.getIdCart()+" and idCustomer="+Integer.parseInt(modeloCarritocompras.getIdCustomer().getIdCustomer());
-            Statement ObjSt = con.createStatement();
+            String query= "exec vistaCarrito"+modeloCarritocompras.getIdCart();
+                    Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
             while (res.next())
             {
