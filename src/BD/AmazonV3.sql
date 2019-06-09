@@ -1,6 +1,6 @@
 use master
 drop database AmazonV3
-create database AmazonV3; 
+create database AmazonV3;
 use AmazonV3;
 
 
@@ -81,7 +81,7 @@ create table Address(
                         idCountry smallint not null,
                         cp int not null,
                         constraint PKAddress primary key (idAddress),
-                        constraint FKAddress foreign key (idCity,idState,idCountry) references City(idCity,idState,idCountry)                        
+                        constraint FKAddress foreign key (idCity,idState,idCountry) references City(idCity,idState,idCountry)
 );
 create table Store(
 						idStore int not null identity(1,1),
@@ -117,7 +117,6 @@ create table Sale(
                         idTypeSale int not null,
                         idStore int not null,
                         idPromo int,
-						nUser int not null,
 						idProduct int not null,
                         date date not null,
                         constraint PKSale primary key (idSale),
@@ -132,9 +131,10 @@ create table invoice(
 						idInvoice int not null identity(1,1),
                         idSale int not null,
                         dateInvoice date not null,
-                        nUser int,
+						idCustomer int not null,
                         constraint PKInvoice primary key (idInvoice,idSale),
-                        constraint FK1Invoice foreign key (idSale) references Sale(idSale));
+                        constraint FK1Invoice foreign key (idSale) references Sale(idSale),
+						constraint FK2Invoice foreign key (idCustomer) references Customers (idCustomer));
 
 
 create table Stock(

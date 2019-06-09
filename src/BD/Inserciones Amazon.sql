@@ -1,70 +1,55 @@
+use master
 use amazonV3
 
-insert into Role values
-	('Administrador','encargado'),
-    ('Usuario','comprador')
-    
+	select * from PaymentMethod
 insert into PaymentMethod values
 	('TarjetaR','transaccion-digital'),
     ('Trueque','dinero-fisico'),
 	('efectivo','dinero-fisico'),
     ('TarjetasCR','transaccion-digital'),
     ('Cupones','transaccion-digital')
-    
+
+	select * from Promotion
 insert into Promotion values
 	('2x1','2018-12-25'),
     ('3x2','2018-12-28'),
 	('5descuento','2018-12-15'),
     ('10descuento','2018-12-20'),
     ('20descuento','2018-12-25')
-    
+
 insert into Customers values
-	('Paulina','Cupa','F','Cupa'),
-    ('Juan luis','Montero','M','Montero'),
-	('Erick','Camacho','M','Montero'),
-    ('Sarai','Jimenes','F','Jimenes'),
-    ('Francisco','Tierrablnca','M','Tierrablanca')
-    
+	('Paulina','Cupa','F','PC'),
+    ('Juan luis','Montero','M','JL'),
+	('Erick','Camacho','M','EC'),
+    ('Sarai','Jimenes','F','SJ'),
+    ('Francisco','Tierrablnca','M','FT')
+
 insert into Category values
-	('Electronicos','Celulares,Computadoras',null),
-    ('Linea Blanca','Refrigeradores,Lavadoras',null),
-    ('Deportes','Tenis,Sudaderas',null)
-    
-insert into Package values
-	('Libros','Habitos de millonarios',250.00,10,null),
-    ('Accesorios','Sueter para perro',199.99,10,null),
-	('Celulares','Note 9',24999.99,10,null),
-    ('Lavadora','lG',12599.99,20,null),
-    ('Tenis','nike',1599.99,30,null)
-    
+	('Componentes PC','Accesorios',null),
+    ('Papeleria','plumas, lapiz',null),
+	('Electronicos','cables etc',null)
+
 insert into Country values
 	('España'),
     ('Inglaterra'),
 	('Japon'),
     ('Mexico'),
     ('EUA')
-    
-insert into Users values
-	('JM','12345',2),
-    ('PC','12345',1),
-	('EC','12345',2),
-    ('SJ','12345',1),
-    ('FT','12345',2)
-    
+
+	select * from TypeSale
 insert into TypeSale values
 	('Normal','Caja'),
     ('Regalo','envoltura')
-    
+
 insert into Product values
-	('Xbox one',1,'Xbox de 1T',7500.00,'/sample/imagenes/xbox.jpg'),
-	('Lavadora Smart',2,'Lavadora Samsung',16500.00,'/sample/imagenes/lavadora2.jpg'),
-    ('Tenis modernos',3,'Tenis Nike',2100.00,'/sample/imagenes/tenis2.jpg'),
-    ('iPhone x',1,'Celular Apple',20999.99,'/sample/imagenes/iphonex.png'),
-	('note 9',1,'Celular Samsung',24999.99,'/sample/imagenes/note9.jpg'),
-    ('Lavadora',2,'Lavador LG',12599.99,'/sample/imagenes/lavadora.jpg'),
-    ('Tenis',3,'Tenis nike',1599.99,'/sample/imagenes/tenis.jpg'),
-    ('Refrigerador',2,'Refrigerador 16 pies',21000.00,'/sample/imagenes/refri.jpg'),
-	('Google pixel',1,'Celular google',18999.99,'/sample/imagenes/pixel.jpg')
+	('Lapiz',2,'Lapiz HB',4.50,'/sample/imagenes/lapiz.jpg'),
+	('Folder',2,'Folder amarillo',3.00,'/sample/imagenes/folder.jpg'),
+	('Protectores',2,'Protector transparente',3.00,'/sample/imagenes/protector.jpg'),
+	('Memoria RAM',1,'DDR4 de 8 GB',1100,'/sample/imagenes/ram.jpg'),
+	('Tarjeta madre',1,'AM4 AMD Gaming ATX',2200,'/sample/imagenes/tarjeta.jpg'),
+	('Laptop Dell',3,'8GB RAM Intel i7, GTX 1060',18500,'/sample/imagenes/laptop.jpg'),
+	('print Brother',3,'DCP-L2540DW multifuncional',2999,'/sample/imagenes/brother.jpg'),
+	('Cooler Liquid',1,'Enfriamento Cooler Master',4347.88,'/sample/imagenes/coler.jpg')
 
 insert into State values
 	('Cataluña',1),
@@ -73,71 +58,82 @@ insert into State values
     ('California',5),
     ('Tokyo',3)
 
-insert into City values
-	('Londres',2,13),
-    ('Barcelona',1,12),
-	('Celaya',4,14),
-    ('L.A',5,15),
-    ('kioto',3,16)
-    
-insert into Address values
-    ('insurgenes','erick@gmail.com','4612565465','pokemon',10,13,2,38050),
-	('seiso foruya','cupa@gmail.com','4613215487','chinos',12,14,4,38030),
-	('valle del pirul','Juan@gmail.com','4616543252','ArtiDep',14,16,3,38010),
-	('agua marina','fran@gmail.com','4611789567','Forex',11,12,1,38020),
-	('piracanto','Sarai@gmail.com','4611685599','Celutec',13,15,5,38040)
+	select * from city
 
+insert into City values
+	('Londres',2,2),
+    ('Barcelona',1,1),
+	('Celaya',4,3),
+    ('L.A',5,4),
+    ('kioto',3,5)
+
+	select * from Address
+
+insert into Address values
+    ('insurgenes','erick@gmail.com','4612565465','pokemon',1,2,2,38050),
+	('seiso foruya','cupa@gmail.com','4613215487','chinos',2,1,1,38030),
+	('valle del pirul','Juan@gmail.com','4616543252','ArtiDep',3,3,4,38010),
+	('agua marina','fran@gmail.com','4611789567','Forex',4,4,5,38020),
+	('piracanto','Sarai@gmail.com','4611685599','Celutec',5,5,3,38040)
+
+	select * from store
 insert into Store values
-	(5,'Machitos'),
-    (4,'Leon'),
-	(3,'Tigres'),
-    (6,'Stadium'),
-    (7,'miniso')
+	(4,'Machitos'),
+    (5,'Leon'),
+	(6,'Tigres'),
+    (7,'Stadium'),
+    (8,'miniso')
+
+	select * from store
+	select * from Customers
+	select * from ShoppingCart
+	select * from Product
 
 insert into ShoppingCart values
-	(4,1,2100.00),
-    (5,2,16500.00),
-	(2,3,12999.99),
-    (6,4,24999.99),
-    (3,5,1599.99)
-    
+	(4,1,7,2100.00,1),
+    (5,2,8,16500.00,1),
+	(2,3,8,12999.99,1),
+    (1,4,5,24999.99,1),
+    (3,5,2,1599.99,1)
+
+	select * from AddressCustomer
 insert into AddressCustomer values
-	(5,5),
-    (4,4),
-	(2,3),
-    (6,6),
-    (3,7)
+	(5,4),
+    (4,5),
+	(2,6),
+    (1,7),
+    (3,8)
+
+	select * from Store
+	select * from Promotion
+	select * from Customers
+	select * from ShoppingCart
+	select * from PaymentMethod
+	select * from sale
 
 insert into Sale values
-	(2,3,1,12599.99,2,1,8,2,'2018-12-25'),
-    (5,2,2,16500.00,1,2,9,2,'2018-12-26'),
-    (4,1,3,12599.99,3,2,10,1,'2018-12-11'),
-    (3,5,4,12599.99,4,2,9,1,'2018-12-11'),
-    (6,4,5,24999.99,1,1,11,1,'2018-12-10')
+	(1,4,12599.99,1,2,2,1,5,'2018-12-25'),
+    (2,3,16500.00,5,2,2,2,8,'2018-12-26'),
+    (3,5,12599.99,4,1,3,3,2,'2018-12-11'),
+    (4,1,12599.99,3,1,4,2,7,'2018-12-11'),
+    (5,2,24999.99,2,1,5,2,8,'2018-12-10')
+
+select * from sale
+select * from invoice
+
 
 insert into invoice values
-	(11,'2018-12-05',1),
-    (13,'2018-12-01',2),
-    (12,'2018-12-03',3),
-    (14,'2018-12-05',1)
+	(3,'2018-12-05',1),
+    (4,'2018-12-01',2),
+    (5,'2018-12-03',3),
+    (6,'2018-12-05',4)
 
-insert into ListShoppingCart values
-	(4,6,'Celular',1,2,2,2),
-    (3,2,'Tenis',1,2,2,2),
-	(3,2,'Celular',1,1,1,1),
-    (5,3,'Lavadora',2,1,2,1),
-    (2,5,'Tenis',3,1,3,1)
-
+	select * from Product
+	select * from Store
+	select * from Stock
 insert into Stock values
-	(4,8,15),
-    (5,9,10),
-	(1,11,10),
-    (2,10,5),
-    (3,12,50)
-    
-insert into PackageContent values
-	(4,'Celular',8,1),
-    (5,'Tenis',7,1),
-	(1,'celular',1,1),
-    (2,'Lavadora',2,1),
-    (3,'tenis',3,1)
+	(2,2,15),
+    (3,3,10),
+	(4,4,10),
+    (5,5,5),
+    (1,6,50)

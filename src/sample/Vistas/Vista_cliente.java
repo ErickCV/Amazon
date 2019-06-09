@@ -28,10 +28,10 @@ public class Vista_cliente extends Stage
     int opci = 0;
     //Tabla_clientes objTC;
 
-    public Vista_cliente(int opci,modelo_cliente modelo)
+    public Vista_cliente()
     {
-        this.opci = opci;
-        this.objMC = modelo;
+        //this.opci = opci;
+        //this.objMC = modelo;
         crearEscena();
         escena = new Scene(ancPanel,400,400);
         escena.getStylesheets().addAll("/sample/css/estilo.css");
@@ -49,7 +49,7 @@ public class Vista_cliente extends Stage
 
         btnCancelar = new JFXButton("Cancelar");
 
-        //btnAceptar.setOnAction(event -> Acciones(1));
+        btnAceptar.setOnAction(event -> Acciones(1));
         btnCancelar.setOnAction(event -> Acciones(2));
 
         //LABELS

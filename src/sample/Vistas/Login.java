@@ -106,7 +106,8 @@ public class Login extends Stage {
                 break;
             case 2:
                 this.close();
-                Signup objS = new Signup();
+                //Signup objS = new Signup();
+                Vista_cliente objVC =  new Vista_cliente();
         }
 
     }
