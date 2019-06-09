@@ -2,6 +2,8 @@ package sample.Vistas;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.skins.JFXButtonSkin;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,10 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sample.Modelos.ConexionBD;
-import sample.Modelos.modelo_consulta4;
-import sample.Modelos.modelo_productos;
-import sample.Modelos.modelo_productosMAU;
+import sample.Modelos.*;
 import sample.Tablas.Tabla_consulta4;
 
 import javax.imageio.ImageIO;
@@ -48,16 +47,15 @@ public class MenuAsUser extends Stage
     private JFXCheckBox ckbCategoria1,ckbCategoria2,ckbCategoria3;
     private Tab tapInicio,tapCompras;
     private ImageView imvCooler,imvBrother,imvLap,imvLogo,imvPubli,imvTMadre,imvLapiz,imvfolder,imvpixel,imvUser;
-    private JFXButton btnBscar,btnFiltrar,btnQuitarFiltro,btnLogout;
+    private JFXButton btnBscar,btnFiltrar,btnQuitarFiltro,btnLogout,btnShoppinCart;
     private Button btnAgregar;
-    public ImageView image = new ImageView("/sample/imagenes/mas.png");
-    //public JFXComboBox<String> chbCategorias;
+    public ImageView image;
     public TableView<modelo_productosMAU> tbvProductos;
     public String name, clave;
     HBox hbxNode;
     HBox hbxContentProducts;
     VBox vbxContent;
-
+    FontAwesomeIconView icono;
     ScrollPane spInicio;
 
     public MenuAsUser(String name,String clave)
@@ -143,6 +141,10 @@ public class MenuAsUser extends Stage
         obj.Lista2(cate1,cate2);
         while (con < obj.i)
         {
+            image = new ImageView("/sample/imagenes/mas.png");
+            image.setFitHeight(20.0);
+            image.setFitWidth(20.0);
+            btnAgregar = new Button("Agregar a carrito",image);
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -150,7 +152,7 @@ public class MenuAsUser extends Stage
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
             vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
+            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel,btnAgregar);
             hbxProduct.getChildren().addAll(vbxLabels);
             hbxProduct.setSpacing(10.0);
             con = con +1;
@@ -158,11 +160,13 @@ public class MenuAsUser extends Stage
             if (pro==3)
             {
                 vbxHbx.getChildren().addAll(hbxProduct);
+                vbxHbx.setSpacing(10.0);
                 hbxProduct = new HBox();
                 pro=0;
             }
         }
         vbxHbx.getChildren().addAll(hbxProduct);
+        vbxHbx.setSpacing(10.0);
         spInicio.setContent(vbxHbx);
         con=0;
     }
@@ -177,6 +181,10 @@ public class MenuAsUser extends Stage
             modelo_productosMAU obj = new modelo_productosMAU();
             obj.ListaPrecios(Integer.parseInt(txtP1.getText()), Integer.parseInt(txtP2.getText()));
             while (con < obj.i) {
+                image = new ImageView("/sample/imagenes/mas.png");
+                image.setFitHeight(20.0);
+                image.setFitWidth(20.0);
+                btnAgregar = new Button("Agregar a carrito",image);
                 lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
                 lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
                 lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -184,7 +192,7 @@ public class MenuAsUser extends Stage
                 imvCel[con].setFitWidth(250.0);
                 imvCel[con].setFitHeight(170.0);
                 vbxLabels = new VBox();
-                vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel, lblPrecioCel, lblDescCel);
+                vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel, lblPrecioCel, lblDescCel,btnAgregar);
                 hbxProduct.getChildren().addAll(vbxLabels);
                 hbxProduct.setSpacing(10.0);
                 con = con + 1;
@@ -192,11 +200,13 @@ public class MenuAsUser extends Stage
                 if (pro==3)
                 {
                     vbxHbx.getChildren().addAll(hbxProduct);
+                    vbxHbx.setSpacing(10.0);
                     hbxProduct = new HBox();
                     pro=0;
                 }
             }
             vbxHbx.getChildren().addAll(hbxProduct);
+            vbxHbx.setSpacing(10.0);
             spInicio.setContent(vbxHbx);
             con = 0;
         }
@@ -222,6 +232,10 @@ public class MenuAsUser extends Stage
         obj.Lista(Cate);
         while (con < obj.i)
         {
+            image = new ImageView("/sample/imagenes/mas.png");
+            image.setFitHeight(20.0);
+            image.setFitWidth(20.0);
+            btnAgregar = new Button("Agregar a carrito",image);
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -229,7 +243,7 @@ public class MenuAsUser extends Stage
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
             vbxLabels = new VBox();
-            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
+            vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel,btnAgregar);
             hbxProduct.getChildren().add(vbxLabels);
             hbxProduct.setSpacing(10.0);
             con = con +1;
@@ -237,11 +251,13 @@ public class MenuAsUser extends Stage
             if (pro==3)
             {
                 vbxHbx.getChildren().addAll(hbxProduct);
+                vbxHbx.setSpacing(10.0);
                 hbxProduct = new HBox();
                 pro=0;
             }
         }
         vbxHbx.getChildren().addAll(hbxProduct);
+        vbxHbx.setSpacing(10.0);
         spInicio.setContent(vbxHbx);
         con=0;
     }
@@ -315,7 +331,7 @@ public class MenuAsUser extends Stage
 //------------------------------------------------------------------------------------------------
         //ESCENA PRINCIPAL
         //ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvPubli,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,vbxCheck,vbxPrecio);
-        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvLogo,txtBusqueda,lbname,imvUser,btnLogout);
+        ancEscena.getChildren().addAll(tbpInterfaz,btnBscar,imvLogo,txtBusqueda,lbname,imvUser,btnLogout,btnShoppinCart);
 //------------------------------------------------------------------------------------------------
 
 
@@ -352,15 +368,25 @@ public class MenuAsUser extends Stage
 
     private void botones()
     {
-        btnAgregar = new JFXButton("Agregar al carrito",image);
-        image.setFitHeight(20.0);
-        image.setFitWidth(20.0);
-
         btnLogout = new JFXButton("    ");
         btnLogout.setId("button_logout");
         btnLogout.setOnAction(event -> Salir());
         AnchorPane.setTopAnchor(btnLogout,15.0);
         AnchorPane.setLeftAnchor(btnLogout,1310.0);
+
+        icono = new FontAwesomeIconView(FontAwesomeIcon.SHOPPING_CART);
+        icono.setSize("12.5");
+        btnShoppinCart = new JFXButton("Carrito de compras");
+        btnShoppinCart.setGraphic(icono);
+        btnShoppinCart.setOnAction(event -> llamadaVista());
+        AnchorPane.setTopAnchor(btnShoppinCart,15.0);
+        AnchorPane.setLeftAnchor(btnShoppinCart,1020.0);
+
+
+    }
+    private void llamadaVista()
+    {
+       Vista_carritocompras vCarrito = new Vista_carritocompras(null);
     }
     private void TextField()
     {
@@ -402,37 +428,7 @@ public class MenuAsUser extends Stage
     private void Vbox()
     {
         //VBOX
-        /*vbxCel = new VBox();
-        vbxCel.getChildren().addAll(imvCooler,lblNombreCel,lblPrecioCel,lblDescCel,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxCel,250.0);
-        AnchorPane.setTopAnchor(vbxCel,200.0);
-
-        vbxLav = new VBox();
-        vbxLav.getChildren().addAll(imvBrother,lblNombreLav,lblPrecioLav,lblDescLav,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxLav,522.0);
-        AnchorPane.setTopAnchor(vbxLav,200.0);
-
-        vbxTenis = new VBox();
-        vbxTenis.getChildren().addAll(imvLap,lblNombreTenis,lblPrecioTenis,lblDescTenis,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxTenis,793.0);
-        AnchorPane.setTopAnchor(vbxTenis,200.0);
-
-        vbxLav2 = new VBox();
-        vbxLav2.getChildren().addAll(imvTMadre,lblNomLava2,lblPrecLava2,lblDescLava2,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxLav2,250.0);
-        AnchorPane.setTopAnchor(vbxLav2,490.0);
-
-        vbxTenis2 = new VBox();
-        vbxTenis2.getChildren().addAll(imvLapiz,lblNomTenis2,lblPreTenis2,lblDescTenis2,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxTenis2,522.0);
-        AnchorPane.setTopAnchor(vbxTenis2,490.0);
-
-        vbxCel2 = new VBox();
-        vbxCel2.getChildren().addAll(imvfolder,lblNomCel2,lblPrecCel2,lblDescCel2,new Button("Agregar al carrito",image));
-        AnchorPane.setLeftAnchor(vbxCel2,793.0);
-        AnchorPane.setTopAnchor(vbxCel2,490.0);*/
-
-        vbxCheck = new VBox();
+                vbxCheck = new VBox();
         vbxPrecio = new VBox();
         vbxCheck.setSpacing(5.0);
         AnchorPane.setLeftAnchor(vbxCheck,10.0);
@@ -516,48 +512,6 @@ public class MenuAsUser extends Stage
         imvLogo = new ImageView("/sample/imagenes/logo.png");
         imvLogo.setFitHeight(80.0);
         imvLogo.setFitWidth(250.0);
-
-        /*imvCooler = new ImageView("/sample/imagenes/coler.jpg");
-        imvCooler.setFitWidth(250.0);
-        imvCooler.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvCooler,20.0);
-        AnchorPane.setLeftAnchor(imvCooler,250.0);
-
-        imvPubli = new ImageView("/sample/imagenes/d.jpg");
-        AnchorPane.setRightAnchor(imvPubli,0.0);
-        AnchorPane.setTopAnchor(imvPubli,110.0);
-        imvPubli.setFitWidth(210.0);
-        imvPubli.setFitHeight(595.0);
-
-        imvBrother = new ImageView("/sample/imagenes/brother.jpg");
-        imvBrother.setFitWidth(250.0);
-        imvBrother.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvBrother,20.0);
-        AnchorPane.setLeftAnchor(imvBrother,520.0);
-
-        imvLap = new ImageView("/sample/imagenes/laptop.jpg");
-        imvLap.setFitWidth(250.0);
-        imvLap.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvLap,20.0);
-        AnchorPane.setLeftAnchor(imvLap,790.0);
-
-        imvTMadre = new ImageView("/sample/imagenes/tarjeta.jpg");
-        imvTMadre.setFitWidth(250.0);
-        imvTMadre.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvTMadre,320.0);
-        AnchorPane.setLeftAnchor(imvTMadre,250.0);
-
-        imvLapiz = new ImageView("/sample/imagenes/lapiz.jpg");
-        imvLapiz.setFitWidth(250.0);
-        imvLapiz.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvLapiz,320.0);
-        AnchorPane.setLeftAnchor(imvLapiz,520.0);
-
-        imvfolder = new ImageView("/sample/imagenes/protector.jpg");
-        imvfolder.setFitWidth(250.0);
-        imvfolder.setFitHeight(170.0);
-        AnchorPane.setTopAnchor(imvfolder,320.0);
-        AnchorPane.setLeftAnchor(imvfolder,790.0);*/
     }
 
     private HBox interfaz2()
@@ -569,33 +523,39 @@ public class MenuAsUser extends Stage
         ImageView imvImage;
         int pro=0;
         spInicio = new ScrollPane();
-        spInicio.setPrefSize(800,500);
+        spInicio.setPrefSize(800,600);
         ObservableList<modelo_productos> Lista = new modelo_productos().Listar();
         for (modelo_productos MP: Lista)
         {
             pro = pro+1;
+            image = new ImageView("/sample/imagenes/mas.png");
+            image.setFitHeight(20.0);
+            image.setFitWidth(20.0);
+            btnAgregar = new Button("Agregar a carrito",image);
             lblname = new Label(MP.getNameProduct());
             lblPrice = new Label(""+MP.getPrice());
             lbldesc = new Label(MP.getDescription());
             imvImage = new ImageView(MP.getImage());
-            imvImage.setFitHeight(200);
-            imvImage.setFitWidth(220);
+            imvImage.setFitHeight(170);
+            imvImage.setFitWidth(250);
             VBox vbxProduct = new VBox();
-            vbxProduct.getChildren().addAll(imvImage,lblname,lblPrice,lbldesc);
+            vbxProduct.getChildren().addAll(imvImage,lblname,lblPrice,lbldesc,btnAgregar);
             hbxContentProducts.getChildren().addAll(vbxProduct);
             hbxContentProducts.setSpacing(10.0);
             if (pro==3)
             {
                 vbxContent.getChildren().addAll(hbxContentProducts);
+                vbxContent.setSpacing(10.0);
                 hbxContentProducts = new HBox();
                 pro=0;
             }
 
         }
         vbxContent.getChildren().addAll(hbxContentProducts);
+        vbxContent.setSpacing(10.0);
         spInicio.setContent(vbxContent);
         hbxNode.getChildren().addAll(vbxCheck,spInicio);
-        //me quede en agregar los checkbox y el sp a un Hbox
+        hbxNode.setSpacing(10.0);
         return hbxNode;
     }
 }

@@ -28,7 +28,7 @@ public class Vista_carritocompras extends Stage
     private Customers user;
     private GridPane gpProduct;
     private Scene escena;
-    private FontAwesomeIconView icono;
+    public FontAwesomeIconView icono;
     private  int c=0,f=0;
     public void CrearGUI(){
         icono=new FontAwesomeIconView(FontAwesomeIcon.MONEY);

@@ -671,7 +671,8 @@ public class MenuAsCustomer extends Stage {
                     break;
                 case 4:
                     modelo_cliente objetoCl = objCl.tableViewCliente.getSelectionModel().getSelectedItem();
-                    objvCl = new Vista_cliente(2,objetoCl);
+                    objvCl = new Vista_cliente();
+                    //objvCl = new Vista_cliente(2,objetoCl);
                     break;
                 case 5:
                     modelo_contenidopaquete objetoCp = objCP.tableViewContenidoPaquete.getSelectionModel().getSelectedItem();
@@ -788,7 +789,8 @@ public class MenuAsCustomer extends Stage {
                     Vista_ciudad objCi = new Vista_ciudad(1,objci);
                     break;
                 case 4:
-                    Vista_cliente objCL = new Vista_cliente(1,objcl);
+                    Vista_cliente objCL = new Vista_cliente();
+                    //Vista_cliente objCL = new Vista_cliente(1,objcl);
                     break;
                 case 5:
                     Vista_contenidopaquete objCP = new Vista_contenidopaquete(1,objcp);
