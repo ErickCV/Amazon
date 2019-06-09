@@ -146,3 +146,9 @@ create table Stock(
                         constraint FK2Stock foreign key(idStore)references Store(idStore),
                         constraint CTStock check (quantity>=0)
 );
+
+create table Users(
+						idUser int not null identity(1,1),
+						name varchar(30),
+						pass varchar(15),
+						constraint PKUSer primary key(idUSer));

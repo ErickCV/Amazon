@@ -1,6 +1,7 @@
 package sample.Vistas;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.Scene;
@@ -15,14 +16,15 @@ import sample.Modelos.modelo_cliente;
 public class Vista_cliente extends Stage
 {
 
-    Label lblidCustumer,lblnombre,lbllastName,lblgenero;
-    JFXTextField txtidCustumer,txtnombre,txtlastName;
+    Label lblnombre,lbllastName,lblgenero,lbclave;
+    JFXTextField txtnombre,txtlastName;
+    JFXPasswordField txtclave;
     JFXRadioButton rdbMasculino,rdbFemenino;
-    HBox hbxidCustumer,hbxnombre,hbxlastName,hbxgenero,hbxBotones;
+    HBox hbxclave,hbxnombre,hbxlastName,hbxgenero,hbxBotones;
     JFXButton btnAceptar,btnCancelar;
     AnchorPane ancPanel;
     Scene escena;
-    VBox vBox1;
+    VBox vBox1;//configurar cuado de texto para password
     final ToggleGroup group = new ToggleGroup();
     modelo_cliente objMC;
     int opci = 0;
@@ -53,14 +55,13 @@ public class Vista_cliente extends Stage
         btnCancelar.setOnAction(event -> Acciones(2));
 
         //LABELS
-        lblidCustumer = new Label("ID cliente :");
+        lbclave = new Label("Clave");
         lblnombre = new Label("Nombre :");
         lbllastName = new Label("Apellidos :");
         lblgenero = new Label("Genero :");
 
         //TEXTFIELD
-        txtidCustumer = new JFXTextField();
-        txtidCustumer.setPromptText("NOT null");
+        txtclave = new JFXPasswordField();
 
         txtnombre = new JFXTextField();
 
@@ -77,11 +78,6 @@ public class Vista_cliente extends Stage
 
         //HBOX
 
-        hbxidCustumer = new HBox();
-        hbxidCustumer.getChildren().addAll(lblidCustumer,txtidCustumer);
-        AnchorPane.setTopAnchor(hbxidCustumer,15.0);
-        AnchorPane.setLeftAnchor(hbxidCustumer,20.0);
-        hbxidCustumer.setSpacing(10.0);
 
         hbxnombre = new HBox();
         hbxnombre.getChildren().addAll(lblnombre,txtnombre);
@@ -94,6 +90,12 @@ public class Vista_cliente extends Stage
         AnchorPane.setTopAnchor(hbxlastName,85.0);
         AnchorPane.setLeftAnchor(hbxlastName,20.0);
         hbxlastName.setSpacing(10.0);
+
+        hbxclave = new HBox();
+        hbxclave.getChildren().addAll(lbclave,txtclave);
+        AnchorPane.setTopAnchor(hbxclave,85.0);
+        AnchorPane.setLeftAnchor(hbxclave,20.0);
+        hbxclave.setSpacing(10.0);
 
         vBox1.getChildren().addAll(rdbMasculino,rdbFemenino);
         vBox1.setSpacing(10);
@@ -111,7 +113,6 @@ public class Vista_cliente extends Stage
         hbxBotones.setSpacing(10);
 
         if(opci==2){
-            txtidCustumer.setText(String.valueOf(objMC.getIdCustomer()));
             txtlastName.setText(objMC.getLastName());
             txtnombre.setText((objMC.getName()));
             if(objMC.getGender().equals("Masculino")){
@@ -121,7 +122,7 @@ public class Vista_cliente extends Stage
                 rdbFemenino.setSelected(true);
         }
 
-        ancPanel.getChildren().addAll(hbxidCustumer,hbxnombre,hbxlastName,hbxgenero,hbxBotones);
+        ancPanel.getChildren().addAll(hbxclave,hbxnombre,hbxlastName,hbxgenero,hbxBotones);
     }
 
     private void Acciones(int opc)
@@ -131,7 +132,6 @@ public class Vista_cliente extends Stage
         {
             case 1:
                 objMC = new modelo_cliente();
-                objMC.setIdCustomer(Integer.parseInt(txtidCustumer.getText()));
                 objMC.setName(txtnombre.getText());
                 objMC.setLastName(txtlastName.getText());
                 objMC.setGender(group.getSelectedToggle().toString());
@@ -140,7 +140,6 @@ public class Vista_cliente extends Stage
                 this.close();
         }
         else{
-            objMC.setIdCustomer(Integer.parseInt(txtidCustumer.getText()));
             objMC.setName(txtnombre.getText());
             objMC.setLastName(txtlastName.getText());
             if(objMC.getGender().equals("Masculino")){

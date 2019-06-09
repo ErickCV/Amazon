@@ -71,8 +71,8 @@ public class modelo_cliente
             objC = new ConexionBD();//abre la conexion a la BD
             con = objC.getConectar();//EL QUE DA ACCESO A LA BD
 
-            String query = "INSERT INTO Customers (name,lastName,gender) " +
-                    "VALUES('"+name+"','"+lastName+"','"+gender+"')";
+            String query = "INSERT INTO Customers (name,lastName,gender,clave) " +
+                    "VALUES('"+name+"','"+lastName+"','"+gender+"','"+clave+"')";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
             objSt.executeUpdate(query);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
             this.Listar();

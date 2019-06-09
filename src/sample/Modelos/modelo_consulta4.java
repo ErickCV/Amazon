@@ -66,11 +66,10 @@ public class modelo_consulta4 {
             modelo_consulta4 objA;
             System.out.println("aqui va: "+name);
             listConsulta4 = FXCollections.observableArrayList();
-            String query= "select u.userName, c.name customerName, p.nameProduct productName, s.date saleDate, s.total saleTotal" +
-                    "                          from Users u inner join Sale s on u.idUser = s.idUser" +
-                    "                                        inner join ShoppingCart sc on s.idCustomer = sc.idCustomer and s.idCart = sc.idCart" +
-                    "                                        inner join Customers c on c.idCustomer = sc.idCustomer" +
-                    "                                        inner join Product p on p.idProduct = sc.idProduct"+
+            String query= "select  c.name customerName, p.nameProduct productName, s.date saleDate, s.total saleTotal" +
+                    "                          from Sale s inner join Customers c on s.idCustomer = c.idCustomer" +
+                    "                                       inner join ShoppingCart sc on s.idCustomer = sc.idCustomer and s.idCart = sc.idCart and c.idCustomer = sc.idCustomer" +
+                    "                                        inner join Product p on p.idProduct = sc.idProduct" +
                     "                          where c.name = '"+name+"'";
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
