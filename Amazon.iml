@@ -28,6 +28,6 @@
     </orderEntry>
     <orderEntry type="library" name="jfoenix-8.0.5" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
-    <orderEntry type="library" name="iconos" level="project" />
+    <orderEntry type="library" exported="" name="iconos" level="project" />
   </component>
 </module>

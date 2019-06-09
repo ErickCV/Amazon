@@ -54,6 +54,9 @@ public class MenuAsUser extends Stage
     //public JFXComboBox<String> chbCategorias;
     public TableView<modelo_productosMAU> tbvProductos;
     public String name, clave;
+    HBox hbxNode;
+    HBox hbxContentProducts;
+    VBox vbxContent;
 
     ScrollPane spInicio;
 
@@ -121,7 +124,7 @@ public class MenuAsUser extends Stage
                             if (!ckbCategoria1.isSelected() && ckbCategoria2.isSelected() && ckbCategoria3.isSelected())
                                 filtro2Cate(ckbCategoria2.getText(),ckbCategoria3.getText());
                             else
-                                spInicio.setContent(vbx);
+                                tapInicio.setContent(interfaz2());
                         }
                     }
                 }
@@ -133,9 +136,9 @@ public class MenuAsUser extends Stage
     private void filtro2Cate(String cate1, String cate2)
     {
         hbxProduct = new HBox();
-        hbxProduct.setSpacing(10.0);
         vbxHbx = new VBox();
         spInicio.setContent(null);
+        int pro = 0;
         modelo_productosMAU obj = new modelo_productosMAU();
         obj.Lista2(cate1,cate2);
         while (con < obj.i)
@@ -149,7 +152,15 @@ public class MenuAsUser extends Stage
             vbxLabels = new VBox();
             vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
             hbxProduct.getChildren().addAll(vbxLabels);
+            hbxProduct.setSpacing(10.0);
             con = con +1;
+            pro++;
+            if (pro==3)
+            {
+                vbxHbx.getChildren().addAll(hbxProduct);
+                hbxProduct = new HBox();
+                pro=0;
+            }
         }
         vbxHbx.getChildren().addAll(hbxProduct);
         spInicio.setContent(vbxHbx);
@@ -160,9 +171,9 @@ public class MenuAsUser extends Stage
         try
         {
             hbxProduct = new HBox();
-            hbxProduct.setSpacing(10.0);
             vbxHbx = new VBox();
             spInicio.setContent(null);
+            int pro = 0;
             modelo_productosMAU obj = new modelo_productosMAU();
             obj.ListaPrecios(Integer.parseInt(txtP1.getText()), Integer.parseInt(txtP2.getText()));
             while (con < obj.i) {
@@ -175,7 +186,15 @@ public class MenuAsUser extends Stage
                 vbxLabels = new VBox();
                 vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel, lblPrecioCel, lblDescCel);
                 hbxProduct.getChildren().addAll(vbxLabels);
+                hbxProduct.setSpacing(10.0);
                 con = con + 1;
+                pro++;
+                if (pro==3)
+                {
+                    vbxHbx.getChildren().addAll(hbxProduct);
+                    hbxProduct = new HBox();
+                    pro=0;
+                }
             }
             vbxHbx.getChildren().addAll(hbxProduct);
             spInicio.setContent(vbxHbx);
@@ -196,8 +215,8 @@ public class MenuAsUser extends Stage
     private void filtraElectronicos(String Cate)
     {
         hbxProduct = new HBox();
-        hbxProduct.setSpacing(10.0);
         vbxHbx = new VBox();
+        int pro = 0;
         spInicio.setContent(null);
         modelo_productosMAU obj = new modelo_productosMAU();
         obj.Lista(Cate);
@@ -212,8 +231,15 @@ public class MenuAsUser extends Stage
             vbxLabels = new VBox();
             vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel);
             hbxProduct.getChildren().add(vbxLabels);
-            //valor = valor + 270.0;
+            hbxProduct.setSpacing(10.0);
             con = con +1;
+            pro++;
+            if (pro==3)
+            {
+                vbxHbx.getChildren().addAll(hbxProduct);
+                hbxProduct = new HBox();
+                pro=0;
+            }
         }
         vbxHbx.getChildren().addAll(hbxProduct);
         spInicio.setContent(vbxHbx);
@@ -259,12 +285,11 @@ public class MenuAsUser extends Stage
         //tapCompras.setOnSelectionChanged(event -> Consulta());
 //---------------------------------------------------------------------------------------------
         //ESCENAS DE LOS TABS
-        vbx = new VBox();
+       /*vbx = new VBox();
         HBox hbx = new HBox();
         HBox hbx1 = new HBox();
         HBox hbx2 = new HBox();
         HBox hbx3 = new HBox();
-        HBox hbxNode = new HBox();
 
         hbx.getChildren().addAll(vbxCel,vbxLav,vbxTenis);
         hbx1.getChildren().addAll(vbxLav2);
@@ -282,10 +307,10 @@ public class MenuAsUser extends Stage
         spInicio.setPrefSize(800,500);
         spInicio.setContent(vbx);
         hbx.setSpacing(10.0);
-        hbxNode.getChildren().addAll(vbxCheck,spInicio);
+        //hbxNode.getChildren().addAll(vbxCheck,spInicio);*/
 //------------------------------------------------------------------------------------------------
         //INSERTANDO LAS ESCENAS A LOS TABS
-        tapInicio.setContent(hbxNode);
+        tapInicio.setContent(interfaz2());
         tbpInterfaz.getTabs().addAll(tapInicio,tapCompras);
 //------------------------------------------------------------------------------------------------
         //ESCENA PRINCIPAL
@@ -377,7 +402,7 @@ public class MenuAsUser extends Stage
     private void Vbox()
     {
         //VBOX
-        vbxCel = new VBox();
+        /*vbxCel = new VBox();
         vbxCel.getChildren().addAll(imvCooler,lblNombreCel,lblPrecioCel,lblDescCel,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxCel,250.0);
         AnchorPane.setTopAnchor(vbxCel,200.0);
@@ -405,7 +430,7 @@ public class MenuAsUser extends Stage
         vbxCel2 = new VBox();
         vbxCel2.getChildren().addAll(imvfolder,lblNomCel2,lblPrecCel2,lblDescCel2,new Button("Agregar al carrito",image));
         AnchorPane.setLeftAnchor(vbxCel2,793.0);
-        AnchorPane.setTopAnchor(vbxCel2,490.0);
+        AnchorPane.setTopAnchor(vbxCel2,490.0);*/
 
         vbxCheck = new VBox();
         vbxPrecio = new VBox();
@@ -441,7 +466,7 @@ public class MenuAsUser extends Stage
         ckbCategoria1.setSelected(false);
         ckbCategoria2.setSelected(false);
         ckbCategoria3.setSelected(false);
-       spInicio.setContent(vbx);
+        tapInicio.setContent(interfaz2());
     }
 
     private void label()
@@ -492,17 +517,17 @@ public class MenuAsUser extends Stage
         imvLogo.setFitHeight(80.0);
         imvLogo.setFitWidth(250.0);
 
-        imvCooler = new ImageView("/sample/imagenes/coler.jpg");
+        /*imvCooler = new ImageView("/sample/imagenes/coler.jpg");
         imvCooler.setFitWidth(250.0);
         imvCooler.setFitHeight(170.0);
         AnchorPane.setTopAnchor(imvCooler,20.0);
         AnchorPane.setLeftAnchor(imvCooler,250.0);
 
-        /*imvPubli = new ImageView("/sample/imagenes/d.jpg");
+        imvPubli = new ImageView("/sample/imagenes/d.jpg");
         AnchorPane.setRightAnchor(imvPubli,0.0);
         AnchorPane.setTopAnchor(imvPubli,110.0);
         imvPubli.setFitWidth(210.0);
-        imvPubli.setFitHeight(595.0);*/
+        imvPubli.setFitHeight(595.0);
 
         imvBrother = new ImageView("/sample/imagenes/brother.jpg");
         imvBrother.setFitWidth(250.0);
@@ -532,26 +557,45 @@ public class MenuAsUser extends Stage
         imvfolder.setFitWidth(250.0);
         imvfolder.setFitHeight(170.0);
         AnchorPane.setTopAnchor(imvfolder,320.0);
-        AnchorPane.setLeftAnchor(imvfolder,790.0);
+        AnchorPane.setLeftAnchor(imvfolder,790.0);*/
     }
 
-    private void interfaz2()
+    private HBox interfaz2()
     {
-        HBox hbx = new HBox();
-        hbx.getChildren().addAll(vbxCel,vbxLav,vbxTenis);
+        hbxNode = new HBox();
+        hbxContentProducts = new HBox();
+        vbxContent = new VBox();
         Label lblname,lblPrice,lbldesc;
         ImageView imvImage;
+        int pro=0;
         spInicio = new ScrollPane();
-        spInicio.setVmax(440);
-        spInicio.setPrefSize(115,150);
-        spInicio.setContent(hbx);
+        spInicio.setPrefSize(800,500);
         ObservableList<modelo_productos> Lista = new modelo_productos().Listar();
         for (modelo_productos MP: Lista)
         {
+            pro = pro+1;
             lblname = new Label(MP.getNameProduct());
             lblPrice = new Label(""+MP.getPrice());
             lbldesc = new Label(MP.getDescription());
             imvImage = new ImageView(MP.getImage());
+            imvImage.setFitHeight(200);
+            imvImage.setFitWidth(220);
+            VBox vbxProduct = new VBox();
+            vbxProduct.getChildren().addAll(imvImage,lblname,lblPrice,lbldesc);
+            hbxContentProducts.getChildren().addAll(vbxProduct);
+            hbxContentProducts.setSpacing(10.0);
+            if (pro==3)
+            {
+                vbxContent.getChildren().addAll(hbxContentProducts);
+                hbxContentProducts = new HBox();
+                pro=0;
+            }
+
         }
+        vbxContent.getChildren().addAll(hbxContentProducts);
+        spInicio.setContent(vbxContent);
+        hbxNode.getChildren().addAll(vbxCheck,spInicio);
+        //me quede en agregar los checkbox y el sp a un Hbox
+        return hbxNode;
     }
 }
