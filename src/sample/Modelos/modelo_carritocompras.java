@@ -128,7 +128,7 @@ public class modelo_carritocompras
             modelo_productos producto=null;
             modelo_carritocompras objMCarrito;
             listCarritoCompras = FXCollections.observableArrayList();
-            String query= "call vistaCarrito("+modeloCarritocompras.getIdCart()+")";
+            String query= "exec vistaCarrito("+modeloCarritocompras.getIdCart()+")";
                     Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
             while (res.next())
