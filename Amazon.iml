@@ -11,23 +11,22 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/JavaFX/Java3D/jfoenix-8.0.5.jar!/" />
+          <root url="file://$MODULE_DIR$/src/librerias/iconos" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/src/librerias/iconos" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/JavaFX/Java3D/sqljdbc4.jar!/" />
+          <root url="file://$MODULE_DIR$/src/librerias/iText" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/src/librerias/iText" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jfoenix-8.0.5" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
-    <orderEntry type="library" exported="" name="iconos" level="project" />
   </component>
 </module>

@@ -57,8 +57,17 @@ public class MenuAsUser extends Stage
     VBox vbxContent;
     FontAwesomeIconView icono;
     ScrollPane spInicio;
+    String nombre;
 
-    public MenuAsUser(String name,String clave)
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public MenuAsUser(String name, String clave)
     {
         this.name = name;
         this.clave = clave;
@@ -74,6 +83,9 @@ public class MenuAsUser extends Stage
         this.setResizable(false);
         this.show();
 
+    }
+
+    public MenuAsUser() {
     }
 
     private void lista()
@@ -362,8 +374,17 @@ public class MenuAsUser extends Stage
             }
     private void llamadaVista()
     {
+        nombre=lbname.getText();
+        System.out.print(nombre);
         modelo_carritocompras mc = new modelo_carritocompras();
-       Vista_carritocompras vCarrito = new Vista_carritocompras(mc);
+        try {
+            mc.setIdCustomer(new modelo_cliente().BuscarCustomer(1));
+            mc.setIdCart(4);
+            new Vista_carritocompras(mc);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
     private void TextField()
     {

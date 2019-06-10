@@ -2,6 +2,7 @@ package sample.Modelos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -124,6 +125,14 @@ public class modelo_usuarios {
             System.out.println("nombre para exec"+nombre);
             System.out.println("clave para exec"+clave);
             String query = "exec verificaUsuario '"+nombre+"','"+clave+"',"+valor+"";
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Confirmacion de usuario");
+            alert.setContentText("Tu nuevo usuario es "+clave+"con clave "+clave);
+
+            alert.showAndWait();
+
             System.out.println(query);
             objSt = con.createStatement();
             valor = objSt.executeUpdate(query);

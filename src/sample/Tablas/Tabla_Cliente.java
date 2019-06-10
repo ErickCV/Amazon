@@ -30,7 +30,7 @@ public class Tabla_Cliente extends Stage{
         TableColumn<modelo_cliente,Integer> tbcgender = new TableColumn<>("gender");
         tbcgender.setCellValueFactory(new PropertyValueFactory<>("gender"));
 
-        tableViewCliente.setItems(new modelo_cliente()  .Listar());
+        //tableViewCliente.setItems(new modelo_cliente().Listar());
 
         tableViewCliente.getColumns().addAll(tbcidCustomer,tbcname,tbclastName,tbcgender);
     }

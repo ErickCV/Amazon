@@ -15,6 +15,7 @@ public class modelo_cliente
     public String texto,name,lastName,gender,clave;
     ConexionBD objC;
     Connection con;
+    modelo_cliente objMCliente;
 
     public String getClave() {
         return clave;
@@ -98,7 +99,7 @@ public class modelo_cliente
             String query = "UPDATE Customers SET name='"+name+"',lastName='"+lastName+"',"+"gender='"+gender+"',clave='"+clave+"' where idCustomer="+idCustomer;
             Statement objSt = con.createStatement();
             objSt.executeUpdate(query);
-            this.Listar();
+            //this.Listar();
             con.close();
         }
         catch (Exception e)
@@ -116,55 +117,53 @@ public class modelo_cliente
             String query = "DELETE FROM Customers WHERE idCustomer = "+idCustomer;
             Statement objSt = con.createStatement();
             objSt.executeUpdate(query);
-            this.Listar();
+            //this.Listar();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public ObservableList<modelo_cliente> Listar()
+    public int Listar(String name)
     {
+        objMCliente = new modelo_cliente();
         ObservableList<modelo_cliente> listCliente = null;
         try
         {
             objC = new ConexionBD();
             con = objC.getConectar();
+            System.out.println(name);
 
-            modelo_cliente objMCliente;
             listCliente = FXCollections.observableArrayList();
-            String query= "SELECT * FROM Customers ORDER BY idCustomer";
+            String query= "SELECT idCustomer FROM Customers where name ='"+name+"'";
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
-
+            objMCliente=new modelo_cliente();
             while (res.next())
             {
-                objMCliente = new modelo_cliente();
-                objMCliente.setIdCustomer(res.getInt("idCustomer"));
-                objMCliente.setName(res.getString("name"));
-                objMCliente.setLastName(res.getString("lastName"));
-                objMCliente.setGender(res.getString("gender"));
-                objMCliente.setClave(res.getString("clave"));
-                listCliente.add(objMCliente);
-                texto = String.valueOf(res.getInt("idCustomer"))+" "+res.getString("name")+" "
-                        +res.getString("lastName")+" "+res.getString("gender");
+                objMCliente.idCustomer=res.getInt("idCustomer");
             }
-            con.close();
+
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-        return listCliente;
+        System.out.println("id: "+objMCliente.idCustomer);
+        return objMCliente.idCustomer;
+
     }
-    public Customers BuscarCustomer(int idCustomer) throws SQLException {
+
+    public Customers BuscarCustomer(int idCustomer) throws SQLException
+    {
         String consulta="Select * from Customers where idCustomer="+idCustomer;
         objC=new ConexionBD();
         con=objC.getConectar();
         Customers customers=null;
         Statement statement =con.createStatement();
         ResultSet resultSet=statement.executeQuery(consulta);
-        while (resultSet.next()){
+        while (resultSet.next())
+        {
             customers=new Customers();
             customers.setIdCustomer(resultSet.getString("idCustomer"));
             customers.setName(resultSet.getString("name"));

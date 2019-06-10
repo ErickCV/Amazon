@@ -13,10 +13,14 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Modelos.ConexionBD;
 import sample.Modelos.modelo_consulta4;
+import sample.Modelos.modelo_carritocompras;
 import sample.Modelos.modelo_consulta;
 import sample.Modelos.modelo_usuarios;
+import sample.Modelos.modelo_cliente;
+import sample.TDAs.Customers;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Login extends Stage {
 
@@ -71,9 +75,22 @@ public class Login extends Stage {
     private void Acceder(int opc) {
         switch (opc) {
             case 1:
+
+
                 modelo_usuarios objM = new modelo_usuarios();
                 modelo_consulta objMC = new modelo_consulta();
-                modelo_consulta4 objC4 =  new modelo_consulta4();
+                modelo_cliente objCLI = new modelo_cliente();
+
+                //objCLI.setName(textFieldUsuario.getText());
+               // objCLI.Listar();
+                //try {
+                //    objCLI.BuscarCustomer(objCLI.getIdCustomer());
+               // } catch (SQLException e) {
+                //    e.printStackTrace();
+               // }
+
+                MenuAsUser objMAU = new MenuAsUser();
+                objMAU.setNombre(textFieldUsuario.getText());
 
                 objMC.setName(textFieldUsuario.getText());
                 objMC.setPass(textFieldContraseña.getText());
@@ -81,23 +98,38 @@ public class Login extends Stage {
                 objM.setNombre(textFieldUsuario.getText());
                 objM.setContra(textFieldContraseña.getText());
 
-                if (objM.consultas()==1)
-                {
-                    this.close();
-                    System.out.println("valor despues de == 1"+objM.valor);
-                    MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
-                }
-                else
-                    {
-                        textFieldUsuario.clear();
-                        textFieldContraseña.clear();
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error message");
-                        alert.setHeaderText("Something went wrong");
-                        alert.setContentText("User or password incorrect");
 
-                        alert.showAndWait();
+
+                if(textFieldUsuario.getText().equals("Erick"))
+                    if(textFieldContraseña.getText().equals("itgd"))
+                        if (objM.consultas()==1)
+                         {
+                            this.close();
+                            System.out.println("valor despues de == 1"+objM.valor);
+                            MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
+                        }
+                        else
+                            {
+                                textFieldUsuario.clear();
+                                textFieldContraseña.clear();
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("Error message");
+                                alert.setHeaderText("Something went wrong");
+                                alert.setContentText("User or password incorrect");
+
+                                alert.showAndWait();
+                            }
+                     else
+                         {
+                             this.close();
+
+                        MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
                     }
+                     else
+                         {
+                             this.close();
+                    MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
+                }
                 break;
             case 2:
                 this.close();
