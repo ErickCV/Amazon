@@ -19,11 +19,8 @@ public class Tabla_Usuarios extends Stage{
     }
     public void crearGUI(){
         tableViewUsuarios = new TableView<>();
-        TableColumn<modelo_consulta,Integer> tbcUserName= new TableColumn<>("userName");
-        tbcUserName.setCellValueFactory(new PropertyValueFactory<>("nameUser"));
-
-        TableColumn<modelo_consulta,Integer> tbcRolname = new TableColumn<>("Rolname");
-        tbcRolname.setCellValueFactory(new PropertyValueFactory<>("idStore"));
+        TableColumn<modelo_consulta,Integer> tbcUserName= new TableColumn<>("customerName");
+        tbcUserName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
 
         TableColumn<modelo_consulta,Integer> tbcidSale = new TableColumn<>("idSale");
         tbcidSale.setCellValueFactory(new PropertyValueFactory<>("idSale"));
@@ -42,6 +39,6 @@ public class Tabla_Usuarios extends Stage{
 
         tableViewUsuarios.setItems(new modelo_consulta().Listar());
 
-        tableViewUsuarios.getColumns().addAll(tbcUserName,tbcRolname,tbcidSale,tbctotalSale,tbcdateSale,tbcidInvoice,tbcdateInvoice);
+        tableViewUsuarios.getColumns().addAll(tbcUserName,tbcidSale,tbctotalSale,tbcdateSale,tbcidInvoice,tbcdateInvoice);
     }
 }

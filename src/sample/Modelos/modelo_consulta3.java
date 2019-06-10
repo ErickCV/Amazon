@@ -41,13 +41,9 @@ public class modelo_consulta3
             listConsulta3 = FXCollections.observableArrayList();
             String query= "select p.idProduct,p.nameProduct " +
                     "      from Product p " +
-                    "      where not exists (select lsc.idCustomer, lsc.idCart " +
-                    "                        from ListShoppingCart lsc " +
-                    "                        where lsc.idProduct = p.idProduct and not exists (select sc.idCustomer, sc.idCart " +
-                    "                                                                          from ShoppingCart sc " +
-                    "                                                                          where not exists (select * " +
-                    "                                                                                            from Sale s " +
-                    "                                                                                            where  sc.idCustomer = s.idCustomer and sc.idCart = s.idCart)))";
+                    "      where not exists (select *" +
+                    "                        from Sale s " +
+                    "                        where s.idProduct = p.idProduct )";
 
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);

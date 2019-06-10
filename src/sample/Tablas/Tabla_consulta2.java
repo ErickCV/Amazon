@@ -20,12 +20,9 @@ public class Tabla_consulta2 extends Stage{
     }
     public void crearGUI(){
         tableViewConsulta2 = new TableView<>();
-        TableColumn<modelo_consulta2,Integer> tbcUserName= new TableColumn<>("userName");
-        tbcUserName.setCellValueFactory(new PropertyValueFactory<>("nameUser"));
-
 
         TableColumn<modelo_consulta2,Integer> tbcCustomerName = new TableColumn<>("customerName");
-        tbcCustomerName.setCellValueFactory(new PropertyValueFactory<>("nameCustomer"));
+        tbcCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
 
         TableColumn<modelo_consulta2,Integer> tbcproductName = new TableColumn<>("productName");
         tbcproductName.setCellValueFactory(new PropertyValueFactory<>("nameProduct"));
@@ -39,6 +36,6 @@ public class Tabla_consulta2 extends Stage{
 
         tableViewConsulta2.setItems(new modelo_consulta2().Listar());
 
-        tableViewConsulta2.getColumns().addAll(tbcUserName,tbcCustomerName,tbcproductName,tbcdateSale,tbctotalSale);
+        tableViewConsulta2.getColumns().addAll(tbcCustomerName,tbcproductName,tbcdateSale,tbctotalSale);
     }
 }

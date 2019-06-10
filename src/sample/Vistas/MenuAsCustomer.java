@@ -63,7 +63,7 @@ public class MenuAsCustomer extends Stage {
     public Tabla_Factura objF;
     public Tabla_MetodoPago objMP;
     public  Tabla_Pais objP;
-    public  Tabla_Paquete objPa;
+
     public  Tabla_Productos objPro;
     public Tabla_Promocion objProm;
     public Tabla_Rol objR;
@@ -86,13 +86,13 @@ public class MenuAsCustomer extends Stage {
     private ObservableList<modelo_categoria> listCategoria= null;
     private ObservableList<modelo_ciudad> listCiudad = null;
     private ObservableList<modelo_cliente> listCliente = null;
-    private ObservableList<modelo_contenidopaquete> listContenidoPaquete = null;
+
     private ObservableList<modelo_direccion> listDireccion = null;
     private ObservableList<modelo_direccioncliente> listDireccionCliente = null;
     private ObservableList<modelo_estado> listEstado = null;
     private ObservableList<modelo_factura> listFactura = null;
     private ObservableList<modelo_pais> listPais= null;
-    private ObservableList<modelo_paquete> listPaquete = null;
+
     private ObservableList<modelo_productos> listProductos = null;
     private ObservableList<modelo_promocion> listPromocion = null;
     private ObservableList<modelo_rol> listRol = null;
@@ -114,7 +114,7 @@ public class MenuAsCustomer extends Stage {
     private modelo_estado obje;
     private modelo_factura objf;
     private modelo_pais objp;
-    private modelo_paquete objpaq;
+
     private modelo_productos objpro;
     private modelo_promocion objprom;
     private modelo_rol objrol;
@@ -130,14 +130,14 @@ public class MenuAsCustomer extends Stage {
     private Vista_categoria objvC = null;
     private Vista_ciudad objvCi = null;
     private Vista_cliente objvCl = null;
-    private Vista_contenidopaquete objvCP = null;
+
     private Vista_direccion objvD = null;
     private Vista_direccioncliente objvDC = null;
     private Vista_estado objvE = null;
     private Vista_factura objvF = null;
     private Vista_metodopago objvMP = null;
     private Vista_pais objvP = null;
-    private Vista_paquete objvPa = null;
+
     private Vista_productos objvPro = null;
     private Vista_promocion objvProm = null;
     private Vista_rol objvR = null;
@@ -231,19 +231,7 @@ public class MenuAsCustomer extends Stage {
                                 objCl.tableViewCliente.setItems(listCliente);
                                 break;
                             case 5:
-                                listContenidoPaquete = FXCollections.observableArrayList();
-                                while (rs.next())
-                                {
-                                    objcp = new modelo_contenidopaquete();
-                                    objcp.setIdPackage(rs.getInt("idPackage"));
-                                    objcp.setDetail(rs.getString("detail"));
-                                    objcp.setIdProduct(rs.getInt("idProduct"));
-                                    objcp.setQuantity(rs.getInt("quantity"));
-                                    listContenidoPaquete.add(objcp);
-                                }
-                                con.close();
 
-                                objCP.tableViewContenidoPaquete.setItems(listContenidoPaquete);
                                 break;
                             case 6:
                                 listDireccion = FXCollections.observableArrayList();
@@ -344,20 +332,7 @@ public class MenuAsCustomer extends Stage {
                                 objP.tableViewPais.setItems(listPais);
                                 break;
                             case 13:
-                                listPaquete = FXCollections.observableArrayList();
-                                while (rs.next())
-                                {
-                                    objpaq.setIdPackage(rs.getInt("idPackage"));
-                                    objpaq.setNamePackage(rs.getString("namePackage"));
-                                    objpaq.setDescription(rs.getString("description"));
-                                    objpaq.setPrice(rs.getFloat("price"));
-                                    objpaq.setStock(rs.getInt("stock"));
-                                    objpaq.setImage(rs.getString("image"));
-                                    listPaquete.addAll(objpaq);
-                                }
-                                con.close();
 
-                                objPa.tableViewPaquete.setItems(listPaquete);
                                 break;
                             case 14:
                                 listProductos = FXCollections.observableArrayList();
@@ -559,7 +534,7 @@ public class MenuAsCustomer extends Stage {
         txtBuscar.setPromptText("Buscar...");
         anchorPane1 = new AnchorPane();
 
-        btnUsuarios = new JFXButton("Usuarios-Ventas");
+        btnUsuarios = new JFXButton("Clientes-Ventas");
         btnUsuarios.setId("button_options");
         btnUsuarios.setOnAction(event -> Usuarios());
         btnResumen= new JFXButton("Resumen-Ventas");
@@ -570,8 +545,8 @@ public class MenuAsCustomer extends Stage {
         comboTablas.getItems().addAll(new Label("Carrito de Compras"),
                 new Label("Categorias"),
                 new Label("Ciudad"),
-                new Label("Cliente"),
-                new Label("Contenido Paquete"),
+
+
                 new Label("Direccion"),
                 new Label("Direccion Cliente"),
                 new Label("Estado"),
@@ -579,7 +554,7 @@ public class MenuAsCustomer extends Stage {
                 new Label("Lista Carrito"),
                 new Label("Metodo de pago"),
                 new Label("Pais"),
-                new Label("Paquete"),
+
                 new Label("Productos"),
                 new Label("Promociones"),
                 new Label("Rol"),
@@ -623,9 +598,9 @@ public class MenuAsCustomer extends Stage {
         vBox3.getChildren().addAll(txtBuscar,hBox3);//agregar aqui mas botones de consultas
         vBox3.setSpacing(10);
 
-        System.out.println("user "+user);
-        System.out.println("clave "+contra);
-        if(user.equals("EC") && contra.equals("1234"))
+        System.out.println("user despues de login "+user);
+        System.out.println("clave despues de login "+contra);
+        if(user.equals("Erick") && contra.equals("itgd"))
         {
             btnNuevo.setDisable(false);
             btnBorrar.setDisable(false);
@@ -670,13 +645,10 @@ public class MenuAsCustomer extends Stage {
                     objvCi = new Vista_ciudad(2,objetoCi);
                     break;
                 case 4:
-                    modelo_cliente objetoCl = objCl.tableViewCliente.getSelectionModel().getSelectedItem();
-                    objvCl = new Vista_cliente();
-                    //objvCl = new Vista_cliente(2,objetoCl);
+
                     break;
                 case 5:
-                    modelo_contenidopaquete objetoCp = objCP.tableViewContenidoPaquete.getSelectionModel().getSelectedItem();
-                    objvCP = new Vista_contenidopaquete(2,objetoCp);
+
                     break;
                 case 6:
                     modelo_direccion objetoD = objD.tableViewDireccion.getSelectionModel().getSelectedItem();
@@ -789,8 +761,7 @@ public class MenuAsCustomer extends Stage {
                     Vista_ciudad objCi = new Vista_ciudad(1,objci);
                     break;
                 case 4:
-                    Vista_cliente objCL = new Vista_cliente();
-                    //Vista_cliente objCL = new Vista_cliente(1,objcl);
+
                     break;
                 case 5:
                     Vista_contenidopaquete objCP = new Vista_contenidopaquete(1,objcp);
@@ -816,8 +787,8 @@ public class MenuAsCustomer extends Stage {
                     Vista_pais objP = new Vista_pais(1,objp);
                     break;
                 case 13:
-                    Stage stage= new Stage();
-                    showPackage(stage);
+                    //Stage stage= new Stage();
+                   // showPackage(stage);
                     break;
                 case 14:
                     Stage stage2= new Stage();
@@ -936,10 +907,7 @@ public class MenuAsCustomer extends Stage {
 
                     break;
                 case 13:
-                    vBoxTabla.getChildren().clear();
-                    objPa = new Tabla_Paquete();
-                    vBoxTabla.getChildren().addAll(objPa.tableViewPaquete);
-                    objPa.close();
+
 
                     break;
                 case 14:
@@ -1062,13 +1030,7 @@ public class MenuAsCustomer extends Stage {
                     objCl.tableViewCliente.refresh();
                     break;
                 case 5:
-                    modelo_contenidopaquete objetoCP = objCP.tableViewContenidoPaquete.getSelectionModel().getSelectedItem();
-                    objetoCP.setIdPackage(objetoCP.getIdPackage());
-                    objetoCP.setIdProduct(objetoCP.getIdProduct());
-                    objetoCP.setQuantity(objetoCP.getQuantity());
-                    objetoCP.setDetail(objetoCP.getDetail());
-                    objetoCP.Borrar();
-                    objCP.tableViewContenidoPaquete.refresh();
+
                     break;
                 case 6:
                     modelo_direccion objetoD = objD.tableViewDireccion.getSelectionModel().getSelectedItem();
@@ -1127,15 +1089,7 @@ public class MenuAsCustomer extends Stage {
                     objP.tableViewPais.refresh();
                     break;
                 case 13:
-                    modelo_paquete objetoPa = objPa.tableViewPaquete.getSelectionModel().getSelectedItem();
-                    objetoPa.setIdPackage(objetoPa.getIdPackage());
-                    objetoPa.setNamePackage(objetoPa.getNamePackage());
-                    objetoPa.setDescription(objetoPa.getDescription());
-                    objetoPa.setPrice(objetoPa.getPrice());
-                    objetoPa.setStock(objetoPa.getStock());
-                    objetoPa.setImage(objetoPa.getImage());
-                    objetoPa.Borrar();
-                    objPa.tableViewPaquete.refresh();
+
                     break;
                 case 14:
                     modelo_productos objetoPro = objPro.tableViewProductos.getSelectionModel().getSelectedItem();
@@ -1321,14 +1275,7 @@ public class MenuAsCustomer extends Stage {
                 tabla = 12;
                 break;
             case "Paquete":
-                vBoxTabla.getChildren().clear();
-                objPa = new Tabla_Paquete();
-                objPa.close();
-                vBoxTabla.getChildren().addAll(objPa.tableViewPaquete);
-                string ="Package";
-                string2 = "namePackage";
-                txtBuscar.setPromptText("namePackage");
-                tabla = 13;
+
                 break;
             case "Productos":
                 vBoxTabla.getChildren().clear();

@@ -10,25 +10,33 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class modelo_consulta {
-    private String nameUser,Rolname;
+    public String customerName, name, pass;
             private int idSale,idInvoice;
     private float total;
     private Date date, dateInvoice;
 
-    public String getNameUser() {
-        return nameUser;
+    public String getName() {
+        return name;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRolname() {
-        return Rolname;
+    public String getPass() {
+        return pass;
     }
 
-    public void setRolname(String rolname) {
-        Rolname = rolname;
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public int getIdSale() {
@@ -76,25 +84,25 @@ public class modelo_consulta {
 
     public ObservableList<modelo_consulta> Listar()//de modelos
     {
+        String nombre = this.name;
         ObservableList<modelo_consulta> listUsuarios=null;
         try {
             objC = new ConexionBD();
             con = objC.getConectar();
-
+            System.out.println("nombre de condicion: "+nombre);
             modelo_consulta objA;
             listUsuarios = FXCollections.observableArrayList();
-            String query= "select u.userName userName, r.name rolName, s.idSale, s.total,s.date saleDate, i.idInvoice, i.dateInvoice invoiceDate" +
-                    "       from Users u inner join Sale s on u.idUser = s.idUser" +
-                    "                    inner join invoice i on u.idUser = i.idUser" +
-                    "                    inner join Role r on r.idRole = u.idRole";
+            String query= "select c.name customername, s.idSale, s.total,s.date saleDate, i.idInvoice, i.dateInvoice invoiceDate" +
+                    "       from Customers c inner join Sale s on c.idCustomer = s.idCustomer" +
+                    "                    inner join invoice i on c.idCustomer = i.idcustomer"+
+                    "        where c.name = "+nombre;
 
             Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
             while (res.next())
             {
                 objA = new modelo_consulta();//de modelos
-                objA.setNameUser(res.getString("userName"));
-                objA.setRolname(res.getString("rolName"));
+                objA.setCustomerName(res.getString("customerName"));
                 objA.setIdSale(res.getInt("idSale"));
                 objA.setTotal(res.getFloat("total"));
                 objA.setDate(res.getDate("saleDate"));

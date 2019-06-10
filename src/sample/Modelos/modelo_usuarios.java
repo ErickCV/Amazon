@@ -121,18 +121,17 @@ public class modelo_usuarios {
         try {
             objC = new ConexionBD();
             con = objC.getConectar();
-            System.out.println("nombre "+nombre);
-            System.out.println("clave "+clave);
-            String query = "exec verificaUsuario '"+nombre+"','"+clave+"','"+valor+"'";
+            System.out.println("nombre para exec"+nombre);
+            System.out.println("clave para exec"+clave);
+            String query = "exec verificaUsuario '"+nombre+"','"+clave+"',"+valor+"";
             System.out.println(query);
             objSt = con.createStatement();
-            ResultSet rs = objSt.executeQuery(query);
-            while(rs.next()) {
-                if (rs.wasNull())
-                    valor = 0;
-                else
-                    valor = 1;
-            }
+            valor = objSt.executeUpdate(query);
+            System.out.println("valor antes de retornarlo: "+valor);
+            if(valor == -1)
+                valor = valor * -1;
+            else
+                valor = 0;
             con.close();
         }
         catch (Exception e)
@@ -147,8 +146,8 @@ public class modelo_usuarios {
         try {
             objC = new ConexionBD();
             con = objC.getConectar();
-            System.out.println("nombre "+nombre);
-            System.out.println("clave "+clave);
+            System.out.println("nombre para exec"+nombre);
+            System.out.println("clave para exec"+clave);
 
             String query2 = "exec verificaCustomer '"+nombre+"','"+clave+"','"+valor+"'";
 

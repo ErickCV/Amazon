@@ -4,8 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -32,8 +34,6 @@ public class Vista_cliente extends Stage
 
     public Vista_cliente()
     {
-        //this.opci = opci;
-        //this.objMC = modelo;
         crearEscena();
         escena = new Scene(ancPanel,400,400);
         escena.getStylesheets().addAll("/sample/css/estilo.css");
@@ -55,7 +55,7 @@ public class Vista_cliente extends Stage
         btnCancelar.setOnAction(event -> Acciones(2));
 
         //LABELS
-        lbclave = new Label("Clave");
+        lbclave = new Label("Clave :");
         lblnombre = new Label("Nombre :");
         lbllastName = new Label("Apellidos :");
         lblgenero = new Label("Genero :");
@@ -72,9 +72,11 @@ public class Vista_cliente extends Stage
         //RADIO-BUTTON
         rdbMasculino = new JFXRadioButton("Masculino");
         rdbMasculino.setToggleGroup(group);
+        rdbMasculino.setUserData("M");
         rdbMasculino.setSelected(true);
         rdbFemenino = new JFXRadioButton("Femenino");
         rdbFemenino.setToggleGroup(group);
+        rdbFemenino.setUserData("F");
 
         //HBOX
 
@@ -93,7 +95,7 @@ public class Vista_cliente extends Stage
 
         hbxclave = new HBox();
         hbxclave.getChildren().addAll(lbclave,txtclave);
-        AnchorPane.setTopAnchor(hbxclave,85.0);
+        AnchorPane.setTopAnchor(hbxclave,120.0);
         AnchorPane.setLeftAnchor(hbxclave,20.0);
         hbxclave.setSpacing(10.0);
 
@@ -102,52 +104,33 @@ public class Vista_cliente extends Stage
 
         hbxgenero = new HBox();
         hbxgenero.getChildren().addAll(lblgenero,vBox1);
-        AnchorPane.setTopAnchor(hbxgenero,120.0);
+        AnchorPane.setTopAnchor(hbxgenero,170.0);
         AnchorPane.setLeftAnchor(hbxgenero,20.0);
         hbxgenero.setSpacing(10);
 
         hbxBotones = new HBox();
         hbxBotones.getChildren().addAll(btnAceptar,btnCancelar);
-        AnchorPane.setTopAnchor(hbxBotones,170.0);
-        AnchorPane.setLeftAnchor(hbxBotones,15.0);
+        AnchorPane.setTopAnchor(hbxBotones,250.0);
+        AnchorPane.setLeftAnchor(hbxBotones,20.0);
         hbxBotones.setSpacing(10);
 
-        if(opci==2){
-            txtlastName.setText(objMC.getLastName());
-            txtnombre.setText((objMC.getName()));
-            if(objMC.getGender().equals("Masculino")){
-                rdbMasculino.setSelected(true);
-            }
-            else
-                rdbFemenino.setSelected(true);
-        }
-
-        ancPanel.getChildren().addAll(hbxclave,hbxnombre,hbxlastName,hbxgenero,hbxBotones);
+        ancPanel.getChildren().addAll(hbxnombre,hbxlastName,hbxclave,hbxgenero,hbxBotones);
     }
 
     private void Acciones(int opc)
     {
-        if(opci==1)
         switch (opc)
         {
             case 1:
                 objMC = new modelo_cliente();
                 objMC.setName(txtnombre.getText());
                 objMC.setLastName(txtlastName.getText());
-                objMC.setGender(group.getSelectedToggle().toString());
+                objMC.setGender(group.getSelectedToggle().getUserData().toString());
+                objMC.setClave(txtclave.getText());
                 objMC.insertar();
+                MenuAsCustomer objMe = new MenuAsCustomer(txtnombre.getText(), txtclave.getText());
             case 2:
                 this.close();
-        }
-        else{
-            objMC.setName(txtnombre.getText());
-            objMC.setLastName(txtlastName.getText());
-            if(objMC.getGender().equals("Masculino")){
-                objMC.setGender("Masculino");
-            }
-            else
-                objMC.setGender("Femenino");
-            objMC.Actualizar();
         }
     }
 }

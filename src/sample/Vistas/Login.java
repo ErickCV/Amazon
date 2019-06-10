@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Modelos.ConexionBD;
 import sample.Modelos.modelo_consulta4;
+import sample.Modelos.modelo_consulta;
 import sample.Modelos.modelo_usuarios;
 
 import java.sql.Connection;
@@ -71,38 +72,32 @@ public class Login extends Stage {
         switch (opc) {
             case 1:
                 modelo_usuarios objM = new modelo_usuarios();
+                modelo_consulta objMC = new modelo_consulta();
                 modelo_consulta4 objC4 =  new modelo_consulta4();
+
+                objMC.setName(textFieldUsuario.getText());
+                objMC.setPass(textFieldContraseña.getText());
+
                 objM.setNombre(textFieldUsuario.getText());
                 objM.setContra(textFieldContraseña.getText());
-                objM.consultas();
-                System.out.println("valor "+objM.valor);
+
                 if (objM.consultas()==1)
                 {
                     this.close();
+                    System.out.println("valor despues de == 1"+objM.valor);
                     MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
-                } else
-                {
-                    objM.setNombre(textFieldUsuario.getText());
-                    objM.setContra(textFieldContraseña.getText());
-                    if(objM.consultas2()==2)
-                    {
-                        this.close();
-
-                        MenuAsUser objMU = new MenuAsUser(textFieldUsuario.getText(),textFieldContraseña.getText());
-                        objC4.Listar(textFieldUsuario.getText());
-                    }
-                    else
+                }
+                else
                     {
                         textFieldUsuario.clear();
                         textFieldContraseña.clear();
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Error message");
                         alert.setHeaderText("Something went wrong");
-                        alert.setContentText("Log in error, please try again");
+                        alert.setContentText("User or password incorrect");
 
                         alert.showAndWait();
                     }
-                }
                 break;
             case 2:
                 this.close();

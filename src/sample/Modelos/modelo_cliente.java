@@ -68,14 +68,19 @@ public class modelo_cliente
     public void insertar()
     {
         try {
+            System.out.println("vino aqui");
             objC = new ConexionBD();//abre la conexion a la BD
             con = objC.getConectar();//EL QUE DA ACCESO A LA BD
-
-            String query = "INSERT INTO Customers (name,lastName,gender,clave) " +
-                    "VALUES('"+name+"','"+lastName+"','"+gender+"','"+clave+"')";
-            Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
-            objSt.executeUpdate(query);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
-            this.Listar();
+            System.out.println(name+""+lastName+""+gender+""+clave);
+            String query1 = "INSERT INTO Customers VALUES('"+name+"','"+lastName+"','"+gender+"','"+clave+"')";
+           // String query2 = "INSERT INTO Customers VALUES( 'Johana','Amoles','F','sabes')";
+            System.out.println("aqui si");
+            Statement objSt = null;//ENCARGADO DE REALIZAR LA CONSULTA
+            objSt = con.createStatement();
+            System.out.println("aqui tambien");
+            objSt.executeUpdate(query1);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
+            System.out.println("termino");
+            //this.Listar();
             con.close();
         }
         catch (Exception e)
