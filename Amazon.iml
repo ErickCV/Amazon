@@ -119,5 +119,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="fontawesomefx-commons-8.15" level="project" />
   </component>
 </module>
