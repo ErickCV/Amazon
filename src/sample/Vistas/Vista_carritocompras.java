@@ -41,7 +41,6 @@ public class Vista_carritocompras extends Stage
         gpProduct=new GridPane();
         principal=new ScrollPane();
         vboxPrincipal=new VBox();
-        user = new Customers();
         lblCustomer=new Label("Cliente: "+user.getName()+" "+user.getLastName());
         icono=new FontAwesomeIconView(FontAwesomeIcon.USER_CIRCLE_ALT);
         icono.setSize("50");
@@ -53,10 +52,13 @@ public class Vista_carritocompras extends Stage
             lblCantidad=new Label(carrito.getCantidad()+"");
             try
             {
-                imagen=new ImageView(carrito.getIdProduct().getImage());
+                imagen=new ImageView(carrito.getIdProduct().getImage().toString());
+                System.out.println(carrito.getIdProduct().getImage());
             }
             catch (Exception e){
-              imagen=new ImageView("sample/imagenes/null.png");
+                e.getMessage();
+
+              imagen=new ImageView("/sample/imagenes/null.png");
             }
             imagen.setFitWidth(100);
             imagen.setFitHeight(100);
@@ -93,7 +95,9 @@ public class Vista_carritocompras extends Stage
     }
 
     public Vista_carritocompras(modelo_carritocompras carritocompras) {
+        user=new Customers();
         listacarrito=new modelo_carritocompras().Listar(carritocompras);
+        System.out.println("usuario"+carritocompras.getIdCustomer().getName());
         user=carritocompras.getIdCustomer();
         CrearGUI();
     }

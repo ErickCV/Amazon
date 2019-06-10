@@ -163,6 +163,7 @@ Connection con;
             product.setDescription(resultSet.getString("description"));
             product.setIdCategory(resultSet.getInt("idCategory"));
             product.setPrice(resultSet.getDouble("price"));
+            product.setImage(resultSet.getString("image"));
         }
         return  product;
     }
