@@ -665,7 +665,7 @@ public class MenuAsCustomer extends Stage {
                     break;
                 case 9:
                     modelo_factura objetoF = objF.tableViewFactura.getSelectionModel().getSelectedItem();
-                    objvF = new Vista_factura(2,objetoF);
+                    //objvF = new Vista_factura(2,objetoF);
                     break;
                 case 10:
                     break;
@@ -776,7 +776,7 @@ public class MenuAsCustomer extends Stage {
                     Vista_estado objE = new Vista_estado(1,obje);
                     break;
                 case 9:
-                    Vista_factura objF = new Vista_factura(1,objf);
+                    //Vista_factura objF = new Vista_factura(1,objf);
                     break;
                 case 10:
                     break;

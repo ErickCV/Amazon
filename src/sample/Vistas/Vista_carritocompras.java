@@ -1,6 +1,7 @@
 package sample.Vistas;
 
 import com.jfoenix.controls.JFXButton;
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.ObservableList;
@@ -89,12 +90,11 @@ public class Vista_carritocompras extends Stage
     private void EventoPagar() {
         this.close();
         Vista_metodopago pago = new Vista_metodopago(listacarrito.get(0).idCart,Integer.parseInt(listacarrito.get(0).idCustomer.getIdCustomer()));
-
     }
 
     public Vista_carritocompras(modelo_carritocompras carritocompras) {
-        user=carritocompras.getIdCustomer();
         listacarrito=new modelo_carritocompras().Listar(carritocompras);
+        user=carritocompras.getIdCustomer();
         CrearGUI();
     }
 

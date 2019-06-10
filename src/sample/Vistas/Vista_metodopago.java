@@ -14,9 +14,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Modelos.modelo_carritocompras;
+import sample.Modelos.modelo_cliente;
 import sample.Modelos.modelo_metodopago;
 import sample.Modelos.modelo_venta;
 import sample.TDAs.Customers;
+
+import java.sql.SQLException;
 
 public class Vista_metodopago extends Stage {
     private RadioButton rbtnTypeSale;
@@ -39,7 +42,11 @@ public class Vista_metodopago extends Stage {
         carrito=new modelo_carritocompras();
         cliente.setIdCustomer(""+idCustomer);
         carrito.setIdCart(idCarrito);
-        carrito.setIdCustomer(cliente);
+        try {
+            carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(idCustomer));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         CrearGUI();
     }
     public  void CrearGUI(){
