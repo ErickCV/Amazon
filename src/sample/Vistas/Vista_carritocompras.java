@@ -40,11 +40,11 @@ public class Vista_carritocompras extends Stage
         gpProduct=new GridPane();
         principal=new ScrollPane();
         vboxPrincipal=new VBox();
-        lblCustomer=new Label("Cliente: "+user.getName()+" "+user.getLastName());
+//        lblCustomer=new Label("Cliente: "+user.getName()+" "+user.getLastName());
         icono=new FontAwesomeIconView(FontAwesomeIcon.USER_CIRCLE_ALT);
         icono.setSize("50");
-        lblCustomer.setGraphic(icono);
-        for (modelo_carritocompras carrito:listacarrito) {
+        //lblCustomer.setGraphic(icono);
+        for (modelo_carritocompras carrito: listacarrito) {
             lblProduct=new Label("Nombre: "+carrito.getIdProduct().getNameProduct());
             lblDescripcion=new Label("Descripcion: "+carrito.getIdProduct().getDescription());
             lblPrecio=new Label("Precio $"+carrito.getIdProduct().getPrice());
@@ -75,12 +75,13 @@ public class Vista_carritocompras extends Stage
             btnPayment.setDisable(true);
         }
         vboxPrincipal.setAlignment(Pos.TOP_CENTER);
-        vboxPrincipal.getChildren().addAll(lblCustomer,principal,btnPayment);
+        //vboxPrincipal.getChildren().addAll(lblCustomer,principal,btnPayment);
+        vboxPrincipal.getChildren().addAll(principal,btnPayment);
         escena=new Scene(vboxPrincipal);
         escena.getStylesheets().add("/sample/CSS/estilo.css");
         setScene(escena);
         setMaximized(true);
-        setTitle("Contenido del carrito de compras del usuario: "+user.getName()+" "+user.getLastName());
+        //setTitle("Contenido del carrito de compras del usuario: "+user.getName()+" "+user.getLastName());
         show();
     }
 

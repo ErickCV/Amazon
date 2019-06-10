@@ -132,7 +132,7 @@ public class MenuAsUser extends Stage
 
     }
     private void filtro2Cate(String cate1, String cate2)
-    {
+        {
         hbxProduct = new HBox();
         vbxHbx = new VBox();
         spInicio.setContent(null);
@@ -145,6 +145,7 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
+            btnAgregar.setOnAction(event -> System.out.println("funciona"));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -185,6 +186,7 @@ public class MenuAsUser extends Stage
                 image.setFitHeight(20.0);
                 image.setFitWidth(20.0);
                 btnAgregar = new Button("Agregar a carrito",image);
+                btnAgregar.setOnAction(event -> System.out.println("funciona"));
                 lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
                 lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
                 lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -236,6 +238,7 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
+            btnAgregar.setOnAction(event -> System.out.println("funciona"));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -300,31 +303,6 @@ public class MenuAsUser extends Stage
         tapCompras = new Tab("Tus compras");
         //tapCompras.setOnSelectionChanged(event -> Consulta());
 //---------------------------------------------------------------------------------------------
-        //ESCENAS DE LOS TABS
-       /*vbx = new VBox();
-        HBox hbx = new HBox();
-        HBox hbx1 = new HBox();
-        HBox hbx2 = new HBox();
-        HBox hbx3 = new HBox();
-
-        hbx.getChildren().addAll(vbxCel,vbxLav,vbxTenis);
-        hbx1.getChildren().addAll(vbxLav2);
-        hbx2.getChildren().addAll(vbxCel2);
-        hbx3.getChildren().addAll(vbxTenis2);
-
-        hbx.setSpacing(10.0);
-        hbx1.setSpacing(10.0);
-        hbx2.setSpacing(10.0);
-        hbx3.setSpacing(10.0);
-        vbx.setSpacing(10.0);
-
-        vbx.getChildren().addAll(hbx,hbx1,hbx2,hbx3);
-        spInicio = new ScrollPane();
-        spInicio.setPrefSize(800,500);
-        spInicio.setContent(vbx);
-        hbx.setSpacing(10.0);
-        //hbxNode.getChildren().addAll(vbxCheck,spInicio);*/
-//------------------------------------------------------------------------------------------------
         //INSERTANDO LAS ESCENAS A LOS TABS
         tapInicio.setContent(interfaz2());
         tbpInterfaz.getTabs().addAll(tapInicio,tapCompras);
@@ -381,12 +359,11 @@ public class MenuAsUser extends Stage
         btnShoppinCart.setOnAction(event -> llamadaVista());
         AnchorPane.setTopAnchor(btnShoppinCart,15.0);
         AnchorPane.setLeftAnchor(btnShoppinCart,1020.0);
-
-
-    }
+            }
     private void llamadaVista()
     {
-       Vista_carritocompras vCarrito = new Vista_carritocompras(null);
+        modelo_carritocompras mc = new modelo_carritocompras();
+       Vista_carritocompras vCarrito = new Vista_carritocompras(mc);
     }
     private void TextField()
     {
@@ -532,12 +509,18 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
+            btnAgregar.setOnAction(event -> System.out.println("funciona"));
             lblname = new Label(MP.getNameProduct());
             lblPrice = new Label(""+MP.getPrice());
             lbldesc = new Label(MP.getDescription());
-            imvImage = new ImageView(MP.getImage());
-            imvImage.setFitHeight(170);
-            imvImage.setFitWidth(250);
+            try {
+                imvImage = new ImageView(MP.getImage());
+                imvImage.setFitHeight(170);
+                imvImage.setFitWidth(250);
+            }catch (Exception e)
+            {
+                imvImage = new ImageView("sample/imagenes/null.png");
+            }
             VBox vbxProduct = new VBox();
             vbxProduct.getChildren().addAll(imvImage,lblname,lblPrice,lbldesc,btnAgregar);
             hbxContentProducts.getChildren().addAll(vbxProduct);
