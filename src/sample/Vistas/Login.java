@@ -32,6 +32,7 @@ public class Login extends Stage {
     private JFXPasswordField textFieldContraseña;
     private JFXButton buttonEntrar,buttonCrear;
     private Label or;
+    public boolean banderaLogin = false;
     private modelo_usuarios objS = new modelo_usuarios();
 
     ConexionBD objC;
@@ -98,15 +99,17 @@ public class Login extends Stage {
                 objM.setNombre(textFieldUsuario.getText());
                 objM.setContra(textFieldContraseña.getText());
 
-
-
-                if(textFieldUsuario.getText().equals("Erick"))
-                    if(textFieldContraseña.getText().equals("itgd"))
                         if (objM.consultas()==1)
                          {
-                            this.close();
-                            System.out.println("valor despues de == 1"+objM.valor);
-                            MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
+                             banderaLogin = true;
+                             this.close();
+                             if(textFieldUsuario.getText().equals("Erick") && textFieldContraseña.getText().equals("itgd")) {
+                                 MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
+                             }
+                             else
+                             {
+                                 MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
+                             }
                         }
                         else
                             {
@@ -119,21 +122,11 @@ public class Login extends Stage {
 
                                 alert.showAndWait();
                             }
-                     else
-                         {
-                             this.close();
-
-                        MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
-                    }
-                     else
-                         {
-                             this.close();
-                    MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
-                }
                 break;
             case 2:
                 this.close();
                 //Signup objS = new Signup();
+                 banderaLogin = false;
                 Vista_cliente objVC =  new Vista_cliente();
         }
 

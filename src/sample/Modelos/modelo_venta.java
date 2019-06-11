@@ -99,7 +99,7 @@ public class modelo_venta {
             objC = new ConexionBD();
             con = objC.getConectar();
 
-            String query = "call insertventa("+this.idCart+","+this.idCustomer+","+this.idPayment+")";
+            String query = "exec insertventa "+this.idCart+","+this.idCustomer+","+this.idPayment+"";
 
             Statement objSt = null;
             objSt = con.createStatement();
