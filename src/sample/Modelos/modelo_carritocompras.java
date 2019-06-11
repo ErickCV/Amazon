@@ -151,11 +151,12 @@ public class modelo_carritocompras
         }
         return listCarritoCompras;
     }
-    public int nuevocarro(){
+    public int nuevocarro()
+    {
         objC=new ConexionBD();
         con=objC.getConectar();
         modelo_carritocompras carrito=new modelo_carritocompras();
-        String consulta="select  max (idCart) from ShoppingCart";
+        String consulta="select  max(idCart) idCart from ShoppingCart";
         try {
             Statement statement=con.createStatement();
             ResultSet resultSet=statement.executeQuery(consulta);

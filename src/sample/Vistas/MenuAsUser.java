@@ -68,6 +68,7 @@ public class MenuAsUser extends Stage
     FontAwesomeIconView icono,icono2;
     ScrollPane spInicio;
     String nombre;
+    AnchorPane nuevoAnchor;
 
     public String getNombre() {
         return nombre;
@@ -351,6 +352,7 @@ public class MenuAsUser extends Stage
 //---------------------------------------------------------------------------------------------
         //INSERTANDO LAS ESCENAS A LOS TABS
         tapInicio.setContent(interfaz2());
+        tapCompras.setContent(Consulta());
         tbpInterfaz.getTabs().addAll(tapInicio,tapCompras);
 //------------------------------------------------------------------------------------------------
         //ESCENA PRINCIPAL
@@ -368,18 +370,37 @@ public class MenuAsUser extends Stage
                 '}';
     }
 
-    public void Consulta() {
-        modelo_consulta4 modelo = new modelo_consulta4();
-        modelo.setNameCustomer(lbname.getText());
-        VBox vbox1 = new VBox();
-        AnchorPane nuevoAnchor = new AnchorPane();
-        Tabla_consulta4 tabla = new Tabla_consulta4();
-        vbox1.getChildren().addAll(tabla.tableViewConsulta4);
-        AnchorPane.setTopAnchor(vbox1,50.0);
-        AnchorPane.setLeftAnchor(vbox1,250.0);
-        nuevoAnchor.getChildren().addAll(vbox1);
-        tapCompras.setContent(nuevoAnchor);
-        tabla.close();
+    public AnchorPane Consulta()
+    {
+        if (!lbname.getText().equals("user"))
+        {
+            Label lblname, lblPrice, lbldesc;
+            ImageView imvImage;
+            hbxContentProducts = new HBox();
+            modelo_cliente mc = new modelo_cliente();
+            ObservableList<modelo_productos> showSales = new modelo_productos().showSales(mc.Listar(lbname.getText()));
+            for (modelo_productos MP : showSales) {
+                lblname = new Label(MP.getNameProduct());
+                lblPrice = new Label("" + MP.getPrice());
+                lbldesc = new Label(MP.getDescription());
+                try {
+                    imvImage = new ImageView(MP.getImage());
+                    imvImage.setFitHeight(170);
+                    imvImage.setFitWidth(250);
+                } catch (Exception e) {
+                    imvImage = new ImageView("sample/imagenes/null.png");
+                }
+                VBox vbxProduct = new VBox();
+                vbxProduct.getChildren().addAll(imvImage, lblname, lblPrice, lbldesc);
+                hbxContentProducts.getChildren().addAll(vbxProduct);
+                hbxContentProducts.setSpacing(10.0);
+            }
+            nuevoAnchor = new AnchorPane();
+            AnchorPane.setLeftAnchor(hbxContentProducts, 20.0);
+            AnchorPane.setTopAnchor(hbxContentProducts, 20.0);
+            nuevoAnchor.getChildren().addAll(hbxContentProducts);
+        }
+        return  nuevoAnchor;
     }
 //------------------------------------------------------------------------------------------------
 
@@ -521,32 +542,9 @@ public class MenuAsUser extends Stage
         AnchorPane.setTopAnchor(lbname,15.0);
         AnchorPane.setLeftAnchor(lbname,1225.0);
 
-        lblNombreCel = new Label("Cooler Liquid");
-        lblNombreLav = new Label("print Brother");
-        lblNombreTenis = new Label("Laptop Dell");
-
-        lblPrecioCel = new Label("4,347.88");
-        lblPrecioLav = new Label("2,999");
-        lblPrecioTenis = new Label("18,500");
-
-        lblDescCel = new Label("Enfriamento Cooler Master");
-        lblDescLav = new Label("DCP-L2540DW multifuncional");
-        lblDescTenis = new Label("8GB RAM Intel i7, GTX 1060");
-
         lblCategoria = new Label("Categorias");
         lblPrecios = new Label("Por costo");
 
-        lblNomLava2 = new Label("Tarjeta madre");
-        lblPrecLava2 = new Label("2,200");
-        lblDescLava2 = new Label("AM4 AMD Gaming ATX");
-
-        lblNomTenis2 = new Label("Lapiz");
-        lblPreTenis2 = new Label("4.50");
-        lblDescTenis2 = new Label("Lapiz HB");
-
-        lblNomCel2 = new Label("Protectores");
-        lblPrecCel2 = new Label("3.00");
-        lblDescCel2 = new Label("Protector transparente");
     }
     private void imagenes()
     {
