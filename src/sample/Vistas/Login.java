@@ -109,6 +109,7 @@ public class Login extends Stage {
                              else
                              {
                                  MenuAsUser objMAU2 = new MenuAsUser(textFieldUsuario.getText(), textFieldContraseña.getText());
+                                 objMAU2.setNoCarrito(new modelo_carritocompras().nuevocarro());
                              }
                         }
                         else

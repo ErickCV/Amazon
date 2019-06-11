@@ -28,6 +28,16 @@ import java.util.Optional;
 
 public class MenuAsUser extends Stage
 {
+    private  int noCarrito;
+
+    public int getNoCarrito() {
+        return noCarrito;
+    }
+
+    public void setNoCarrito(int noCarrito) {
+        this.noCarrito = noCarrito;
+    }
+
     private Scene escena;
     private JFXTextField txtBusqueda;
     public double valor = 250,top=20.0,top2=195;
@@ -157,7 +167,7 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
-            btnAgregar.setOnAction(event -> System.out.println("funciona"));
+            btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -198,7 +208,7 @@ public class MenuAsUser extends Stage
                 image.setFitHeight(20.0);
                 image.setFitWidth(20.0);
                 btnAgregar = new Button("Agregar a carrito",image);
-                btnAgregar.setOnAction(event -> System.out.println("funciona"));
+                btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
                 lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
                 lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
                 lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -250,7 +260,7 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
-            btnAgregar.setOnAction(event -> System.out.println("funciona"));
+            btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
@@ -275,6 +285,30 @@ public class MenuAsUser extends Stage
         vbxHbx.setSpacing(10.0);
         spInicio.setContent(vbxHbx);
         con=0;
+    }
+
+    private void EventoAgregar(String s) {
+        modelo_carritocompras carritocompras=new modelo_carritocompras();
+        if (lbname.getText().equals("user"))
+        {
+            Alert alert =new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Debe Iniciar sesion para poder agregar productos al carrito de compra");
+            alert.showAndWait();
+        }
+        else {
+
+            try {
+                carritocompras.setIdCart(noCarrito);
+                carritocompras.setIdProduct(new modelo_productos().BuscarByName(s));
+                carritocompras.setCantidad(1);
+                carritocompras.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
+                carritocompras.setSubTotal((float) carritocompras.getIdProduct().getPrice());
+                carritocompras.insertar();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     private void crearEscena()

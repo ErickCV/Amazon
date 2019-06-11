@@ -68,8 +68,8 @@ public class modelo_carritocompras
             objC = new ConexionBD();//abre la conexion a la BD
             con = objC.getConectar();//EL QUE DA ACCESO A LA BD
 
-            String query = "INSERT INTO ShoppingCart (idCustomer,subTotal) " +
-                    "VALUES('"+idCustomer+"','"+subTotal+"')";
+            String query = "INSERT INTO ShoppingCart(idCustomer,idCart,idProduct,subTotal,cantidad)" +
+                    "VALUES("+idCustomer.getIdCustomer()+","+idCart+","+idProduct.getIdProduct()+","+subTotal+","+cantidad+")";
             Statement objSt = con.createStatement();//ENCARGADO DE REALIZAR LA CONSULTA
             objSt.executeUpdate(query);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
             //this.Listar();
@@ -151,7 +151,23 @@ public class modelo_carritocompras
         }
         return listCarritoCompras;
     }
+    public int nuevocarro(){
+        objC=new ConexionBD();
+        con=objC.getConectar();
+        modelo_carritocompras carrito=new modelo_carritocompras();
+        String consulta="select  max (idCart) from ShoppingCart";
+        try {
+            Statement statement=con.createStatement();
+            ResultSet resultSet=statement.executeQuery(consulta);
+            while (resultSet.next()){
 
+                carrito.setIdCart(resultSet.getInt("idCart"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  carrito.getIdCart();
+    }
 
 
 }
