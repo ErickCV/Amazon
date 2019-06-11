@@ -3,6 +3,7 @@ package sample.Modelos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.TDAs.Product;
+import sample.TDAs.State;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -166,6 +167,28 @@ Connection con;
             product.setImage(resultSet.getString("image"));
         }
         return  product;
+    }
+    public Product BuscarByName(String name){
+        objC=new ConexionBD();
+        con=objC.getConectar();
+        Product product=null;
+        String consulta="Select * from Product where nameProduct='"+name+"'";
+        try {
+            Statement statement =con.createStatement();
+            ResultSet resultSet=statement.executeQuery(consulta);
+            while (resultSet.next()){
+                product=new Product();
+                product.setIdProduct(resultSet.getInt("idProduct"));
+                product.setNameProduct(resultSet.getString("nameProduct"));
+                product.setDescription(resultSet.getString("description"));
+                product.setIdCategory(resultSet.getInt("idCategory"));
+                product.setPrice(resultSet.getDouble("price"));
+                product.setImage(resultSet.getString("image"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return product;
     }
 }
 
