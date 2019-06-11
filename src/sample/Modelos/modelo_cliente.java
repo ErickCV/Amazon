@@ -2,6 +2,7 @@ package sample.Modelos;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import sample.TDAs.Customers;
 
 import java.sql.Connection;
@@ -69,19 +70,25 @@ public class modelo_cliente
     public void insertar()
     {
         try {
-            System.out.println("vino aqui");
+
             objC = new ConexionBD();//abre la conexion a la BD
             con = objC.getConectar();//EL QUE DA ACCESO A LA BD
             System.out.println(name+""+lastName+""+gender+""+clave);
             String query1 = "INSERT INTO Customers VALUES('"+name+"','"+lastName+"','"+gender+"','"+clave+"')";
-           // String query2 = "INSERT INTO Customers VALUES( 'Johana','Amoles','F','sabes')";
-            System.out.println("aqui si");
+
+
             Statement objSt = null;//ENCARGADO DE REALIZAR LA CONSULTA
             objSt = con.createStatement();
-            System.out.println("aqui tambien");
+
             objSt.executeUpdate(query1);//executeUpdate PARA ACTUALIZAR LA BD   Y EL EXECUTEQUERY SOLO PARA REALIZAR CONSULTAS
-            System.out.println("termino");
+
             //this.Listar();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Confirmacion de usuario");
+            alert.setContentText("Tu nuevo usuario es '" + name + "' con clave '" + clave + "'");
+
+            alert.showAndWait();
             con.close();
         }
         catch (Exception e)

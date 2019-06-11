@@ -45,6 +45,7 @@ public class Login extends Stage {
         this.setScene(scene);
         this.setTitle("LogIn");
         this.show();
+
     }
     public void crearLogin(){
         vBox1 = new VBox();
@@ -76,7 +77,7 @@ public class Login extends Stage {
     private void Acceder(int opc) {
         switch (opc) {
             case 1:
-
+                banderaLogin = true;
 
                 modelo_usuarios objM = new modelo_usuarios();
                 modelo_consulta objMC = new modelo_consulta();
@@ -101,9 +102,10 @@ public class Login extends Stage {
 
                         if (objM.consultas()==1)
                          {
-                             banderaLogin = true;
+
                              this.close();
-                             if(textFieldUsuario.getText().equals("Erick") && textFieldContraseña.getText().equals("itgd")) {
+                             if(textFieldUsuario.getText().equals("Erick") && textFieldContraseña.getText().equals("itgd"))
+                             {
                                  MenuAsCustomer objMe = new MenuAsCustomer(textFieldUsuario.getText(), textFieldContraseña.getText());
                              }
                              else

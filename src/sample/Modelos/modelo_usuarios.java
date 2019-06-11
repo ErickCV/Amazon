@@ -133,12 +133,6 @@
                         objSt = con.createStatement();
                             rs = objSt.executeQuery(query);
                             valor = 1;
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Information Dialog");
-                            alert.setHeaderText("Confirmacion de usuario");
-                            alert.setContentText("Tu nuevo usuario es " + nombre + " con clave " + clave);
-
-                            alert.showAndWait();
                     con.close();
             }
             catch (SQLException e)

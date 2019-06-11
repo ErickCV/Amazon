@@ -385,8 +385,31 @@ public class MenuAsUser extends Stage
 
 
     private void Salir() {
-        this.close();
-        Login objL = new Login();
+        if (lbname.getText().equals("user"))
+        {
+            this.close();
+            Login objL = new Login();
+        }
+        else
+            {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Action required");
+            alert.setContentText("Are you sure of this?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK)
+            {
+                this.close();
+                Login objL = new Login();
+            }
+            else
+                {
+                // ... user chose CANCEL or closed the dialog
+            }
+        }
+
+
     }
 //-------------------------------------------------------------------------------------------------
 
@@ -421,7 +444,8 @@ public class MenuAsUser extends Stage
                     carrito.setIdCart(6);
                     carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
                     new Vista_carritocompras(carrito);
-                } catch (SQLException e) {
+                } catch (SQLException e)
+                {
                     e.printStackTrace();
                 }
             }
