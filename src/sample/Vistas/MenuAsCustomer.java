@@ -3,6 +3,8 @@ package sample.Vistas;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -63,6 +65,7 @@ public class MenuAsCustomer extends Stage {
     public Tabla_Factura objF;
     public Tabla_MetodoPago objMP;
     public  Tabla_Pais objP;
+    public FontAwesomeIconView icono,icono2;
 
     public  Tabla_Productos objPro;
     public Tabla_Promocion objProm;
@@ -564,8 +567,11 @@ public class MenuAsCustomer extends Stage {
                 new Label("Venta"));
 
         comboTablas.setOnAction(event -> Tabla(comboTablas.getSelectionModel().getSelectedItem().getText()));
-        btnActualizar = new JFXButton("   ");
+        btnActualizar = new JFXButton();
+        icono2 = new FontAwesomeIconView(FontAwesomeIcon.REFRESH);
+        icono2.setSize("20");
         btnActualizar.setOnAction(event -> Actualizar());
+        btnActualizar.setGraphic(icono2);
         btnActualizar.setId("button_actualizar");
         btnConsulta3 = new JFXButton("Sin vender");
         btnConsulta3.setOnAction(event -> NoVenta() );
@@ -579,7 +585,10 @@ public class MenuAsCustomer extends Stage {
         btnBorrar.setId("button_options");
         btnBorrar.setOnAction(event -> Borrar(tabla));
         btnLogout = new JFXButton();
+        icono = new FontAwesomeIconView(FontAwesomeIcon.SIGN_IN);
+        icono.setSize("20");
         btnLogout.setId("button_logout");
+        btnLogout.setGraphic(icono);
         btnLogout.setPrefSize(35,35);
         btnLogout.setOnAction(event -> Salir());
 

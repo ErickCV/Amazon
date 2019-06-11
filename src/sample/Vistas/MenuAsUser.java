@@ -49,13 +49,13 @@ public class MenuAsUser extends Stage
     private ImageView imvCooler,imvBrother,imvLap,imvLogo,imvPubli,imvTMadre,imvLapiz,imvfolder,imvpixel,imvUser;
     private JFXButton btnBscar,btnFiltrar,btnQuitarFiltro,btnLogout,btnShoppinCart;
     private Button btnAgregar;
-    public ImageView image;
+    public ImageView image,image2;
     public TableView<modelo_productosMAU> tbvProductos;
     public String name, clave;
     HBox hbxNode;
     HBox hbxContentProducts;
     VBox vbxContent;
-    FontAwesomeIconView icono;
+    FontAwesomeIconView icono,icono2;
     ScrollPane spInicio;
     String nombre;
 
@@ -358,7 +358,10 @@ public class MenuAsUser extends Stage
 
     private void botones()
     {
-        btnLogout = new JFXButton("    ");
+        icono2 = new FontAwesomeIconView(FontAwesomeIcon.SIGN_IN);
+        icono2.setSize("20");
+        btnLogout = new JFXButton();
+        btnLogout.setGraphic(icono2);
         btnLogout.setId("button_logout");
         btnLogout.setOnAction(event -> Salir());
         AnchorPane.setTopAnchor(btnLogout,15.0);
@@ -374,17 +377,29 @@ public class MenuAsUser extends Stage
             }
     private void llamadaVista()
     {
+
         nombre=lbname.getText();
-        System.out.print(nombre);
-        modelo_carritocompras mc = new modelo_carritocompras();
-        try {
-            modelo_carritocompras carrito=new modelo_carritocompras();
-            carrito.setIdCart(6);
-            carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
-            new Vista_carritocompras(carrito);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        System.out.print("esto es: "+nombre);
+            if(!nombre.equals("User")) {
+                modelo_carritocompras mc = new modelo_carritocompras();
+                try {
+                    modelo_carritocompras carrito = new modelo_carritocompras();
+                    carrito.setIdCart(6);
+                    carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
+                    new Vista_carritocompras(carrito);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Dialog");
+                alert.setHeaderText("Error Dialog");
+                alert.setContentText("Please log in before you check your cart");
+
+                alert.showAndWait();
+            }
+
 
     }
     private void TextField()
