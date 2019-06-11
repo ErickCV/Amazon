@@ -6,9 +6,6 @@
 -fx-background-radius: 5;
 }
 
-#button_logout{
-    -fx-background-image: url("/sample/imagenes/logout-variant.png");
-}
 
 .root{
     -fx-background-color: #eeeeee;
