@@ -223,7 +223,6 @@ select  c.name customerName, p.nameProduct productName, s.date saleDate, s.total
                                                            inner join Product p on p.idProduct = sc.idProduct
                                               where c.name = SUSER_SNAME()
 
-
 -----------------------------------------TABLA DE ERRORES--------------------------------------------------------
 create table Mensajes(restriccion varchar(20) not null,
                       mensaje varchar(60),
