@@ -196,13 +196,13 @@ Connection con;
     public Product BuscarByName(String name){
         objC=new ConexionBD();
         con=objC.getConectar();
-        Product product=null;
+        Product product=new Product();;
         String consulta="Select * from Product where nameProduct='"+name+"'";
         try {
             Statement statement =con.createStatement();
             ResultSet resultSet=statement.executeQuery(consulta);
             while (resultSet.next()){
-                product=new Product();
+
                 product.setIdProduct(resultSet.getInt("idProduct"));
                 product.setNameProduct(resultSet.getString("nameProduct"));
                 product.setDescription(resultSet.getString("description"));

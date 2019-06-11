@@ -77,6 +77,7 @@ public class modelo_carritocompras
         }
         catch (Exception e)
         {
+            System.out.println("Me excepciono en modelo carrito "+e.getMessage());
             e.toString();
         }
 
@@ -128,7 +129,7 @@ public class modelo_carritocompras
             modelo_productos producto=null;
             modelo_carritocompras objMCarrito;
             listCarritoCompras = FXCollections.observableArrayList();
-            String query= "exec vistaCarrito "+modeloCarritocompras.getIdCart();
+            String query= "exec vistaCarrito '"+modeloCarritocompras.getIdCart()+"'";
                     Statement ObjSt = con.createStatement();
             ResultSet res = ObjSt.executeQuery(query);
             while (res.next())
