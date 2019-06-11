@@ -28,7 +28,7 @@ import java.util.Optional;
 
 public class MenuAsUser extends Stage
 {
-    private  int noCarrito;
+    private  static int noCarrito;
 
     public int getNoCarrito() {
         return noCarrito;
@@ -168,10 +168,10 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
-            btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
+            btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
             imvCel[con] = new ImageView(obj.imgArray[con]);
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
@@ -209,10 +209,10 @@ public class MenuAsUser extends Stage
                 image.setFitHeight(20.0);
                 image.setFitWidth(20.0);
                 btnAgregar = new Button("Agregar a carrito",image);
-                btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
                 lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
                 lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
                 lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
+                btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
                 imvCel[con] = new ImageView(obj.imgArray[con]);
                 imvCel[con].setFitWidth(250.0);
                 imvCel[con].setFitHeight(170.0);
@@ -261,10 +261,10 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
-            btnAgregar.setOnAction(event -> EventoAgregar(ArrayNameM[con]));
             lblNombreCel = new Label(ArrayNameM[con] = new String(obj.ArrayName[con]));
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
+            btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
             imvCel[con] = new ImageView(obj.imgArray[con]);
             imvCel[con].setFitWidth(250.0);
             imvCel[con].setFitHeight(170.0);
@@ -459,11 +459,12 @@ public class MenuAsUser extends Stage
         nombre=lbname.getText();
         System.out.print("esto es: "+nombre);
             if(!nombre.equals("User")) {
-                modelo_carritocompras mc = new modelo_carritocompras();
+                //modelo_carritocompras mc = new modelo_carritocompras();
                 try {
                     modelo_carritocompras carrito = new modelo_carritocompras();
-                    carrito.setIdCart(6);
+                    carrito.setIdCart(noCarrito);
                     carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
+                    System.out.println(""+carrito.getIdCustomer().getIdCustomer());
                     new Vista_carritocompras(carrito);
                 } catch (SQLException e)
                 {
@@ -602,10 +603,12 @@ public class MenuAsUser extends Stage
             image.setFitHeight(20.0);
             image.setFitWidth(20.0);
             btnAgregar = new Button("Agregar a carrito",image);
-            btnAgregar.setOnAction(event -> System.out.println("funciona"));
             lblname = new Label(MP.getNameProduct());
             lblPrice = new Label(""+MP.getPrice());
             lbldesc = new Label(MP.getDescription());
+            Label finalLblname = lblname;
+            Label finalLblname1 = lblname;
+            btnAgregar.setOnAction(event -> EventoAgregar(finalLblname1.getText()));
             try {
                 imvImage = new ImageView(MP.getImage());
                 imvImage.setFitHeight(170);
@@ -634,4 +637,5 @@ public class MenuAsUser extends Stage
         hbxNode.setSpacing(10.0);
         return hbxNode;
     }
+
 }

@@ -99,7 +99,7 @@ public class Vista_carritocompras extends Stage
     public Vista_carritocompras(modelo_carritocompras carritocompras) {
         user=new Customers();
         listacarrito=new modelo_carritocompras().Listar(carritocompras);
-        System.out.println("usuario"+carritocompras.getIdCustomer().getName());
+       // System.out.println("usuario"+carritocompras.getIdCustomer().getName());
         user=carritocompras.getIdCustomer();
         CrearGUI();
     }
