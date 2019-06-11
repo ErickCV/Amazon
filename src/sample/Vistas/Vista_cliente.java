@@ -128,7 +128,7 @@ public class Vista_cliente extends Stage
                 objMC.setGender(group.getSelectedToggle().getUserData().toString());
                 objMC.setClave(txtclave.getText());
                 objMC.insertar();
-                MenuAsCustomer objMe = new MenuAsCustomer(txtnombre.getText(), txtclave.getText());
+                MenuAsUser objMe = new MenuAsUser(txtnombre.getText(), txtclave.getText());
             case 2:
                 this.close();
         }
