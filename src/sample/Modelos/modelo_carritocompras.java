@@ -169,6 +169,13 @@ public class modelo_carritocompras
         return  carrito.getIdCart();
     }
 
-
+    public void eliminarItem() throws SQLException {
+        objC=new ConexionBD();
+        con=objC.getConectar();
+        //borraritem(in cliente int, carrito int, producto int)
+        String consulta="exec borraritem "+idCustomer.getIdCustomer()+","+idCart+","+idProduct.getIdProduct();
+        Statement statement=con.createStatement();
+        statement.executeUpdate(consulta);
+    }
 }
 
