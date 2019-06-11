@@ -160,6 +160,18 @@ end try
 -----------------------------------------------------------------------------------------------------------------------------------
 
 /*----------------+ PROCEDIMIENTOS FRAN +-----------------*/
+create procedure ShowSales
+	@IdCustomer int
+as
+BEGIN
+Select nameProduct,price,description,image
+from Product
+where idProduct in (select idProduct
+										from Sale
+										where idCustomer = @IdCustomer)
+	END
+
+
 use AmazonV3
 drop procedure filtro
 create procedure filtro
@@ -296,28 +308,29 @@ begin
 end
 /*---------------------------------------eliminaritem del carrito---------------------------------------------------*/
 
-create procedure borraritem  @cliente int, @carrito int, @producto int
+create procedure borraritem
+  @cliente int, @carrito int, @producto int
 as
 begin
-declare @nuevototal float;
-declare @nuevacantidad int;
-if(select cantidad from shoppingcart where idCustomer=@cliente and idCart=@carrito and idProduct=@producto>1)
-begin
-	set @nuevacantidad=(select cantidad from shoppingcart where idCustomer=@cliente and idCart=@carrito and idProduct=@producto)-1;
+	declare @nuevototal float;
+	declare @nuevacantidad int;
+	if(select cantidad from shoppingcart where idCustomer=@cliente and idCart=@carrito and idProduct=@producto>1)
+		begin
+			set @nuevacantidad=(select cantidad from shoppingcart where idCustomer=@cliente and idCart=@carrito and idProduct=@producto)-1;
 
-	update shoppingcart
-	set cantidad=@nuevacantidad
-	where idCustomer=@cliente and idCart=@carrito and idProduct=@producto
+			update shoppingcart
+			set cantidad=@nuevacantidad
+			where idCustomer=@cliente and idCart=@carrito and idProduct=@producto
 
-	set @nuevototal=((select price from product where idProduct=@producto)*(select ShoppingCart.cantidad from ShoppingCart 
-								where idCustomer=@cliente and idCart=@carrito and idProduct=@producto))
-	update shoppingcart
-	set subTotal=@nuevototal
-	where idCustomer=@cliente and idCart=@carrito and idProduct=@producto
+			set @nuevototal=((select price from product where idProduct=@producto)*(select ShoppingCart.cantidad from ShoppingCart
+												where idCustomer=@cliente and idCart=@carrito and idProduct=@producto))
+			update shoppingcart
+			set subTotal=@nuevototal
+			where idCustomer=@cliente and idCart=@carrito and idProduct=@producto
     end
-else
-	begin
-	delete from shoppingcart
-    where idCustomer=@cliente and idCart=@carrito and idProduct=@producto;
+	else
+		begin
+			delete from shoppingcart
+    	where idCustomer=@cliente and idCart=@carrito and idProduct=@producto;
     end
 end

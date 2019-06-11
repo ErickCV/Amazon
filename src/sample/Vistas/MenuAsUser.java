@@ -439,7 +439,7 @@ public class MenuAsUser extends Stage
                 modelo_carritocompras mc = new modelo_carritocompras();
                 try {
                     modelo_carritocompras carrito = new modelo_carritocompras();
-                    carrito.setIdCart(6);
+                    carrito.setIdCart(noCarrito);
                     carrito.setIdCustomer(new modelo_cliente().BuscarCustomer(new modelo_cliente().Listar(lbname.getText())));
                     new Vista_carritocompras(carrito);
                 } catch (SQLException e) {

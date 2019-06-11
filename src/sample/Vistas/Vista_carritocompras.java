@@ -24,7 +24,7 @@ public class Vista_carritocompras extends Stage
     private Label lblCustomer,lblProduct,lblPrecio,lblDescripcion,lblCantidad;
     private JFXButton btnEliminar;
     private ImageView imagen;
-    private ObservableList<modelo_carritocompras> listacarrito;
+    private ObservableList<modelo_carritocompras> listacarrito=null;
     private ScrollPane principal;
     private VBox vbProduct,vboxPrincipal;
     private JFXButton btnPayment;
