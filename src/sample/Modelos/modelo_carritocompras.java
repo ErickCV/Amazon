@@ -151,11 +151,12 @@ public class modelo_carritocompras
         }
         return listCarritoCompras;
     }
-    public int nuevocarro(){
+    public int nuevocarro()
+    {
         objC=new ConexionBD();
         con=objC.getConectar();
         modelo_carritocompras carrito=new modelo_carritocompras();
-        String consulta="select  max (idCart) idCart from ShoppingCart";
+        String consulta="select  max(idCart) idCart from ShoppingCart";
         try {
             Statement statement=con.createStatement();
             ResultSet resultSet=statement.executeQuery(consulta);
@@ -169,6 +170,13 @@ public class modelo_carritocompras
         return  carrito.getIdCart();
     }
 
-
+    public void eliminarItem() throws SQLException {
+        objC=new ConexionBD();
+        con=objC.getConectar();
+        //borraritem(in cliente int, carrito int, producto int)
+        String consulta="exec borraritem "+idCustomer.getIdCustomer()+","+idCart+","+idProduct.getIdProduct();
+        Statement statement=con.createStatement();
+        statement.executeUpdate(consulta);
+    }
 }
 

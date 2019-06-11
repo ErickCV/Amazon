@@ -28,7 +28,7 @@ public class Login extends Stage {
     private VBox vBox1;
     private ImageView imageView1;
     private Image image1;
-    private JFXTextField textFieldUsuario;
+    public JFXTextField textFieldUsuario;
     private JFXPasswordField textFieldContraseña;
     private JFXButton buttonEntrar,buttonCrear;
     private Label or;

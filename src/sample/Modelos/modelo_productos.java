@@ -124,6 +124,31 @@ Connection con;
         }
     }
 
+
+    public ObservableList<modelo_productos> showSales(int idCustomer) {
+        ObservableList<modelo_productos> listProductos = null;
+        try{
+            objC = new ConexionBD();
+            con = objC.getConectar();
+            modelo_productos objp;
+            listProductos = FXCollections.observableArrayList();
+            String query = "exec ShowSales'"+idCustomer+"'";
+            Statement ObjSt = con.createStatement();
+            ResultSet res = ObjSt.executeQuery(query);
+            while(res.next()){
+                objp = new modelo_productos();
+                objp.setNameProduct(res.getString("nameProduct"));
+                objp.setDescription(res.getString("description"));
+                objp.setPrice(res.getFloat("price"));
+                objp.setImage(res.getString("image"));
+                listProductos.addAll(objp);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return listProductos;
+    }
+
     public ObservableList<modelo_productos> Listar() {
         ObservableList<modelo_productos> listProductos = null;
         try{

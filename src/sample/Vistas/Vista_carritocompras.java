@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import sample.Modelos.modelo_carritocompras;
 import sample.TDAs.Customers;
 
+import java.sql.SQLException;
+
 
 public class Vista_carritocompras extends Stage
 {
@@ -103,5 +105,12 @@ public class Vista_carritocompras extends Stage
     }
 
     private void EventoEliminar(modelo_carritocompras carrito) {
+        try {
+            carrito.eliminarItem();
+            this.close();
+            new Vista_carritocompras(carrito);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
