@@ -194,6 +194,7 @@ Connection con;
         return  product;
     }
     public Product BuscarByName(String name){
+        this.nameProduct = name;
         objC=new ConexionBD();
         con=objC.getConectar();
         Product product=new Product();;

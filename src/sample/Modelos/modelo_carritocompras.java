@@ -161,8 +161,8 @@ public class modelo_carritocompras
         try {
             Statement statement=con.createStatement();
             ResultSet resultSet=statement.executeQuery(consulta);
-            while (resultSet.next()){
-
+            while (resultSet.next())
+            {
                 carrito.setIdCart(resultSet.getInt("idCart"));
             }
         } catch (SQLException e) {

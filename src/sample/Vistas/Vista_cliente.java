@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.Modelos.modelo_carritocompras;
 import sample.Modelos.modelo_cliente;
 
 public class Vista_cliente extends Stage
@@ -129,6 +130,7 @@ public class Vista_cliente extends Stage
                 objMC.setClave(txtclave.getText());
                 objMC.insertar();
                 MenuAsUser objMe = new MenuAsUser(txtnombre.getText(), txtclave.getText());
+                objMe.setNoCarrito(new modelo_carritocompras().nuevocarro()+1);
             case 2:
                 this.close();
         }

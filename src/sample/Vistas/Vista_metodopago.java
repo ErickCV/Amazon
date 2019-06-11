@@ -36,10 +36,12 @@ public class Vista_metodopago extends Stage {
     private Alert alerta;
     private modelo_carritocompras carrito;
     private Customers cliente=new Customers();
+    private int Producto;
 
 
-    public Vista_metodopago(int idCarrito ,int idCustomer) {
+    public Vista_metodopago(int idCarrito ,int idCustomer, int producto) {
         carrito=new modelo_carritocompras();
+        this.Producto = producto;
         cliente.setIdCustomer(""+idCustomer);
         carrito.setIdCart(idCarrito);
         try {
@@ -101,6 +103,7 @@ public class Vista_metodopago extends Stage {
             venta .setIdCart(carrito.getIdCart());
             venta.setIdCustomer(Integer.parseInt(carrito.getIdCustomer().getIdCustomer()));
             venta.setIdPayment(metodopago.getIdPayment());
+            venta.setProducto(this.Producto);
             venta.Insert();
             alerta=new Alert(Alert.AlertType.INFORMATION);
             alerta.setContentText("Compra realizada");

@@ -93,7 +93,8 @@ public class Vista_carritocompras extends Stage
 
     private void EventoPagar() {
         this.close();
-        Vista_metodopago pago = new Vista_metodopago(listacarrito.get(0).idCart,Integer.parseInt(listacarrito.get(0).idCustomer.getIdCustomer()));
+        Vista_metodopago pago = new Vista_metodopago(listacarrito.get(0).idCart,
+                                                      Integer.parseInt(listacarrito.get(0).idCustomer.getIdCustomer()),listacarrito.get(0).getIdProduct().getIdProduct());
     }
 
     public Vista_carritocompras(modelo_carritocompras carritocompras) {

@@ -978,7 +978,8 @@ public class MenuAsCustomer extends Stage {
         }
     }
 
-    private void Salir() {
+    private void Salir()
+    {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText("Action required");

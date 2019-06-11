@@ -6,11 +6,19 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class modelo_venta {
-    private int idSale,idCustomer,idCart,idUser,idPayment,idTypeSale,idStore,idPromo;
+    private int idSale,idCustomer,idCart,idUser,idPayment,idTypeSale,idStore,idPromo,Producto;
     private double total;
     private Date date;
     ConexionBD objC;
     Connection con;
+
+    public int getProducto() {
+        return Producto;
+    }
+
+    public void setProducto(int producto) {
+        Producto = producto;
+    }
 
     public Date getDate() {
         return date;
@@ -99,7 +107,8 @@ public class modelo_venta {
             objC = new ConexionBD();
             con = objC.getConectar();
 
-            String query = "exec insertventa "+this.idCart+","+this.idCustomer+","+this.idPayment+"";
+
+            String query = "exec insertventa "+this.idCart+","+this.idCustomer+","+this.idPayment+","+Producto;
 
             Statement objSt = null;
             objSt = con.createStatement();
@@ -109,6 +118,7 @@ public class modelo_venta {
         } catch (SQLException e)
         {
             e.printStackTrace();
+            System.out.println("modelo venta "+e.getMessage());
         }
     }
     public void Actualizar()
