@@ -172,9 +172,17 @@ public class MenuAsUser extends Stage
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
             btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
+            try {
+                imvCel[con] = new ImageView(obj.imgArray[con]);
+                imvCel[con].setFitWidth(250.0);
+                imvCel[con].setFitHeight(170.0);
+            }
+            catch (Exception e)
+            {
+                imvCel[con] = new ImageView("sample/imagenes/null.png");
+                imvCel[con].setFitWidth(250.0);
+                imvCel[con].setFitHeight(170.0);
+            }
             vbxLabels = new VBox();
             vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel,btnAgregar);
             hbxProduct.getChildren().addAll(vbxLabels);
@@ -213,9 +221,15 @@ public class MenuAsUser extends Stage
                 lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
                 lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
                 btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
-                imvCel[con] = new ImageView(obj.imgArray[con]);
-                imvCel[con].setFitWidth(250.0);
-                imvCel[con].setFitHeight(170.0);
+                try {
+                    imvCel[con] = new ImageView(obj.imgArray[con]);
+                    imvCel[con].setFitWidth(250.0);
+                    imvCel[con].setFitHeight(170.0);
+                }
+                catch (Exception e)
+                {
+                    imvCel[con] = new ImageView("sample/imagenes/null.png");
+                }
                 vbxLabels = new VBox();
                 vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel, lblPrecioCel, lblDescCel,btnAgregar);
                 hbxProduct.getChildren().addAll(vbxLabels);
@@ -265,9 +279,15 @@ public class MenuAsUser extends Stage
             lblPrecioCel = new Label(String.valueOf(ArrayPrecioM[con] = new Float(obj.ArrayPrecio[con])));
             lblDescCel = new Label(ArrayDescripM[con] = new String(obj.ArrayDescrip[con]));
             btnAgregar.setOnAction(event -> EventoAgregar(lblNombreCel.getText()));
-            imvCel[con] = new ImageView(obj.imgArray[con]);
-            imvCel[con].setFitWidth(250.0);
-            imvCel[con].setFitHeight(170.0);
+            try {
+                imvCel[con] = new ImageView(obj.imgArray[con]);
+                imvCel[con].setFitWidth(250.0);
+                imvCel[con].setFitHeight(170.0);
+            }
+            catch (Exception e)
+            {
+                imvCel[con] = new ImageView("sample/imagenes/null.png");
+            }
             vbxLabels = new VBox();
             vbxLabels.getChildren().addAll(imvCel[con],lblNombreCel,lblPrecioCel,lblDescCel,btnAgregar);
             hbxProduct.getChildren().add(vbxLabels);

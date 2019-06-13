@@ -545,7 +545,7 @@ public class MenuAsCustomer extends Stage {
         btnResumen.setOnAction(event -> Resumen());
         comboTablas =  new JFXComboBox<>();
         comboTablas.setPromptText("Tablas");
-        comboTablas.getItems().addAll(new Label("Carrito de Compras"),
+        comboTablas.getItems().addAll(
                 new Label("Categorias"),
                 new Label("Ciudad"),
 
@@ -560,11 +560,11 @@ public class MenuAsCustomer extends Stage {
 
                 new Label("Productos"),
                 new Label("Promociones"),
-                new Label("Rol"),
+
                 new Label("Stock"),
                 new Label("Tienda"),
-                new Label("Tipo de venta"),
-                new Label("Venta"));
+                new Label("Tipo de venta")
+                );
 
         comboTablas.setOnAction(event -> Tabla(comboTablas.getSelectionModel().getSelectedItem().getText()));
         btnActualizar = new JFXButton();
@@ -692,7 +692,7 @@ public class MenuAsCustomer extends Stage {
                     break;
                 case 14:
                     modelo_productos objetoPro = objPro.tableViewProductos.getSelectionModel().getSelectedItem();
-                    objvPro = new Vista_carritocompras(2,objetoPro);
+                    objvPro = new Vista_productos(2,objetoPro);
                     break;
                 case 15:
                     modelo_promocion objetoProm = objProm.tableViewPromocion.getSelectionModel().getSelectedItem();
@@ -761,7 +761,7 @@ public class MenuAsCustomer extends Stage {
         if(tabla!=0)
             switch (tabla){
                 case 1:
-                    //Vista_carritocompras objCC = new Vista_carritocompras(1,objcc);
+
                     break;
                 case 2:
                     Vista_categoria objCa = new Vista_categoria(1,objca);
@@ -773,7 +773,7 @@ public class MenuAsCustomer extends Stage {
 
                     break;
                 case 5:
-                    Vista_contenidopaquete objCP = new Vista_contenidopaquete(1,objcp);
+
                     break;
                 case 6:
                     Vista_direccion objD = new Vista_direccion(1,objd);
@@ -796,20 +796,19 @@ public class MenuAsCustomer extends Stage {
                     Vista_pais objP = new Vista_pais(1,objp);
                     break;
                 case 13:
-                    //Stage stage= new Stage();
-                   // showPackage(stage);
+
                     break;
                 case 14:
-                    Stage stage2= new Stage();
-                    showProduct(stage2);
+                    new Vista_productos();
+                    //Stage stage2 = new Stage();
+                    //showProduct(stage2);
                     break;
                 case 15:
                     Stage stage3= new Stage();
                     showPromotion(stage3);
                     break;
                 case 16:
-                    Stage stage4= new Stage();
-                    showRol(stage4);
+
                     break;
                 case 17:
                     Stage stage5= new Stage();
@@ -824,8 +823,7 @@ public class MenuAsCustomer extends Stage {
                     showTypeSale(stage7);
                     break;
                 case 20:
-                    Stage stage8= new Stage();
-                    showSale(stage8);
+
             }
         else
         {
@@ -1177,13 +1175,7 @@ public class MenuAsCustomer extends Stage {
         // txtBuscar.setOnKeyPressed(new GestorTeclado(this,opc));
         switch (opc)
         {
-            case "Carrito de Compras":
-                vBoxTabla.getChildren().clear();
-                tabla = 1;
-                string ="ShoppingCart";
-                string2="idCart";
-                txtBuscar.setPromptText("idCart");
-                break;
+
             case "Categorias":
                 vBoxTabla.getChildren().clear();
                 objC = new Tabla_Categoria();
@@ -1213,16 +1205,6 @@ public class MenuAsCustomer extends Stage {
                 string2 = "name";
                 txtBuscar.setPromptText("name");
                 tabla = 4;
-                break;
-            case "Contenido Paquete":
-                vBoxTabla.getChildren().clear();
-                objCP = new Tabla_ContenidoPaquete();
-                objCP.close();
-                vBoxTabla.getChildren().addAll(objCP.tableViewContenidoPaquete);
-                string ="PackageContent";
-                string2 = "detail";
-                txtBuscar.setPromptText("detail");
-                tabla = 5;
                 break;
             case "Direccion":
                 vBoxTabla.getChildren().clear();
@@ -1307,16 +1289,8 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla = 15;
                 break;
-            case "Rol":
-                vBoxTabla.getChildren().clear();
-                objR = new Tabla_Rol();
-                objR.close();
-                vBoxTabla.getChildren().addAll(objR.tableViewRol);
-                string ="role";
-                string2 = "name";
-                txtBuscar.setPromptText("name");
-                tabla = 16;
-                break;
+
+
             case "Stock":
                 vBoxTabla.getChildren().clear();
                 objS = new Tabla_Stock();
@@ -1347,15 +1321,7 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla = 19;
                 break;
-            case "Venta":
-                vBoxTabla.getChildren().clear();
-                objV= new Tabla_Venta();
-                objV.close();
-                vBoxTabla.getChildren().addAll(objV.tableViewVenta);
-                string ="Sale";
-                string2 = "date";
-                txtBuscar.setPromptText("date");
-                tabla = 20;
+
 
         }
     }
@@ -1365,12 +1331,7 @@ public class MenuAsCustomer extends Stage {
         System.out.println("tabla: "+opc);
         switch (opc)
         {
-            case "Carrito de Compras":
-                string ="ShoppingCart";
-                string2="idCart";
-                txtBuscar.setPromptText("idCart");
-                tabla=1;
-                break;
+
             case "Categorias":
                 string = "Category";
                 string2 = "name";
@@ -1389,12 +1350,8 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla=4;
                 break;
-            case "Contenido Paquete":
-                string ="PackageContent";
-                string2 = "detail";
-                txtBuscar.setPromptText("detail");
-                tabla=5;
-                break;
+
+
             case "Direccion":
                 string ="Address";
                 string2 = "street";
@@ -1431,12 +1388,8 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla=12;
                 break;
-            case "Paquete":
-                string ="Package";
-                string2 = "namePackage";
-                txtBuscar.setPromptText("namePackage");
-                tabla=13;
-                break;
+
+
             case "Productos":
                 string ="Product";
                 string2 = "nameProduct";
@@ -1449,12 +1402,7 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla=15;
                 break;
-            case "Rol":
-                string ="role";
-                string2 = "name";
-                txtBuscar.setPromptText("name");
-                tabla=16;
-                break;
+
             case "Stock":
                 string ="stock";
                 string2 = "quantity";
@@ -1473,43 +1421,23 @@ public class MenuAsCustomer extends Stage {
                 txtBuscar.setPromptText("name");
                 tabla=19;
                 break;
-            case "Venta":
-                string ="Sale";
-                string2 = "date";
-                txtBuscar.setPromptText("date");
-                tabla=20;
+
         }
     }
 
-    public void showPackage(Stage _packageListStage){
-        try {
-            Stage = _packageListStage;
-            Stage.setTitle("package");
-            Parent root= null;
-            loader= new FXMLLoader(getClass().getResource("/sample/FXML/AddPackageFormat.fxml"));
-            AddPackageController addPackageController1 = new AddPackageController();
-            loader.setController(addPackageController1);
-            root = loader.load();
-            Scene scene=new Scene(root);
-            scene.getStylesheets().add("/sample/css/estilo.css");
-            Stage.setScene(scene);
-            Stage.setMaximized(true);
-            Stage.show();
-        }catch (IOException e ){
-            e.printStackTrace();
-        }
-    }
+
+
 
     public void showProduct(Stage _packageListStage){
         try {
             Stage = _packageListStage;
             Stage.setTitle("product");
-            Parent root2= null;
-            loader= new FXMLLoader(getClass().getResource("/sample/FXML/ProductAddFormat.fxml"));
-            ProductAddController addPackageController2 = new ProductAddController();
-            loader.setController(addPackageController2);
-            root2 = loader.load();
-            Scene scene=new Scene(root2);
+            Parent rootpro = null;
+            loader = new FXMLLoader(getClass().getResource("/sample/FXML/ProductAddFormat.fxml"));
+            ProductAddController addPackageControllerpro = new ProductAddController();
+            loader.setController(addPackageControllerpro);
+            rootpro = loader.load();
+            Scene scene=new Scene(rootpro);
             scene.getStylesheets().add("/sample/css/estilo.css");
             Stage.setScene(scene);
             Stage.setMaximized(true);
@@ -1538,43 +1466,9 @@ public class MenuAsCustomer extends Stage {
         }
     }
 
-    public void showRol(Stage _packageListStage){
-        try {
-            Stage = _packageListStage;
-            Stage.setTitle("rol");
-            Parent root4= null;
-            loader= new FXMLLoader(getClass().getResource("/sample/FXML/AddRoleFormat.fxml"));
-            AddRoleFormat addPackageController4 = new AddRoleFormat();
-            loader.setController(addPackageController4);
-            root4 = loader.load();
-            Scene scene=new Scene(root4);
-            scene.getStylesheets().add("/sample/css/estilo.css");
-            Stage.setScene(scene);
-            Stage.setMaximized(true);
-            Stage.show();
-        }catch (IOException e ){
-            e.printStackTrace();
-        }
-    }
 
-    public void showSale(Stage _packageListStage){
-        try {
-            Stage = _packageListStage;
-            Stage.setTitle("sale");
-            Parent root5= null;
-            loader= new FXMLLoader(getClass().getResource("/sample/FXML/AddSaleFormat.fxml"));
-            AddSaleFormatController addPackageController5 = new AddSaleFormatController();
-            loader.setController(addPackageController5);
-            root5 = loader.load();
-            Scene scene=new Scene(root5);
-            scene.getStylesheets().add("/sample/css/estilo.css");
-            Stage.setScene(scene);
-            Stage.setMaximized(true);
-            Stage.show();
-        }catch (IOException e ){
-            e.printStackTrace();
-        }
-    }
+
+
 
     public void showStore(Stage _packageListStage){
         try {

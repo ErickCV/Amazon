@@ -9,8 +9,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXButton?>
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
     <GridPane alignment="CENTER">
         <Label text="ID Promocion" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <JFXTextField fx:id="txtPromo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>

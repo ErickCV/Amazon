@@ -15,7 +15,7 @@ public class ConexionBD
     {
         try
         {
-            String connectionUrl = "jdbc:sqlserver://;database=AmazonV3; user=Erick; password=itgd; integratedSecurity=true;";
+            String connectionUrl = "jdbc:sqlserver://;database=AmazonV3;integratedSecurity=true;";
             cn = DriverManager.getConnection(connectionUrl);
             System.out.println("Conectado");
         } catch (SQLException ex)
